@@ -8,4 +8,24 @@ should be allowed to drop.
 
 to reproduce, drop a bomb in between buildings such that it doesnt collide with any of the buildings.
 
+Fixed on line 244 of bomber_oo.py
+
+Bug 2: Plane wraps around too far and misses first building
+
+When the plane reaches the left border of the screen it wraps around to the right hand side but appears
+too far left of the screen and consequently misses the rightmost building, meaning that the first building
+can never be bombed.
+
+Fixed and reported on line 173 of bomber_oo.py
+
+Bug 3: Hidden building on the right hand side of the screen
+
+A building is created outside of the screen on the right hand side due to an indexing error in the function create_buildings
+
+Bug fixed on line 228 of bomber_oo.py
+
+Bug 4: Buildings going below ground level
+
+Bombing a building that is close to being levelled causes the height to become negative and go below ground level. 
+
 

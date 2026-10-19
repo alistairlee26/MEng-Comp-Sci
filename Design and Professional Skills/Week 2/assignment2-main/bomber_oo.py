@@ -169,7 +169,9 @@ class Plane():
     def move(self):
         self.position.move(-4 * speed, 0)
         if self.position.getX() < -self.width:
-            self.position.move(CANVAS_WIDTH, 40)
+            # if the plane has gone off the left side of the screen, move it to the right side
+            # Bug fix 2: changed CANVAS_WIDTH to CANVAS_WIDTH + self.width so that the plane is completely off the right side of the screen before it starts to appear on the left side
+            self.position.move(CANVAS_WIDTH + self.width, 40)
             #ensure we don't go off the bottom of the screen
             if self.position.getY() > CANVAS_HEIGHT:
                 self.position.Y = CANVAS_HEIGHT
@@ -223,7 +225,8 @@ class Display(Frame):
             building.cleanup()
 
         #create the new ones
-        for building_num in range(0, 1200//SPACING):
+        # Bug fix 3: changed range to go from 0 to 1200//SPACING - 1 so that we don't create a building that is off the right side of the screen
+        for building_num in range(0, 1200//SPACING - 1):
             height = self.rand.randint(10,500) #random number between 10 and 500
             self.buildings.append(Building(self.canvas, building_num, height,
                                            self.building_width))
