@@ -77,7 +77,8 @@ class Building():
 
     ''' shrink the building when a bomb drops on it '''
     def shrink(self):
-        self.height = self.height - 50
+        # Bug fix 4: Changed "self.height - 50" to "max(0, self.height - 0)" to prevent the height from reaching a negative number.
+        self.height = max(0, self.height - 50)
         self.canvas.delete(self.main_rect)
         self.main_rect = self.canvas.create_rectangle(self.x, CANVAS_HEIGHT, self.x + self.width, CANVAS_HEIGHT-self.height, fill="brown")
 
@@ -225,8 +226,8 @@ class Display(Frame):
             building.cleanup()
 
         #create the new ones
-        # Bug fix 3: changed range to go from 0 to 1200//SPACING - 1 so that we don't create a building that is off the right side of the screen
-        for building_num in range(0, 1200//SPACING - 1):
+        # Bug fix 3: changed range to go from 0 to CANVAS_WIDTH//SPACING - 2 instead of 1200//SPACING so that we don't create a building that is off the right side of the screen
+        for building_num in range(0, CANVAS_WIDTH//SPACING):
             height = self.rand.randint(10,500) #random number between 10 and 500
             self.buildings.append(Building(self.canvas, building_num, height,
                                            self.building_width))
@@ -243,6 +244,10 @@ class Display(Frame):
             if building.is_inside(self.bomb.position):
                 self.bomb.explode()
                 building.shrink()
+
+                # Bug fix 5: remove the building so no collisions happen if the height is 0
+                if building.height == 0:
+                    self.buildings.remove(building)
 
         # bug fix 1:
         if self.bomb.position.getY() > CANVAS_HEIGHT:
@@ -263,7 +268,8 @@ class Display(Frame):
                 or building.is_inside(plane_body_bottom)
                 or building.is_inside(plane_wing)):
                 self.game_over()
-        if plane_body_bottom.getY() == CANVAS_HEIGHT and plane_body_bottom.getX() < 20:
+        # Bug fix 5: changed == CANVAS_HEIGHT to >= CANVAS_HEIGHT
+        if plane_body_bottom.getY() >= CANVAS_HEIGHT and plane_body_bottom.getX() < 20:
             self.plane_landed()
 
     ''' game_over is called when the plane crashes to stop play and display the 
