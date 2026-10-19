@@ -1,0 +1,11 @@
+Bug 1: Bombs not dropping
+
+Bombs can only be dropped once the previous bomb collides with an object,
+but if the previous bomb misses an object, you will never be able to drop a bomb again.
+
+If the bomb misses an object, but falls through the bottom of the window, the next bomb
+should be allowed to drop.
+
+to reproduce, drop a bomb in between buildings such that it doesnt collide with any of the buildings.
+
+
