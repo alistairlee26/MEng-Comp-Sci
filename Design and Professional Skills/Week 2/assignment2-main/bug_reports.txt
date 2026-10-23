@@ -22,10 +22,17 @@ Bug 3: Hidden building on the right hand side of the screen
 
 A building is created outside of the screen on the right hand side due to an indexing error in the function create_buildings
 
+1200 is used instead of CANVAS_WIDTH for the math to calculate how many buildings fits in the screen
+
 Bug fixed on line 228 of bomber_oo.py
 
 Bug 4: Buildings going below ground level
 
 Bombing a building that is close to being levelled causes the height to become negative and go below ground level. 
 
+Bug fixed on line 80 of bomber_oo.py
 
+Bug 5: Plane not being able to land on completely levelled terrain
+
+This bug happens when all the buildings are completely levelled but the plane still crashes and shows game over.
+This is because of the collision logic with the levelled buildings still being there when buildings have height of 0
