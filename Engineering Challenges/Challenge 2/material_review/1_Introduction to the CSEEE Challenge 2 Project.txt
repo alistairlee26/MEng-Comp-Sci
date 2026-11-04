@@ -1,0 +1,144 @@
+--- SLIDE 1 ---
+Challenge 2
+CS-EEE
+Introduction to the project:
+Connected Bioreactor Control System
+1
+
+NOTES:
+1
+
+--- SLIDE 2 ---
+Challenge 2 – Interdisciplinary Project
+BCG vaccine manufacturing facility in Uganda. 
+Need different expertise – Work 
+TOGETHER
+ to achieve bigger outcome!
+2
+BCG Plant in Uganda
+
+NOTES:
+2
+
+--- SLIDE 3 ---
+3
+
+NOTES:
+3
+
+--- SLIDE 4 ---
+Challenge 2 – Goal for CS/
+EEE
+“Design, develop and test the 
+circuitry, software and interfaces 
+required to remotely monitor and control the parameters of a small-scale bioreactor system.”
+4
+BCG Plant in Uganda
+
+NOTES:
+4
+
+--- SLIDE 5 ---
+Aims
+Consider the design cycle - in particular the conception, implementation and testing phases.
+Bring your disciplinary knowledge to a large problem.
+Understand the complexity of design in large teams.
+5
+
+NOTES:
+5
+
+--- SLIDE 6 ---
+Technical Specification
+Your 
+Challenge
+ is to design and develop a small-scale bioreactor system that:
+Remotely monitors system parameters.
+Provides the user with real-time system information.
+Allows the user to control and adjust system parameters.
+Logs the system parameters for process quality control.
+6
+
+NOTES:
+6
+
+--- SLIDE 7 ---
+Objectives
+During this challenge, you will:
+Develop an overall system concept.
+Break this down into subsystems.
+Design, implement, test and refine 
+each subsystem.
+Integrate the subsystems to demonstrate complete system operation.
+7
+
+NOTES:
+7
+
+--- SLIDE 8 ---
+Team Management
+You will need to 
+collaborate
+ and 
+communicate
+ effectively to complete this project successfully. You will be asked to:
+Assign different roles to each team member.
+Determine the team members who will be working on the different subsystems.
+Produce an implementation plan with clear milestones and actionable tasks.
+8
+
+NOTES:
+8
+
+--- SLIDE 9 ---
+Summative Deliverables for CS-EEE Cohort
+Team proposal presentation (10%)
+Wednesday of week 5.
+Slides to be 
+submitted by 9am 29
+th
+ Oct.
+Individual social impact report (10%)
+See the due date on Moodle.
+Team demonstration (10%)
+Monday of Week 10.
+Team report (30%)
+Due at the end of term.
+Not only to show the design but also the calibration and performance of their system.
+Individual contribution to team work (10%)
+See the due date on Moodle.
+Please also see tab called “
+Assessment Submission
+” on the ENGF0001 Moodle page for details.
+9
+
+NOTES:
+9
+
+--- SLIDE 10 ---
+Tasks for you today and this week (1)
+In your team, research and brainstorm about:
+What is a system?
+What is a bioreactor system?
+What is a connected system?
+What is a control system?
+10
+
+NOTES:
+10
+
+--- SLIDE 11 ---
+Tasks for you today and this week (2)
+In your team, continue to research and brainstorm about:
+Connectivity
+Why do you want connectivity?
+What technologies are available for connectivity?
+What are the pros and cons of each technology?
+Control
+What is required for a control system?
+What parameters need to be controlled in a bioreactor?
+What are the optimal values for the parameters?
+11
+
+NOTES:
+11

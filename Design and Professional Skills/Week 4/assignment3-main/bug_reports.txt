@@ -1,0 +1,38 @@
+Bugs:
+
+1. Frog does not respawn
+Actual: After dying, the frog stays at the fatal position and loses more lives.
+Expected: Return to the starting bank after losing one life.
+Reproduce: Jump off the left edge, then wait.
+Cause: new_life() updates lives without resetting the frog.
+Fix: fr_model.py, line 323: call self.frog.reset_position().
+
+2. Safe river landings kill the frog
+Actual: Landing on a log or turtle costs a life.
+Expected: The frog survives and moves with the platform.
+Reproduce: Cross the road and jump onto a turtle.
+Cause: A typo assigns the platform to on_long, leaving on_log as None.
+Fix: fr_model.py, line 378: change the assignment to on_log = log.
+
+3. Homes do not match the visible openings
+Actual: The leftmost home rejects frogs, making the level impossible to finish.
+Expected: All five visible homes accept frogs.
+Reproduce: After fixing river landings, enter the leftmost opening.
+Cause: Home creation advances x too early and creates six entries instead of five.
+Fix: fr_model.py, lines 269-272: store five centres before advancing x
+line 298: reset exactly five homes.
+
+4. Restart leaves the game frozen
+Actual: Pressing r after Game Over resets the board but movement stays disabled.
+Expected: Restart begins a playable game.
+Reproduce: Lose all lives, press r, then press an arrow key.
+Cause: Resetting never restores game_running after Game Over sets it to False.
+Fix: fr_model.py, line 355: set self.game_running = True in reset_level().
+
+5. Time running out does not end the game
+Actual: Play continues beyond the 120-second limit.
+Expected: Game Over unless all five homes were filled in time.
+Reproduce: Start a game and wait two minutes without filling the homes.
+Cause: The model never checks the deadline.
+Fix: fr_model.py, lines 451-453: end unfinished games at expiry
+line 328: clear paused so a pending callback cannot resume the game.

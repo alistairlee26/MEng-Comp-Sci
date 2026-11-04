@@ -1,0 +1,518 @@
+--- PAGE 1 ---
+Anomaly Detection: Spotting the Unusual in Data
+From Intuition and Time Series to a Streaming Detector
+Stephen Hailes
+9 October 2025
+Department of Computer Science, UCL
+
+
+--- PAGE 2 ---
+Session Plan
+Introduction: What & Why
+Foundations of Detection
+Bioreactor Simulator Context
+Getting Live Data via MQTT
+Wrap-Up
+
+
+--- PAGE 3 ---
+Introduction: What & Why
+
+
+--- PAGE 4 ---
+What is Anomaly Detection?
+Simple definition
+Anomaly detection is the identification of data points or patterns that deviate
+significantly from expected or typical behaviour.
+
+
+--- PAGE 5 ---
+Where is Anomaly Detection Used?
+• Finance — detect fraudulent activity
+• Healthcare — rare diseases or abnormal
+readings
+• Cybersecurity — intrusion and malware
+detection
+• Manufacturing — predictive fault
+monitoring
+• Retail — unusual purchasing behaviour
+
+
+--- PAGE 6 ---
+How Does It Work?
+1. Collect representative data from sensors or logs (or MQTT in our case)
+2. Learn what “normal” looks like — statistically or via models.
+3. Detect deviations from this learned normality.
+
+
+--- PAGE 7 ---
+Popular Methods (Simplified)
+• Statistical: use deviations from expected mean/variance (e.g. z-scores).
+• Model based time series: ARMA/ARIMA, state-space or Kalman; predict ˆxt
+and flag large residuals.
+• Machine learning: classifiers or clustering on features (supervised or
+unsupervised).
+• Deep learning: sequence models and reconstruction methods (autoencoders,
+RNNs, 1D CNNs) that learn normal patterns.
+
+
+--- PAGE 8 ---
+Challenges in Anomaly Detection
+• Defining “normal” accurately.
+• Defining "anomalous" accurately: anomalous data may start to appear later in
+time than the start of (or even the end of) the fault
+• Few anomaly examples →unbalanced data.
+• False alarms vs missed detections.
+• Concept drift — systems change over time.
+
+
+--- PAGE 9 ---
+Why Does It Matter?
+• Safety — catch abnormal behaviour before accidents occur.
+• Reliability — maintain stable operation and product quality.
+• Preventative rather than reactive maintenance
+• Cost — reduce downtime and material waste.
+• Security — detect cyber-physical manipulation.
+
+
+--- PAGE 10 ---
+The Economics of Anomalies (2024–25 snapshot)
+• Global 500 firms lose $1.4 trillion / year to unplanned downtime (≈11% of
+revenue). [Siemens 2024: https://tinyurl.com/bde5ndar]
+• Large plants average $253 million / year in downtime loss. [Siemens 2024:
+https://tinyurl.com/bde5ndar]
+• Cost per hour ranges: $25 k average – $500 k + [MaintainX 2024:
+https://tinyurl.com/3esdcfj8]; $2.3 million for automotive [Siemens 2024:
+https://tinyurl.com/bde5ndar]
+• Anomaly-detection market ≈$5.5 – 6.2 B (2024–25), CAGR 12 – 18 %,
+projected $14 B by 2030. [TBRC 2025: https://tinyurl.com/26qogq3z; GVR 2023:
+https://tinyurl.com/24rvl8ql]
+
+
+--- PAGE 11 ---
+Types of Anomalies
+• Point anomaly: single measurement deviating strongly from baseline.
+• Contextual anomaly: value abnormal only within its context (e.g. time of day).
+• Collective anomaly: a subsequence of otherwise normal points forming an
+abnormal pattern.
+
+
+--- PAGE 12 ---
+Foundations of Detection
+
+
+--- PAGE 13 ---
+Time Series Basics
+A time series is a sequence {xt}T
+t=1 sampled in time.
+• Level and spread: µ = E[x],
+σ2 = Var(x)
+• Dependence: ρ(k) = corr(xt, xt−k)
+• Stationarity: mean and variance stable over time
+
+
+--- PAGE 14 ---
+What Is a Decision Rule?
+• A decision rule is the rule that turns a continuous-valued score into a final
+decision.
+• It compares the score to a chosen threshold:
+At each time t : if s(xt) ≥τ then label as anomaly; otherwise normal.
+• The threshold τ controls how strict the detector is:
+• High τ →fewer alarms, miss more anomalies.
+• Low τ →more alarms, suffer more false alarms.
+• Choosing τ defines the operating point of the detector.
+
+
+--- PAGE 15 ---
+Detecting an anomaly
+Single feature z-score
+zt,i = xt,i −µt,i
+σt,i
+Pooled score across d features
+st(xt) =
+v
+u
+u
+tPd
+i=1
+ 
+xt,i −µt,i
+σt,i
+!2
+where µt,i and σt,i are time-varying baselines estimated
+from recent history or a seasonal model.
+Decision rule
+Anomaly ⇔s(xt) ≥τ
+
+
+--- PAGE 16 ---
+Robustness & Redundancy
+• Use robust statistics when data vary over time or contain outliers:
+mt = median(xt)
+MADt = median(|xt −mt|)
+σt ≈1.4826 × MADt
+modified-Zt,i = 0.6745 (xt,i −mt)
+MADt
+• Avoid redundant or correlated features.
+• Handle missing values gracefully.
+
+
+--- PAGE 17 ---
+Naive Thresholding
+• A simple rule:
+If s(xt) ≥τ then alarm, else normal.
+• But... real data are noisy – scores often
+fluctuate around the decision threshold
+τ.
+• Problem: when s(x) hovers near τ, the
+alarm can flicker on and off.
+• This instability makes alarms unreliable
+and distracting in practice.
+Single threshold – alarm flickers as score crosses τ
+repeatedly.
+
+
+--- PAGE 18 ---
+Hysteresis: Two Thresholds
+• Adds stability by defining two
+thresholds:
+Raise alarm if s(xt) ≥τhigh,
+Clear alarm if s(xt) ≤τlow.
+• The gap τhigh −τlow is the hysteresis
+band.
+• Prevents frequent switching when the
+score fluctuates near the boundary.
+Two-threshold hysteresis – alarm changes state
+only outside the band.
+
+
+--- PAGE 19 ---
+Windowed Detection
+• Applies a time-windowed rule rather
+than relying on individual points.
+• Evaluate the last N samples in a sliding
+window.
+• Raise or clear the alarm based on the
+proportion of points crossing the
+thresholds:
+• Raise alarm if a large enough fraction
+of recent scores exceed τhigh.
+• Clear alarm if most recent scores fall
+below τlow.
+• Smooths the decision signal and ignores
+brief transients or outliers.
+Windowed detection – alarm depends on the
+proportion of high scores within a time window.
+
+
+--- PAGE 20 ---
+Model-Based Detection: ARMA and ARIMA Methods (Advanced)
+Basic thresholding works for steady signals, but more complex systems require models
+of normal (i.e. expected) dynamics.
+• ARMA or ARIMA models capture temporal dependencies in data1.
+• The detector predicts the next value ˆxt and compares it to observed value xt.
+et = xt −ˆxt
+• Large residuals |et| indicate behaviour that deviates from the model – potential
+anomalies.
+• These models adapt to trends, noise, and seasonality, reducing false alarms in
+drifting systems.
+1ARMA = AutoRegressive Moving Average; ARIMA = AutoRegressive Integrated Moving Average
+
+
+--- PAGE 21 ---
+ARIMA-style Detection: Prediction and Residuals
+One-step prediction vs observed
+Residuals with robust 3-sigma bands
+
+
+--- PAGE 22 ---
+Assessing Detector Performance
+• We need objective measures of how well a detector distinguishes normal from
+faulty behaviour.
+• Good detectors should:
+• Raise alarms when faults occur.
+• Stay quiet when systems behave normally.
+• Metrics must capture both correctness and completeness of detection.
+• Note: detectors should also raise alarms quickly but that’s for another day
+
+
+--- PAGE 23 ---
+Precision: How Reliable Are Our Alarms?
+Precision: "When I raise an alarm, how often am I right?"
+• High precision means few false alarms.
+• It measures the reliability or purity of
+detected events.
+• Example: 10 alarms raised, 8 genuine
+faults →precision = 0.8.
+Precision =
+TP
+TP + FP
+• TP – true positives (correct alarms)
+• FP – false positives (false alarms)
+
+
+--- PAGE 24 ---
+Recall: How Complete Is Our Detection?
+Recall: "Of all real faults, how many did I detect?"
+• High recall means few missed faults.
+• It measures the completeness or
+sensitivity of the detector.
+• Example: 12 faults occurred, 8
+detected →recall = 0.67.
+Recall =
+TP
+TP + FN
+• TP – true positives (correct alarms)
+• FN – false negatives (missed faults)
+
+
+--- PAGE 25 ---
+F1 Score: Balancing Precision and Recall
+F1 combines precision and recall into a single performance measure
+• High only when both are high. If either
+precision or recall is low, F1 falls sharply.
+•
+F1 = 2 × Precision × Recall
+Precision + Recall
+• Example values:
+P = 0.8, R = 0.8 ⇒F1 = 0.8
+P = 0.9, R = 0.3 ⇒F1 = 0.45
+P = 0.4, R = 0.9 ⇒F1 ≈0.55
+F1 score surface – colour indicates F1 for
+combinations of precision and recall.
+
+
+--- PAGE 26 ---
+Creating a Precision–Recall Curve
+A Precision–Recall curve shows how precision and recall change as we vary the
+decision threshold.
+• To build the curve:
+1. Sort all samples by their predicted score (highest first).
+2. For each possible threshold:
+• Label points above the threshold as anomalies.
+• Compute TP, FP, FN, then precision and recall.
+3. Plot precision (vertical axis) against recall (horizontal axis).
+• The area under the curve (AUC/AP) summarises overall performance.
+• A good detector maintains high precision even as recall increases.
+
+
+--- PAGE 27 ---
+Precision–Recall Curve
+
+
+--- PAGE 28 ---
+Bioreactor Simulator Context
+
+
+--- PAGE 29 ---
+The bioreactor
+
+
+--- PAGE 30 ---
+The simulator
+
+
+--- PAGE 31 ---
+The simulator
+• The simulator is a black box as far as you are concerned.
+• It is code that simulates your bioreactor2 and has:
+• Sensors: temperature, pH, RPM
+• Actuators: heater, stirrer motor, acid/base dosing
+• A PID controller, whose parameters have been tuned
+• The simulator publishes summary JSON over MQTT once per second.
+• These messages summarise the conditions of the bioreactor over the last second
+• In the simulator:
+• We inject noise
+• Faults of different types can be injected, at different points in time.
+• The setpoints can be changed - either on a schedule, or at random.
+• Fault labels can be reported ... or not.
+2This is done carefully; the simulator uses principled physical and chemical models of the real world
+
+
+--- PAGE 32 ---
+Your (your team’s) task
+• Detect the faults!
+• This is progressive - I will publish several streams
+• No faults
+• Labelled faults
+• Unlabelled faults
+• In several levels of difficulty3
+• Fixed setpoints, no fault
+• Fixed setpoints, one fault
+• Fixed setpoints, multiple faults
+• Varying setpoints, no faults
+• Varying setpoints, one fault
+• Varying setpoints, multiple faults
+3Details will be on Moodle when Challenge 2 starts
+
+
+--- PAGE 33 ---
+Detector Workflow
+1. Train: use fault-free data to compute baseline µi, σi.
+2. Test (labelled): evaluate predictions vs true labels to tune τ.
+3. Test (unlabelled): deploy detector; interpret alerts without ground truth.
+
+
+--- PAGE 34 ---
+Getting Live Data via MQTT
+
+
+--- PAGE 35 ---
+ESP32 MQTT Client with PicoMQTT
+• Demonstration of a minimal ESP32 MQTT client using:
+• WiFi.h - to connect to the wireless network
+• PicoMQTT.h - lightweight MQTT client library
+• Connects to broker.hivemq.com
+• Subscribes to a telemetry topic and prints messages
+• You should install the PicoMQTT library before compiling the code
+
+
+--- PAGE 36 ---
+Minimal PicoMQTT Client
+1
+#include <WiFi.h>
+2
+#include <PicoMQTT.h>
+3
+4
+const char* WIFI_SSID = "YOUR_SSID";
+5
+const char* WIFI_PASSWORD = "YOUR_PASS";
+6
+const char* MQTT_HOST = "broker.hivemq.com";
+7
+const uint16_t MQTT_PORT = 1883;
+8
+const char* TOPIC = "bioreactor_sim/train/telemetry/summary";
+9
+10
+PicoMQTT::Client mqtt(MQTT_HOST, MQTT_PORT);
+
+
+--- PAGE 37 ---
+Message handler
+1
+void onMessage(const char* topic, const char* payload) {
+2
+Serial.print("[MQTT] ");
+3
+Serial.print(topic);
+4
+Serial.print(": ");
+5
+if (payload) {
+6
+Serial.println(payload);
+7
+} else {
+8
+Serial.println("(null)");
+9
+}
+10
+}
+
+
+--- PAGE 38 ---
+Setup and subscription
+1
+void setup() {
+2
+Serial.begin(115200);
+3
+4
+// Connect Wi-Fi
+5
+WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+6
+while (WiFi.status() != WL_CONNECTED) {
+7
+delay(250);
+8
+Serial.print('.');
+9
+}
+10
+Serial.println("\nWi-Fi connected");
+11
+12
+// Subscribe once - PicoMQTT auto re-subscribes after reconnects
+13
+mqtt.subscribe(TOPIC, onMessage);
+14
+mqtt.begin(); // start the MQTT client
+15
+}
+
+
+--- PAGE 39 ---
+Main Loop
+1
+void loop() {
+2
+mqtt.loop(); // manages reconnections and messages
+3
+}
+
+
+--- PAGE 40 ---
+Summary
+• PicoMQTT simplifies ESP32 MQTT code drastically.
+• Automatic reconnects and re-subscriptions reduce complexity.
+• No payload size limit - suitable for JSON telemetry.
+• Ideal for quick prototypes.
+
+
+--- PAGE 41 ---
+Understanding the MQTT Stream
+Telemetry summary message (JSON):
+1
+{"window": {"start": 1760286536, "end": 1760286537, "seconds": 1, "samples":
+11},
+2
+3
+"temperature_C": {"mean": 22.37, "min": 22.35, "max": 22.40},
+4
+5
+"pH": {"mean": 7.07, "min": 6.90, "max": 7.14},
+6
+7
+"rpm": {"mean": 291.31, "min": 274.17, "max": 307.03},
+8
+9
+"actuators_avg": {"heater_pwm": 0.99, "motor_pwm": 0.32, "acid_pwm": 0.0050, "
+base_pwm": 0.00038}, "dosing_L": {"acid": 3.35e-05, "base": 1.79e-05}, "
+heater_energy_Wh": 0.039, "photoevents": 11,
+10
+11
+"setpoints": {"temperature_C": 35.0, "pH": 6.9, "rpm": 300.0},
+12
+13
+"faults": {"last_active": [], "counts": {}}}
+Key Points:
+• One JSON message per
+second.
+• window: time range (start,
+end, seconds).
+• temperature_C, pH, rpm:
+mean/min/max values.
+• actuators_avg: PWM duty
+cycles.
+• faults: appears only when
+labels are enabled.
+
+
+--- PAGE 42 ---
+Wrap-Up
+
+
+--- PAGE 43 ---
+Key Takeaways
+• Defined anomalies and their importance across domains.
+• Learned simple statistical tools: mean, variance, z-scores, thresholds.
+• Explored robustness, drift, and evaluation metrics.
+• Connected theory to practice via the bioreactor and MQTT streaming.
+
+
+--- PAGE 44 ---
+Questions?

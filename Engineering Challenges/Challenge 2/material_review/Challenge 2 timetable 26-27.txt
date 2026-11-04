@@ -1,0 +1,160 @@
+--- PAGE 1 ---
+Student
+Venue
+Student
+Venue
+Week 4
+Monday 2pm-4pm
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+(26/10-1/11) Monday 4pm-6pm
+C + D
+MPEB 6.02 
+C + D
+Roberts 704
+Wednesday 9am-11am
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+Wednesday 11am-1pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Week 5
+Monday 2pm-4pm
+A
+115, Torrington Place (1-19)
+B
+Holiday Inn Bloomsbury, Booker and Tu
+(2/11-8/11)
+Monday 4pm-6pm
+C
+G01 Lankester Lecture Theature
+D
+Drayton House B20 Lecture Theatre
+Wednesday 9am-11am
+A
+103 - Jeffery Hall, IOE - Bedford Way (20)
+B
+B20, Birkbeck Malet Street
+Wednesday 11am-1pm
+C
+Maths 505, Gordon Street (25)
+D
+B20, Birkbeck Malet Street
+Week 6
+Monday 2pm-4pm
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+(16-22/11)
+Monday 4pm-6pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Wednesday 9am-11am
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+Wednesday 11am-1pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Week 7
+Monday 2pm-4pm
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+(23-29/11)
+Monday 4pm-6pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Wednesday 9am-11am
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+Wednesday 11am-1pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Week 8
+Monday 2pm-4pm
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+(30/11-6/12) Monday 4pm-6pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Wednesday 9am-11am
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+Wednesday 11am-1pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Week 9
+Monday 2pm-4pm
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+(7-13/12)
+Monday 4pm-6pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Wednesday 9am-11am
+A + B
+MPEB 6.02
+A + B
+Roberts 704
+Wednesday 11am-1pm
+C + D
+MPEB 6.02
+C + D
+Roberts 704
+Week 10
+Monday 2pm-4pm
+A -D
+MPEB 6.02
+(14-20/12)
+Monday 4pm-6pm
+MPEB 6.02
+Wednesday 9am-11am
+A
+B20, Birkbeck Malet Street
+B
+B20 Jevons LT, Drayton House
+Wednesday 11am-1pm
+C
+Maths 505, Gordon Street (25)
+D
+B20, Birkbeck Malet Street
+F2F - Room 1
+F2F - Room 2
+
+
+--- PAGE 2 ---
+rner Suite
+Demo
+Proposal presentation

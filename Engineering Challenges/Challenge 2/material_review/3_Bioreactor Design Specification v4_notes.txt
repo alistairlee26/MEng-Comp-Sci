@@ -1,0 +1,297 @@
+--- PAGE 1 ---
+Challenge 2
+CS-EEE
+Connected Bioreactor Design Specification
+1
+Hello everyone. This is Ryan speaking. Over the next slides, we will look at the 
+specification and the elements of the small-scale bioreactor control system you are 
+asked to design, implement and test.
+1
+
+
+--- PAGE 2 ---
+Objectives for this task
+• Given the connected bioreactor design 
+specification, identify:
+– The different components that make up the small-scale 
+bioreactor system.
+– The subsystems into which the bioreactor system can 
+be broken down.
+– The functionalities associated with each subsystem, as 
+well as the overall system.
+• You will need to produce:
+– Requirements, block diagrams, structure charts, 
+flowcharts, wireframes to describe the architecture and 
+explain the functionality of the bioreactor system and its 
+subsystems.
+2
+By the time you complete this task, you should be able to identify:
+The different components that make up the small-scale bioreactor system.
+The subsystems into which the bioreactor system can be broken down.
+The functionalities associated with each subsystem, as well as the overall 
+system.
+Having understood the bioreactor design specification, you are then called to use 
+different modelling tools to describe the architecture and explain the functionality of 
+the bioreactor system and its subsystems.
+2
+
+
+--- PAGE 3 ---
+Small-scale bioreactor testbed
+3
+Here is a picture of the small-scale bioreactor testbed. There are three core elements 
+to this bioreactor testbed, namely, the heating subsystem, the stirring subsystem and 
+the pH subsystem.
+3
+
+
+--- PAGE 4 ---
+Bioreactor design specification
+•
+The inlet water temperature is assumed to be in the range of 10-20C.
+•
+The temperature control system must be able to maintain the 
+temperature at a set point in the range 25-35C to within 0.5C of the 
+set point.
+•
+The stirring subsystem must be able to maintain the stirring speed at a 
+set point in the range 500-1500 RPM within 20 RPM of the set point.
+•
+The pH subsystem must be able to maintain the pH value at a setpoint 
+in the sensing range 3-7. 
+•
+Instructions: You should do some research to find the optimal values 
+for the above parameters. Provide justification for your choice.
+•
+ATTENTION: All subsystems should:
+– Log data.
+– Provide a user interface for monitoring the parameters and allowing the set 
+point values to be adjusted.
+4
+Here is the design specification pertaining to this bioreactor system. To start off, it is 
+assumed that the inlet water temperature is in the range of 10-20 degrees Celsius. 
+Subsequently:
+The temperature control system must be able to maintain the temperature at a set 
+point in the range 25-35C to within 0.5C of the set point.
+The stirring subsystem must be able to maintain the stirring speed at a set point in 
+the range 500-1500 RPM within 20 RPM of the set point.
+The pH subsystem must be able to maintain the pH value at a setpoint in the sensing 
+range 3-7. By default, this subsystem should maintain the pH at an optimum 5.
+Note also that all subsystems should:
+Log data.
+Provide a user interface for monitoring the parameters and allowing the set 
+point values to be adjusted.
+4
+
+
+--- PAGE 5 ---
+Let’s visualise each subsystem
+5
+Let us now visualise each element of the bioreactor testbed in more detail. As shown 
+in the slide, the power  supply is provided by a rechargeable lead acid battery, which 
+gives a 12V and a 6V output.
+The two motors shown to the right are 6V, 1A peristaltic pumps, which are part of the 
+pH subsystem and are used to pump alkali or acid into the pH solution.
+5
+
+
+--- PAGE 6 ---
+Stirring subsystem
+6
+The stirring subsystem consists of a propeller, that stirs the liquid in our system, a 
+motor and some gearing. Behind the board, there is an IR LED and phototransistor, 
+which are arranged as a reflective sensor looking at the gear wheel on the output 
+shaft. The gear wheel reflects the light in such a way that it results in two pulses per 
+revolution.
+6
+
+
+--- PAGE 7 ---
+pH subsystem
+7
+The pH subsystem consists of a pH probe being the glass tube shown in the slide, and 
+which acts as the pH sensor. Here we can also see the pH pumps used to pump alkali 
+or acid into the solution.
+7
+
+
+--- PAGE 8 ---
+Heating subsystem
+8
+Finally, the heating subsystem of a 3 Ohm, 30W heating element, represented by the 
+green part, as well as a 10 kOhm thermistor, which monitors the temperature of the 
+solution.
+8
+
+
+--- PAGE 9 ---
+All together now…
+9
+In this slide, we can see how the three separate subsystems can be stacked on top of 
+each other to form the complete bioreactor system, which monitors and controls the 
+temperature, stirring and pH of the liquid in the pot.
+9
+
+
+--- PAGE 10 ---
+Bioreactor testbed – What is missing?
+10
+It should be evident that this testbed on its own is incomplete. While the peripherals 
+are there, the components required to monitor and control the peripherals are 
+missing.
+10
+
+
+--- PAGE 11 ---
+What is missing? - Circuits and software
+Part 1 - Circuits and software
+• The microcontroller development board, which 
+acts as the ‘brains’ of the system.
+– Needs to be programmed in software to provide 
+processing and control.
+• Electronic circuits for interfacing the bioreactor 
+elements between them, as well as with the 
+microcontroller development board.
+11
+Herein, is were you, as an inter-disciplinary team of CS and EEE students come in. 
+Your task is to develop the circuits and program the boards required to interface the 
+bioreactor to its peripherals, as well as to monitor and to control them.
+11
+
+
+--- PAGE 12 ---
+What is missing? – Connectivity
+Part 2 - Connectivity
+• An ESP32, (microcontroller development board), 
+– Needs to be programmed in software to provide 
+connectivity with the outside world.
+• Two-way communication between the Arduino 
+Uno and the ESP
+12
+The Arduino Uno has no network capabilities. You will establish connectivity between 
+the Arduino Uno and the ESP32 so that data, from the Arduino can be transferred to 
+server on the internet for subsequent processing. 
+12
+
+
+--- PAGE 13 ---
+What is missing? - Connectivity
+Part 2 - Connectivity
+• Two-way communication between the ESP32 and 
+a server where the data can be stored, processed 
+and displayed to a user.
+• Communication is 2-way. The operator may need 
+to send commands back to the bioreactor
+13
+Dashboard image: Stephanie Malhomme, wikimedia
+The Arduino Uno has no network capabilities. You will establish connectivity between 
+the Arduino Uno and the ESP32 so that data, from the Arduino can be transferred to 
+server on the internet for subsequent processing.
+13
+
+
+--- PAGE 14 ---
+• No! Simply connecting all the elements together 
+and demonstrating basic functionality is not 
+sufficient.
+– That is to say, simply say that the motor spins or the 
+heater heats the liquid is not sufficient.
+– You need to demonstrate that your system can meet 
+the given specification.
+• That is to say, that your system can operate in such a way that 
+the system parameters (temperature, stirring speed, pH) can be 
+maintained within the specified range.
+14
+So is connecting it all together sufficient?
+The answer to this question is No. As explained previously, your goal is to design and 
+implement a system that meets a particular specification, and fits the needs of the 
+user. Hence, while in the first instance, you will need to show that your system is 
+actually functioning, for example, that the motor is spinning and that the heating 
+element is heating, subsequently you will need to develop the algorithms and 
+processes that will ensure this functionality is in accordance with the given design 
+specification.
+14
+
+
+--- PAGE 15 ---
+How can you prove your system has been 
+designed properly and operates as specified?
+15
+So once you have implemented your system, how can you prove that you have been 
+successful?
+15
+
+
+--- PAGE 16 ---
+Through Results!
+16
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+10
+15
+20
+25
+30
+35
+Temperature Measured (Degrees Celsius)
+Temperature Actual (Degrees Celsius)
+Temperature Sensed (Degrees Celcius)
+The answer is through results. Results and their subsequent analysis and discussion 
+are THE most important aspect and contribution to this project. Generating sufficient 
+results and analysing them appropriate will make or break your project. Hence, be 
+sure to develop a comprehensive testing methodology that will consider the 
+performance metrics that you will take into account, the graphs, figures and tables 
+that you intend to produce, and how you will go about explaining the significance of 
+these results in the context of the bioreactor control system, that is at the core of 
+Challenge 2.
+16
+
+
+--- PAGE 17 ---
+Think and explore
+In your team, you should now identify and explain:
+• What output is expected from each of the 
+bioreactor input sensor devices.
+• What inputs to each microcontroller are required.
+• How the microcontroller will process these inputs.
+• What is required of each microcontroller output.
+• What is needed to drive each of the actuators 
+(pumps, motors, heater) in the system.
+• How the user interface will be connected.
+• Where data will be stored.
+17
+Now that you have watched this recording, you need to work together in your team 
+to identify and explain:
+What output is expected from each of the bioreactor input sensor devices.
+What inputs to the microcontroller are required.
+How the microcontroller will process these inputs.
+What is required of each microcontroller output.
+What is needed to drive each of the actuators (pumps, motors, heater) in the system.
+How the user interface will be connected to the system.
+17
+
+
+--- PAGE 18 ---
+Recall – Objectives and tasks
+You need to produce:
+• Block diagrams and structure charts for the overall 
+bioreactor control system, and for each 
+subsystem.
+• Flow charts describing the functionality of each 
+subsystem and the overall system.
+• Wireframes for the display screens.
+18
+To help you towards this task, refer to the design approaches and tools discussed 
+earlier on, which will enable you to model your bioreactor system and its subsystems, 
+describe its architecture and explain its functionality.
+This concludes this recording. Thank you for watching and best of luck in modelling 
+your bioreactor system!
+18

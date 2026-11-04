@@ -1,0 +1,41 @@
+The bioreactor testbed consists of three subsystems that may be used independently or combined to create a complete, small-scale, bioreactor system.
+Power Supply:
+
+12V, 7AH rechargable lead acid battery with a 12V and 6V output.
+Heating:
+
+The heating subsystem consists of:
+
+ A 3Ω, 30W heater element, that can be immersed.
+10kΩ NTC thermistor (ND06P00103K). Datasheet available at: http://www.farnell.com/datasheets/86133.pdf
+Stirring:
+
+The stirring subsystem consists of:
+
+A 5V DC motor.
+A Hall sensor producing 70 pulses per revolution.
+
+The DC motor is set up with a 10-to-1 gear ratio. The Hall sensor and motor have a common +5 V supply pin.
+
+These must be powered from the Arduino +5 V supply, not an external supply.
+
+More information may be found here: https://moodle.ucl.ac.uk/mod/folder/view.php?id=9105547
+
+pH:
+
+The pH monitoring and control system consists of:
+
+A pH probe (PH-100ATC Probe). Datasheet available at: http://www.rapidonline.com/pdf/127752_da_en_01.pdf
+PH meter SKU SEN0161: https://wiki.dfrobot.com/PH_meter_SKU__SEN0161_
+Two 6V, 1A peristaltic pumps
+
+Arduino Nano ESP32
+https://docs.arduino.cc/resources/datasheets/ABX00083-datasheet.pdf
+
+LilyGO TTGO T-Display:
+https://github.com/Xinyuan-LilyGO/TTGO-T-Display/blob/master/image/pinmap.jpg
+
+Espressif ESP32 DevKitC V4:
+https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html
+
+Last modified: Monday, 26 October 2026, 8:13 AM

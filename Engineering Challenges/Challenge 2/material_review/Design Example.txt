@@ -1,0 +1,323 @@
+--- PAGE 1 ---
+Design Example
+ENGF0001 Engineering Challenges
+
+
+--- PAGE 2 ---
+2
+Content
+• Introduction
+• Distance Measurement Subsystem
+• Motor Control Subsystem
+• Distance Control Logic and Code
+• Experimental Results
+• Conclusion
+
+
+--- PAGE 3 ---
+3
+Content
+• Introduction
+• Distance Measurement Subsystem
+• Motor Control Subsystem
+• Distance Control Logic and Code
+• Experimental Results
+• Conclusion
+
+
+--- PAGE 4 ---
+4
+Introduction (1)
+• The following is an example of the design process.
+• It has no relationship with the bio-reactor project you are 
+working on, but it shows you the steps in completing a 
+project.
+
+
+--- PAGE 5 ---
+5
+Introduction (2)
+• Purpose of the distance control system:
+• To maintain a desired distance between the robot and the wall.
+• The system can be divided into two parts: 
+• The distance measurement subsystem, and 
+• The motor control subsystem.
+robot
+wall
+50 cm
+
+
+--- PAGE 6 ---
+6
+Content
+• Introduction
+• Distance Measurement Subsystem
+• Motor Control Subsystem
+• Distance Control Logic and Code
+• Experimental Results
+• Conclusion
+
+
+--- PAGE 7 ---
+7
+The Sensor
+• The sensor used for distance measurement in this project 
+is the Sharp GP2Y0A02YK0F analog infrared sensor [1].
+[1] Sharp, “Distance Measuring Sensor Unit Measuring distance: 20 to 150 cm Analog output type”, GP2Y0A02YK0F datasheet
+[Online]. https://docs.rs-online.com/268d/0900766b81364822.pdf (accessed 5 Sep 2022)
+
+
+--- PAGE 8 ---
+8
+The Sensor Circuit (1)
+• The sensor circuit is 
+shown on the right [2]:
+• The Arduino board 
+supplies 5V to the sensor
+• The sensor provides an 
+analog signal 
+corresponding to the 
+distance back to Arduino. 
+[2] Codebender_cc, “How to Use the Sharp IR Sensor (GP2Y0A41SK0F) - Arduino Tutorial,” [Online].
+https://www.instructables.com/How-to-Use-the-Sharp-IR-Sensor-GP2Y0A41SK0F-Arduin/ (accessed 5 Sep 2022)
+
+
+--- PAGE 9 ---
+9
+The Sensor Circuit (2)
+• Note for students: 
+• This circuit in previous slide was taken from the internet. 
+• For your system, you should design your own circuit! 
+• Also, the circuit was very simple because all the electronics are 
+integrated within the sensor unit. 
+• For your own subsystem, you should include circuits for amplification, 
+filtering etc. where necessary.
+
+
+--- PAGE 10 ---
+10
+Sensor Calibration (1)
+• We need to know the relationship between the measured 
+distance and the sensor output signal.
+• Then, if we get a sensor reading, we will know the distance.
+• The process is called calibration.
+• We use a “trusted” measurement device to measure the distance, 
+then read off the sensor output signal.
+robot
+wall
+Distance 
+measured using 
+a meter ruler
+Sensor signal
+
+
+--- PAGE 11 ---
+11
+Sensor Calibration (2)
+• By placing the robot at several distances from the wall, 
+we obtain the following data:
+• The relationship between the two is nonlinear. 
+• Hard to programmatically determine the distance from the 
+measured output signal. 
+
+
+--- PAGE 12 ---
+12
+Sensor Calibration (3)
+• However, if we make a plot of output signal vs. 
+1/distance, we obtain an almost-linear relationship: 
+
+
+--- PAGE 13 ---
+13
+Sensor Calibration (4)
+• Using Excel’s curve fitting tool, the linear equation 
+between the two quantities is determined to be:
+Output Voltage in V = 57.244 '
+1
+Distance in cm
+• Therefore, once the output voltage is read in by Arduino, 
+we can calculate the distance as:
+Distance in cm = 57.244 '
+1
+Output Voltage in V
+
+
+--- PAGE 14 ---
+14
+Sensor Calibration (5)
+• Note: The sensor’s output voltage will go through analog-
+digital-conversion (ADC) in Arduino.
+• Arduino’s ADC is 10 bits.
+• Physical 0V will be converted to a ADC value of 0.
+• Physical 5V will be converted to a ADC value of 1023.
+• Therefore, to get the physical voltage from a given ADC value, the 
+calculation is:
+Output Voltage in V = 5 ' ADC value
+1024
+• In Arduino, we will use the function “map” to do this automatically.
+
+
+--- PAGE 15 ---
+15
+Content
+• Introduction
+• Distance Measurement Subsystem
+• Motor Control Subsystem
+• Distance Control Logic and Code
+• Experimental Results
+• Conclusion
+
+
+--- PAGE 16 ---
+16
+Motor Control Circuit (1)
+• To control the distance of 
+the robot from the wall, 
+the circuit needs to have 
+the capability of rotating 
+the motors (connected to 
+the wheels) in both 
+directions. 
+• To this means, we have 
+designed a circuit consisting 
+of two relays.
+[3] The Pi Hut, “Controlling Motors with Relays”, [Online].
+https://thepihut.com/blogs/raspberry-pi-tutorials/controlling-motors-
+with-relays (accessed 5 Sep 2022)
+
+
+--- PAGE 17 ---
+17
+Motor Control Circuit (2)
+• How it works:
+• When the input signal to the relay is LOW or 0V, the switch is in the 
+normally open (NO) position.
+• When the input signal to the relay is HIGH or 5V, the switch 
+switches to the normally closed (NC) position.
+• Depending on the digital output signals from pin 12 and 13, we can 
+command the motors in the following ways:
+Pin 12 Output
+Pin 13 Output
+Motor Status
+LOW (0V)
+LOW (0V)
+Stop
+HIGH (5V)
+LOW (0V)
+Clockwise
+LOW (0V)
+HIGH (5V)
+Anti-Clockwise
+HIGH (5V)
+HIGH (5V)
+Stop
+
+
+--- PAGE 18 ---
+18
+Motor Control Circuit (3)
+• The relay is of brand SunFounder, model number SU-
+TS0001 which requires 5V to turn on [4], 
+• Suitable to be operated using Arduino.
+[4] Little Bird Electronics, “4 Channel 5V Relay Shield Module [SU-TS0011],” [Online]. 
+https://littlebirdelectronics.com.au/products/4-channel-5v-relay-shield-module (accessed 5 Sep 2022)
+
+
+--- PAGE 19 ---
+19
+Motor Control Circuit (4)
+• The physical connection is as follows: 
+
+
+--- PAGE 20 ---
+20
+Content
+• Introduction
+• Distance Measurement Subsystem
+• Motor Control Subsystem
+• Distance Control Logic and Code
+• Experimental Results
+• Conclusion
+
+
+--- PAGE 21 ---
+21
+Motor Control Logic
+• Flowchart:
+• We have opted to achieve 
+a distance between 49 cm 
+and 51 cm
+• as it is quite difficult to reach 
+exactly 50 cm in front of the 
+wall, due to the fast motor 
+speed. 
+
+
+--- PAGE 22 ---
+22
+Arduino Code - Setup
+
+
+--- PAGE 23 ---
+23
+Arduino Code - Loop
+
+
+--- PAGE 24 ---
+24
+Content
+• Introduction
+• Distance Measurement Subsystem
+• Motor Control Subsystem
+• Distance Control Logic and Code
+• Experimental Results
+• Conclusion
+
+
+--- PAGE 25 ---
+25
+Experiments
+• We ran an experiment, and 
+here is a video of the robot 
+movement:
+• Ignore the left/right motion.
+• The forward motion indeed stopped 
+at a desired distance from the wall!
+
+
+--- PAGE 26 ---
+26
+Experimental Data
+• We also logged the distance data during the forward 
+motion, and it is as follows:
+
+
+--- PAGE 27 ---
+27
+Content
+• Introduction
+• Distance Measurement Subsystem
+• Motor Control Subsystem
+• Distance Control Logic and Code
+• Experimental Results
+• Conclusion
+
+
+--- PAGE 28 ---
+28
+Conclusion
+• In this presentation, we have shown the design process 
+for a distance control system.
+• How to design circuit for sensor, and how to calibrate sensor.
+• How to design circuit for actuator.
+• How to design the control logic.
+• How to translate the control logic into Arduino code.
+• We have also done the experiments, which shows that 
+the robot was able to stop at the desired distance from 
+the wall.
+
+
+--- PAGE 29 ---
+Thank you for your attention!
+Any questions?

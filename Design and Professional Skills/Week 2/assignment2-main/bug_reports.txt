@@ -36,3 +36,6 @@ Bug 5: Plane not being able to land on completely levelled terrain
 
 This bug happens when all the buildings are completely levelled but the plane still crashes and shows game over.
 This is because of the collision logic with the levelled buildings still being there when buildings have height of 0
+To fix buildings are completely deleted once their height has reached 0, and the check for when the plane has landed is been changed from == 0 to >= 0
+
+Bug fixed on lines 267 and 248 of bomber_oo.py

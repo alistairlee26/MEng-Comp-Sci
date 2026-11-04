@@ -1,0 +1,157 @@
+--- PAGE 1 ---
+Challenge 2
+CS-EEE
+Introduction to 
+Transistors
+1
+
+
+--- PAGE 2 ---
+It comes in various forms and packages 
+but
+•
+It has three terminals
+•
+Two types: BJT and MOSFET
+•
+Amplifier:
+What is Transistors?
+•
+Switches:
+A semiconductor device used to:
+• amplify signal 
+• switch electrical signals and power.
+
+
+--- PAGE 3 ---
+Complementary metal–oxide–semiconductor (CMOS)
+Bipolar Junction Transistor
+Transistor Types
+
+
+--- PAGE 4 ---
+Transistor Types
+Characteristic
+MOSFET
+BJT (NPN/PNP)
+Transistor Types
+N-Channel (e.g., IRF520, 
+IRF740), P-Channel (e.g., 
+IRF9530, IRF9630)
+NPN (e.g., 2N3904, BC547), 
+PNP (e.g., 2N3906, BC557)
+Input Control
+Voltage-controlled device
+Current-controlled device
+Input Impedance
+Extremely high
+Moderate to low
+Switching Speed
+Very fast (e.g., nanoseconds 
+to microseconds)
+Fast to moderate (e.g., 
+microseconds to milliseconds)
+Voltage Rating
+low to high voltage
+low to moderate voltage
+Current Rating
+low to high current
+low to moderate current
+Applications
+Digital and analog
+applications
+Amplification, switching, 
+signal processing
+
+
+--- PAGE 5 ---
+How do they work? At entry level
+Ø Symbol of MOSFET
+Ø The concept
+Ø The circuit implementation
++𝑉!"
+•
+A positive 𝑉!"
+•
+Drain (D) and Source (S) are connected like a 
+switch!
+•
+The 𝑉!" must be large enough to turn on the 
+switch, hence larger then a 𝑉#$
+•
+Control the gate voltage to control the current 
+flows through the light bulb
+•
+Functions as a switch with a control 
+terminal 
+
+
+--- PAGE 6 ---
+6
+How to use it?
+Circuit schematics
+•
+The transistor in serial with the load
+•
+The gate of the transistor is connected to 
+the selected IO pins from Arduino.
+•
+R1 is called a pull-down resistor
+•
+When the IO pin is high, 5V is connected 
+to the transistor, and turn it on
+•
+Current flows from supply +V to the Load.
+If +V = 5V, can we use IO pin to connect to 
+the load?
+Can we connect the load on the other side of 
+the transistor?
+
+
+--- PAGE 7 ---
+More about transistors
+
+
+--- PAGE 8 ---
+Regions of operations of MOSFET
+
+
+--- PAGE 9 ---
+
+
+--- PAGE 10 ---
+Ref: https://www.electronicshub.org/mosfet-as-a-switch/
+Ideal Switch vs. Practical Switch
+ON state:
+•
+No limit on the current it can carry.
+•
+Zero voltage drop.
+OFF state:
+•
+No limit on the blocking voltage.
+•
+OFF state resistance should be infinite.
+ The operating speed of the device has no 
+limits.
+
+
+--- PAGE 11 ---
+Ref: https://www.electronicshub.org/mosfet-as-a-switch/
+Power handling capabilities
+Reality Check
+Finite on-state resistance
+Finite off-state resistance, which results in 
+a reverse leakage current and 100V max 
+VDS.
+Limited speed of operation
+Power losses during the transition of 
+states.
+
+
+--- PAGE 12 ---
+Ref: https://www.electronicshub.org/mosfet-as-a-switch/
+https://youtu.be/LXGtE3X2k7Y?si=Y35UGmVnJL8Plsqc
+Back EMF and flyback diode
+One more thing
+Look at those spikes! And there is a limited on Vds

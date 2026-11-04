@@ -1,0 +1,191 @@
+--- PAGE 1 ---
+Bioreactor
+By Group CSEEE-21
+
+
+--- PAGE 2 ---
+Context:
+●
+Tuberculosis(TB) is a bacterial infection usually 
+affecting the lungs
+●
+Most common treatment of TB is through special 
+antibiotics, such as rifampicin or isoniazid etc.
+●
+Only effective if the TB they have contracted is 
+not Multi-drug resistant(MDR). 
+●
+“Only about 2 in 5 people with multidrug-resistant 
+TB accessed treatment in 2024.”, according to the 
+WHO.
+●
+Prevention may also be an option
+●
+A vaccine trains the immune system to attack the 
+actual bacterium so isn't affected by the various 
+strains
+●
+Often cheaper as it is a one-time dose compared 
+to the months of treatment on antibiotic
+Source:https://worldhealthorg.shinyapps.io/tb_profiles/?_inputs_&tab=%22charts%22&lan=%22EN%22&iso3=%22UGA%2
+2&entity_type=%22country%22
+
+
+--- PAGE 3 ---
+Stirring subsystem
+12V/6V
+DC Power 
+supply
+ESP 32
+ Arduino Nano
+6V DC 
+voltage
+6V DC 
+voltage
+Data of 
+subsystem
+MOSFET
+Motor
+Speed 
+sensor
+5V 
+voltage
+Pulse 
+signal
+5V voltage
+Signal of 
+on/off
+Comments 
+from 
+server
+Setting 
+voltage
+Detected 
+mechanical 
+rotation
+
+
+--- PAGE 4 ---
+pH subsystem
+Inlets
+Sensing
+pH sensor probe(PH100ATC)
+pH meter
+SKU SEN0161
+BNC cable
+Process & Control
+Arduino Uno
+Container
+Sensor jumper cable
+Connectivity
+ESP32
+2 - way connection
+Data-Logging
+Cloud Server & User Interface 
+Wi-fi
+Electronic Switch
+MOSFET (IRF520)
+Acid & Alkali 
+Solution
+Dual Peristaltic Pumps 
+(6V, 1A)
+By: abie
+
+
+--- PAGE 5 ---
+Heating subsystem
+ESP32 DevKitC
+Connect to network and be 
+responsible for communication 
+between Arduino and dashboard
+Arduino Uno
+User Interface
+Monitor status data and 
+setup temperature
+Voltage 
+Divider with 
+fixed Resistor
+MOSFET
+IRLB8748
+Controlling whether to turn 
+on the heating element
+Power 
+Supply
+                     Liquid
+Heater Element
+3Ω 30W
+Power 
+Supply
+Thermistor
+10kΩ NTC
+Resistance changes as 
+temperature changes
+ADC in Arduino Uno convert 
+analogue signal to digital
+Command like changing 
+temperature set from 
+ESP32 DevKit
+Arduino Uno returns 
+temperature data 
+obtained
+User command
+data
+Control signal
+Output voltage in 
+fixed resistor 
+changes as 
+resistance of 
+thermistor 
+changes
+Switched 
+Power
+heat
+Temperature 
+feedback
+25–35°C±0.5°C 
+
+
+--- PAGE 6 ---
+DC Power 
+Supply
+12 V / 6 V
+Arduino Nano
+ESP32
+Cloud Server 
+/ User 
+Interface
+MOSFET
+Heating 
+Element
+Thermistor
+MOSFET
+Dual Pumps
+MOSFET
+Motor
+Speed 
+Sensor
+IR LED + 
+Phototransistor
+pH probe
+Bioreactor Vessel
+Acid / 
+Alkali
+Heating
+pH 
+Stirring
+
+
+--- PAGE 7 ---
+Connectivity and User Interface
+
+
+--- PAGE 8 ---
+Data Analysis
+-
+Using hysteresis two thresholds
+-
+Calculate median and MAD for 
+modified z-score
+-
+Thresholds decided using 
+anomalous data

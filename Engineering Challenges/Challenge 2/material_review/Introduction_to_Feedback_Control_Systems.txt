@@ -1,0 +1,230 @@
+--- SLIDE 1 ---
+Challenge 2
+CS-EEE
+Introduction to 
+Feedback Control Systems
+1
+
+NOTES:
+1
+
+--- SLIDE 2 ---
+Controller
+System to be controlled
+Manual 
+Automatic 
+Control is used to regulate or modify the behaviour of a system so it behaves in a specific desirable way over time
+Examples of control systems are everywhere, from aerospace systems and wireless networks to bioengineering and traffic control
+What is control
+
+NOTES:
+applies specific principles and methods to control dynamic systems so that they produce desired outcomes.
+2
+
+--- SLIDE 3 ---
+Example: Vehicle 
+speed
+ 
+control
+car
+driver
+slope, wind, traffic…
+actual velocity
+accel.
+brake
+desired velocity
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 4 ---
+Control Scheme
+Open-Loop
+car
+ 
+-
+ 
+Closed-Loop
+feedback
+Measurement 
+car
+driver
+slope, wind, traffic…
+actual velocity
+accel.
+brake
+desired velocity
+desired velocity
+accel.
+brake
+slope, wind, traffic…
+actual velocity
+Less accurate!
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 5 ---
+Bang-Bang Control
+Push back, against the direction of the error
+With constant action 
+Tracking error is  
+ is on 
+ is off 
+Another example: Household thermostat
+ 
+Optimal for reaching the setpoint
+Not very good for staying near it
+How can you prevent the chattering?
+Output: actual speed, temperature, etc.
+Setpoint: desired speed, temperature, etc.
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 6 ---
+The Bang-Bang Controller
+Hysteresis switching 
+Error is  
+ is on 
+ is off 
+with 
+ a small constant
+ 
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 7 ---
+Proportional Control
+The control is 
+proportional
+ to the error
+ is the proportional(control) gain
+ 
+Increasing gain approaches setpoint faster
+Can lead to overshoot, and even instability
+Steady-state offset (error) if used without an integral component
+Increase 
+ 
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 8 ---
+PI Control
+Using a
+ Proportional-Integral (PI) 
+Controller
+ is the integral gain
+ 
+Settles with zero steady-state error
+May lead to a large overshoot as 
+ is going too fast as it approaches the setpoint – requires proper design approach ideally
+ 
+Increase 
+, fixed 
+ 
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 9 ---
+PID Control
+using a
+ Proportional-Integral (PI) 
+Controller
+ is the derivative gain
+ 
+derivative action can counteract the 
+tendency to overshoot or undershoot
+But it’s vulnerable to noise !!
+Increase 
+, fixed 
+ and 
+ 
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 10 ---
+PID Control
+Here is a schematic of an implementation of a typical PID controller.
+In practice, we often use PI (e.g. driving a motor), or PD (e.g. balancing two-wheel vehicle), and NOT all three terms.
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 11 ---
+PWM control
+PWM module
+output
+PID output
+PWM output
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 12 ---
+Concluding remarks
+Good behavior depends on good tuning!!
+The P-action is introduced to increase the speed of the response. Exaggerated P-action results in oscillation.
+The I-action is introduced to obtain zero steady-state error. 
+The D-action is introduced for damping purposes. The disadvantage is the sensitivity to the noise.
+Although a cut-and-try design may work OK, for best performance a full design, based on fundamental principles, is needed.
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 13 ---
+Integration and 
+differentiation in Arduino
+Numerical 
+integration
+provided 
+ sufficiently small – needs the loop time to be measured and/or regulated
+Numerical differentiation
+ 
+ 
+
+NOTES:
+Name of presentation
+4 November, 2024
+
+--- SLIDE 14 ---
+References
+https://uk.mathworks.com/videos/series/understanding-pid-control.html
+PID tuning
+Common tunning methods:
+Ziegler-Nichols method 
+Trial-and-error manual tuning
+14
+
+NOTES:
+14
+
+--- SLIDE 15 ---
+References
+Ziegler-Nichols method 
+15
+
+NOTES:
+15
+
+--- SLIDE 16 ---
+References
+Trial-and-error manual tuning
+16
+
+NOTES:
+16

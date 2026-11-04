@@ -1,0 +1,116 @@
+--- SLIDE 1 ---
+Challenge 2
+CS-EEE
+Housekeeping:
+Teaching team, plan and schedule
+1
+
+NOTES:
+1
+
+--- SLIDE 2 ---
+Instructors – Who’s Who?
+2
+Staff (EEE)
+Staff (CS)
+PGTAs
+Thomas Gilbert
+Steve Hailes
+Hongwei Cui
+Boli Chen
+Matthew Caldwell
+Sara Cender
+Qianhao Zhan
+Ruixuan Zhao
+Junhao Liu
+Borui Du
+Shreevanth
+, Gopalakrishnan
+Vedika Bedi
+Guanyu Ren
+James Hughes
+
+NOTES:
+2
+
+--- SLIDE 3 ---
+Instructors (Staff) – Who’s Who?
+3
+Thomas 
+Gilbert
+Boli
+Chen
+Matthew 
+Caldwell
+EEE
+CS
+Steve
+Hailes
+
+NOTES:
+3
+
+--- SLIDE 4 ---
+Plan
+2
+2-hour in-person sessions each week.
+Timetable
+Mondays 2pm-4pm: Groups A, B
+Mondays 4pm-6pm: Groups C, D
+Wednesdays 9am-11am: Groups A, B
+Wednesdays 11am-1pm: Groups C, D
+Detailed time on Moodle, check it for venue. 
+Important that you arrive prepared!
+Helpdesk:
+Please use the forums.
+ 
+4
+Sustainable lab guide:
+Make sure you know how to correctly use the experimental equipment 
+Do not attempt anything recklessly
+Microcontroller is for loan and must be returned at the end
+
+NOTES:
+5
+
+--- SLIDE 5 ---
+Schedule
+5
+Term
+Week
+Academic
+Week
+Content
+4
+9
+Introduction to the project, communication, roles and tasks. 
+Design modelling and tools. Showcase testbed.
+5
+10
+Introduction to the design techniques. Preparation for project proposal.
+Assign team roles. Ideally, pairing a CS and an EEE student for each subsystem, and this will be recorded
+Team proposal presentation 
+11
+Reading Week
+6-9
+12-15
+Integration and testing methodology.
+Implementation, testing and integration in action.
+10
+16
+Team demonstration
+ +Prepare and submit final report.
+
+NOTES:
+6
+
+--- SLIDE 6 ---
+Attendance policy
+Attendance will be marked in the first 20 minutes of the session
+Challenge 2 works on a 3-strike system
+If you are marked absent 
+without
+ reason for 3 sessions you will receive 
+NO MARKS 
+for Challenge 2
+6

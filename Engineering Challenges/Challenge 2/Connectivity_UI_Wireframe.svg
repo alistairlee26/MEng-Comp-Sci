@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <title>Proposed bioreactor dashboard wireframe</title>
+  <desc>Three parameter panels with measured and confirmed values, requested target controls, trend sketches, connection and logging status, and an alert list. All data is illustrative.</desc>
+  <rect width="1440" height="900" fill="white" />
+  <text x="40" y="49" class="title" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="29px" font-weight="bold">Bioreactor dashboard</text>
+  <text x="40" y="79" class="subtitle" font-family="Arial, Helvetica, sans-serif" fill="#57616b" font-size="17px">Proposed interface — all readings and plot shapes are illustrative</text>
+  <rect x="40" y="102" width="1360" height="57" rx="7" fill="#f1f3f5" stroke="#a4abb2" />
+  <text x="60" y="137" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Device: CSEEE-21 / rig-01</text>
+  <text x="399" y="137" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Controller: LIVE</text>
+  <text x="671" y="137" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Last new sample: 0.8 s ago</text>
+  <text x="1053" y="137" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Log: RECORDING · run-17</text>
+
+  <g transform="translate(40,181)">
+    <rect width="437" height="415" rx="9" class="panel" fill="#fff" stroke="#a4abb2" stroke-width="1.6" />
+    <text x="21" y="37" class="label" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="21px" font-weight="bold">Temperature</text>
+    <text x="21" y="94" class="value" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="43px" font-weight="bold">29.8 °C</text>
+    <text x="21" y="127" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Confirmed target: 30.0 °C</text>
+    <text x="21" y="163" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Requested target · allowed 25–35 °C</text>
+    <rect x="21" y="176" width="252" height="40" rx="4" class="input" fill="#fff" stroke="#737d87" stroke-width="1.5" />
+    <text x="32" y="203" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">30.0 °C</text>
+    <rect x="287" y="176" width="128" height="40" rx="4" class="button" fill="#edf0f3" stroke="#737d87" stroke-width="1.5" />
+    <text x="324" y="203" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Apply</text>
+    <text x="21" y="245" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Last command: APPLIED</text>
+    <path d="M38 269 V367 H410" class="axis" fill="none" stroke="#929aa3" stroke-width="1.5" />
+    <path d="M38 293 H410" class="target" fill="none" stroke="#747c85" stroke-width="2" stroke-dasharray="7 6" />
+    <path d="M38 351 L68 344 L98 336 L128 325 L158 312 L188 300 L218 286 L248 289 L278 299 L308 296 L338 292 L368 294 L407 296" class="measured" fill="none" stroke="#214c6b" stroke-width="3" />
+    <text x="38" y="393" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Measured / confirmed target over time</text>
+  </g>
+
+  <g transform="translate(502,181)">
+    <rect width="436" height="415" rx="9" class="panel" fill="#fff" stroke="#a4abb2" stroke-width="1.6" />
+    <text x="21" y="37" class="label" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="21px" font-weight="bold">Stirring speed</text>
+    <text x="21" y="94" class="value" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="43px" font-weight="bold">998 RPM</text>
+    <text x="21" y="127" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Confirmed target: 1000 RPM</text>
+    <text x="21" y="163" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Requested target · allowed 500–1500 RPM</text>
+    <rect x="21" y="176" width="252" height="40" rx="4" class="input" fill="#fff" stroke="#737d87" stroke-width="1.5" />
+    <text x="32" y="203" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">1000 RPM</text>
+    <rect x="287" y="176" width="128" height="40" rx="4" class="button" fill="#edf0f3" stroke="#737d87" stroke-width="1.5" />
+    <text x="324" y="203" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Apply</text>
+    <text x="21" y="245" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Last command: APPLIED</text>
+    <path d="M38 269 V367 H410" class="axis" fill="none" stroke="#929aa3" stroke-width="1.5" />
+    <path d="M38 306 H410" class="target" fill="none" stroke="#747c85" stroke-width="2" stroke-dasharray="7 6" />
+    <path d="M38 339 L68 310 L98 291 L128 302 L158 313 L188 305 L218 308 L248 301 L278 307 L308 304 L338 309 L368 303 L407 307" class="measured" fill="none" stroke="#214c6b" stroke-width="3" />
+    <text x="38" y="393" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Measured / confirmed target over time</text>
+  </g>
+
+  <g transform="translate(963,181)">
+    <rect width="437" height="415" rx="9" class="panel" fill="#fff" stroke="#a4abb2" stroke-width="1.6" />
+    <text x="21" y="37" class="label" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="21px" font-weight="bold">pH</text>
+    <text x="21" y="94" class="value" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="43px" font-weight="bold">5.02</text>
+    <text x="21" y="127" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Confirmed target: 5.00</text>
+    <text x="21" y="163" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Requested target · allowed pH 3–7</text>
+    <rect x="21" y="176" width="252" height="40" rx="4" class="input" fill="#fff" stroke="#737d87" stroke-width="1.5" />
+    <text x="32" y="203" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">5.00</text>
+    <rect x="287" y="176" width="128" height="40" rx="4" class="button" fill="#edf0f3" stroke="#737d87" stroke-width="1.5" />
+    <text x="324" y="203" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Apply</text>
+    <text x="21" y="245" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Last command: APPLIED</text>
+    <path d="M38 269 V367 H410" class="axis" fill="none" stroke="#929aa3" stroke-width="1.5" />
+    <path d="M38 316 H410" class="target" fill="none" stroke="#747c85" stroke-width="2" stroke-dasharray="7 6" />
+    <path d="M38 281 L68 287 L98 293 L128 302 L158 309 L188 317 L218 321 L248 316 L278 313 L308 318 L338 315 L368 317 L407 314" class="measured" fill="none" stroke="#214c6b" stroke-width="3" />
+    <text x="38" y="393" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Measured / confirmed target over time</text>
+  </g>
+
+  <rect x="40" y="618" width="1360" height="159" rx="8" class="panel" fill="#fff" stroke="#a4abb2" stroke-width="1.6" />
+  <text x="61" y="653" class="label" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="21px" font-weight="bold">Alerts and events</text>
+  <text x="61" y="687" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">14:03:22 · Command applied · Temperature target confirmed as 30.0 °C</text>
+  <text x="61" y="718" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">14:03:15 · Connection restored · Previous missing samples remain marked as a gap</text>
+  <text x="61" y="749" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">Controller faults and the analysis team's anomaly warnings will appear here with time and explanation.</text>
+  <rect x="40" y="798" width="270" height="48" rx="5" class="button" fill="#edf0f3" stroke="#737d87" stroke-width="1.5" />
+  <text x="62" y="829" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Run: experiment-17</text>
+  <rect x="330" y="798" width="204" height="48" rx="5" class="button" fill="#edf0f3" stroke="#737d87" stroke-width="1.5" />
+  <text x="360" y="829" class="body" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="19px">Export run CSV</text>
+  <text x="565" y="820" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">If no new controller sample arrives for 5 s:</text>
+  <text x="565" y="845" class="small" font-family="Arial, Helvetica, sans-serif" fill="#20252b" font-size="16px">show STALE, keep last-known values labelled, and disable Apply.</text>
+  <text x="40" y="883" class="subtitle" font-family="Arial, Helvetica, sans-serif" fill="#57616b" font-size="17px">Design targets: 1 Hz reporting · 95% of command confirmations within 2 s · visible data gaps</text>
+</svg>
