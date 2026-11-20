@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "checks": [
+    "no shared endpoint holes",
+    "sensor divider nets separate",
+    "gate resistor not bypassed",
+    "common source/controller ground",
+    "no heater positive connection on breadboard"
+  ],
+  "occupied_holes": {
+    "B3": "wire",
+    "B9": "wire",
+    "A6": "wire",
+    "B16": "wire",
+    "B6": "wire",
+    "G26": "wire",
+    "D9": "wire",
+    "D6": "wire",
+    "H26": "wire",
+    "B22": "wire",
+    "E3": "R1",
+    "E9": "R1",
+    "C16": "R2",
+    "C22": "R2"
+  }
+}

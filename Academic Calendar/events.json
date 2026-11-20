@@ -1,0 +1,1036 @@
+{
+  "as_of": "2026-11-15T15:54:13+00:00",
+  "timezone": "Europe/London",
+  "term_end": "2026-12-18",
+  "team": 21,
+  "events": [
+    {
+      "id": "haskell-start",
+      "title": "COMP0002: Haskell teaching starts this week",
+      "start": "2026-11-16",
+      "end": null,
+      "category": "Milestone",
+      "course": "COMP0002",
+      "notes": "The functional programming half runs 16 November–18 December. The first module slides confirm a 5% Haskell in-class test and a 90% Term 3 exam. A classmate reports 14 December for the test, but no written confirmation was found. Confirm the test date/time with Dr David Clark; consult your personal timetable for lectures and your allocated lab.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1378607",
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508469"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "acc-window",
+      "title": "OPTIONAL WINDOW: ACC one-to-one tutorials",
+      "start": "2026-11-16",
+      "end": "2026-12-19",
+      "category": "Support",
+      "course": "ACC",
+      "notes": "Booking window, not an appointment: Round 1 runs 16 November–18 December. Book a 30-minute MS Teams tutorial on writing, presentations or learning strategies. A booked slot must be added separately.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/scheduler/view.php?id=8605107"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "challenges-2026-11-16",
+      "title": "ENGF0001: Team 21 timetabled session (C/D)",
+      "start": "2026-11-16T16:00",
+      "end": "2026-11-16T18:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "Team 21 falls in cohort C (teams 18–25), based on the module announcement. The updated 2026 timetable places C/D on Mondays 16:00–18:00 and Wednesdays 11:00–13:00 during project weeks 6–9. It lists parallel rooms MPEB 6.02 and Roberts 704 without resolving your room: confirm your allocation in the personal timetable. Session purpose may include project work or another timetabled activity. Agree who will submit the team meeting minutes and aim to do so within 48 hours after the meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published cohort times; room allocation TBC",
+      "weight": null
+    },
+    {
+      "id": "dps-tue-2026-11-17",
+      "title": "ENGF0034: CS lecture",
+      "start": "2026-11-17T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Birkbeck Euston Road (373), room 402. Start time published as 11:00; end time is not published in the Moodle calendar. Check your personal timetable for the duration and any changes.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "office-2026-11-17",
+      "title": "OPTIONAL: ENGF0034 office hour",
+      "start": "2026-11-17T14:00",
+      "end": "2026-11-17T15:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "169 Euston Road, room 208. Times from the dated course calendar.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "pulse-target",
+      "title": "COMP0002 pulse survey: requested completion",
+      "start": "2026-11-18T10:00",
+      "end": null,
+      "category": "Survey",
+      "course": "COMP0002",
+      "notes": "Moodle calendar target completion time. This is a feedback survey, not coursework. The actual closing time is 20 November at 23:59.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/feedback/view.php?id=8582586"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "challenges-2026-11-18",
+      "title": "ENGF0001: Team 21 timetabled session (C/D)",
+      "start": "2026-11-18T11:00",
+      "end": "2026-11-18T13:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "Team 21 falls in cohort C (teams 18–25), based on the module announcement. The updated 2026 timetable places C/D on Mondays 16:00–18:00 and Wednesdays 11:00–13:00 during project weeks 6–9. It lists parallel rooms MPEB 6.02 and Roberts 704 without resolving your room: confirm your allocation in the personal timetable. Session purpose may include project work or another timetabled activity. Agree who will submit the team meeting minutes and aim to do so within 48 hours after the meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published cohort times; room allocation TBC",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-11-18",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-11-18T15:00",
+      "end": "2026-11-18T16:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "comp0002-c",
+      "title": "DUE: COMP0002 C maze coursework (5%)",
+      "start": "2026-11-18T16:00",
+      "end": null,
+      "category": "Assessment",
+      "course": "COMP0002",
+      "notes": "Submit COMP0002CW1.zip to Moodle: C source, readMe (maximum one page), and required data/images. Exclude compiled files and the supplied DrawApp files. Brief and Moodle agree on 16:00 UK time. Moodle status rechecked on 15 November: new, not submitted. Personal extensions may change your deadline.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/assign/view.php?id=8508448",
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508574"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": "5%"
+    },
+    {
+      "id": "careers-focus",
+      "title": "OPTIONAL: Engineering teamwork focus group — SLOT TBC",
+      "start": "2026-11-19",
+      "end": null,
+      "category": "Event",
+      "course": "Careers",
+      "notes": "The 5 November Careers announcement advertises Thursday 19 November, UCL Bloomsbury, around one hour, with 17:00 or 18:00 slots. The MCP returns only an excerpt, so a full slot and registration details are unverified. Read the full announcement before booking; this all-day marker is not a confirmed reservation.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=8764831"
+      ],
+      "optional": true,
+      "certainty": "Announcement excerpt; registration/slot TBC",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-11-19",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-11-19T16:00",
+      "end": "2026-11-19T17:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "mentor-nominations",
+      "title": "OPTIONAL: Transition Mentor award nominations close — TIME TBC",
+      "start": "2026-11-20",
+      "end": null,
+      "category": "Event",
+      "course": "Transition",
+      "notes": "The Moodle link says nominations close 20 November; no cutoff time is supplied. Optional nomination, not an assessment.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9500064"
+      ],
+      "optional": true,
+      "certainty": "Date published; time TBC",
+      "weight": null
+    },
+    {
+      "id": "admin-2026-11-20",
+      "title": "OPTIONAL: Undergraduate teaching/admin drop-in",
+      "start": "2026-11-20T09:00",
+      "end": "2026-11-20T10:00",
+      "category": "Support",
+      "course": "Student Hub",
+      "notes": "MS Teams, no appointment. Useful for timetable, module and study-support queries. Open the Moodle section for the join link.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1463351"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "dps-fri-2026-11-20",
+      "title": "ENGF0034: CS tutorial",
+      "start": "2026-11-20T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Medical Sciences 131, A V Hill Lecture Theatre. Start time published as 11:00; end time is not published. The calendar does not list an 11:00 tutorial on 18 December, so none has been invented.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-11-20",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-11-20T13:00",
+      "end": "2026-11-20T14:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "pulse-close-COMP0002",
+      "title": "COMP0002 pulse survey closes",
+      "start": "2026-11-20T23:59",
+      "end": null,
+      "category": "Survey",
+      "course": "COMP0002",
+      "notes": "Feedback survey closing time from Moodle calendar; not a graded assessment.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/feedback/view.php?id=8582586"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "pulse-close-COMP0147",
+      "title": "COMP0147 pulse survey closes",
+      "start": "2026-11-20T23:59",
+      "end": null,
+      "category": "Survey",
+      "course": "COMP0147",
+      "notes": "Feedback survey closing time from Moodle calendar; not a graded assessment.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/feedback/view.php?id=8625370"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "ethics-tasks",
+      "title": "ENGF0034: Ethics tasks this week",
+      "start": "2026-11-23",
+      "end": null,
+      "category": "Preparation",
+      "course": "ENGF0034",
+      "notes": "The course calendar lists Ethics tasks on Monday of this week, before Tuesday’s ethics lecture. Review the ethics videos, case studies, canvas and reflection activity. No separate submission deadline was found; this entry is preparation, not a graded deadline.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467898"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "mentor-final",
+      "title": "WINDOW: Final Transition Mentor session — TIME TBC",
+      "start": "2026-11-23",
+      "end": "2026-11-28",
+      "category": "Event",
+      "course": "Transition",
+      "notes": "The final wrap-up session is in the week commencing 23 November. The week-long entry marks a scheduling window, not a meeting every day. Confirm your actual session with your mentor. Programme evaluation survey also mentioned, with no fixed deadline.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1434967"
+      ],
+      "optional": true,
+      "certainty": "Week published; personal meeting TBC",
+      "weight": null
+    },
+    {
+      "id": "challenges-2026-11-23",
+      "title": "ENGF0001: Team 21 timetabled session (C/D)",
+      "start": "2026-11-23T16:00",
+      "end": "2026-11-23T18:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "Team 21 falls in cohort C (teams 18–25), based on the module announcement. The updated 2026 timetable places C/D on Mondays 16:00–18:00 and Wednesdays 11:00–13:00 during project weeks 6–9. It lists parallel rooms MPEB 6.02 and Roberts 704 without resolving your room: confirm your allocation in the personal timetable. Session purpose may include project work or another timetabled activity. Agree who will submit the team meeting minutes and aim to do so within 48 hours after the meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published cohort times; room allocation TBC",
+      "weight": null
+    },
+    {
+      "id": "dps-tue-2026-11-24",
+      "title": "ENGF0034: Ethics lecture / activity",
+      "start": "2026-11-24T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Birkbeck Euston Road (373), room 402. Start time published as 11:00; end time is not published in the Moodle calendar. Check your personal timetable for the duration and any changes.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "challenges-2026-11-25",
+      "title": "ENGF0001: Team 21 timetabled session (C/D)",
+      "start": "2026-11-25T11:00",
+      "end": "2026-11-25T13:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "Team 21 falls in cohort C (teams 18–25), based on the module announcement. The updated 2026 timetable places C/D on Mondays 16:00–18:00 and Wednesdays 11:00–13:00 during project weeks 6–9. It lists parallel rooms MPEB 6.02 and Roberts 704 without resolving your room: confirm your allocation in the personal timetable. Session purpose may include project work or another timetabled activity. Agree who will submit the team meeting minutes and aim to do so within 48 hours after the meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published cohort times; room allocation TBC",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-11-25",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-11-25T15:00",
+      "end": "2026-11-25T16:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "engf0034-ca4",
+      "title": "DUE: ENGF0034 CA4 Tetris autoplayer (20%)",
+      "start": "2026-11-25T23:59",
+      "end": null,
+      "category": "Assessment",
+      "course": "ENGF0034",
+      "notes": "Deadline date from the current course calendar; exact 23:59 UK time from the linked assignment brief. Set up UCL GitLab, sign in to the grading server, enrol in Tetris and push code to your fork. Check the server has received and run your submitted version. Moodle assignment status does not cover this external submission.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895",
+        "https://github.com/UCL-ENGF0034-2026/course-materials/blob/main/Assignment%204%20brief/assignment4.pdf"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": "20%"
+    },
+    {
+      "id": "ca5-release",
+      "title": "RELEASE: ENGF0034 CA5 and Pacman video",
+      "start": "2026-11-26",
+      "end": null,
+      "category": "Release",
+      "course": "ENGF0034",
+      "notes": "The course calendar schedules the CA5 release and CA5.0 Pacman video today. Read the new brief to confirm the exact 10 December cutoff and submission method.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-11-26",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-11-26T16:00",
+      "end": "2026-11-26T17:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "admin-2026-11-27",
+      "title": "OPTIONAL: Undergraduate teaching/admin drop-in",
+      "start": "2026-11-27T09:00",
+      "end": "2026-11-27T10:00",
+      "category": "Support",
+      "course": "Student Hub",
+      "notes": "MS Teams, no appointment. Useful for timetable, module and study-support queries. Open the Moodle section for the join link.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1463351"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "dps-fri-2026-11-27",
+      "title": "ENGF0034: CS tutorial",
+      "start": "2026-11-27T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Medical Sciences 131, A V Hill Lecture Theatre. Start time published as 11:00; end time is not published. The calendar does not list an 11:00 tutorial on 18 December, so none has been invented.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-11-27",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-11-27T13:00",
+      "end": "2026-11-27T14:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "challenges-2026-11-30",
+      "title": "ENGF0001: Team 21 timetabled session (C/D)",
+      "start": "2026-11-30T16:00",
+      "end": "2026-11-30T18:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "Team 21 falls in cohort C (teams 18–25), based on the module announcement. The updated 2026 timetable places C/D on Mondays 16:00–18:00 and Wednesdays 11:00–13:00 during project weeks 6–9. It lists parallel rooms MPEB 6.02 and Roberts 704 without resolving your room: confirm your allocation in the personal timetable. Session purpose may include project work or another timetabled activity. Agree who will submit the team meeting minutes and aim to do so within 48 hours after the meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published cohort times; room allocation TBC",
+      "weight": null
+    },
+    {
+      "id": "dps-tue-2026-12-01",
+      "title": "ENGF0034: CS lecture",
+      "start": "2026-12-01T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Birkbeck Euston Road (373), room 402. Start time published as 11:00; end time is not published in the Moodle calendar. Check your personal timetable for the duration and any changes.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "office-2026-12-01",
+      "title": "OPTIONAL: ENGF0034 office hour",
+      "start": "2026-12-01T14:00",
+      "end": "2026-12-01T15:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "169 Euston Road, room 208. Times from the dated course calendar.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "challenges-2026-12-02",
+      "title": "ENGF0001: Team 21 timetabled session (C/D)",
+      "start": "2026-12-02T11:00",
+      "end": "2026-12-02T13:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "Team 21 falls in cohort C (teams 18–25), based on the module announcement. The updated 2026 timetable places C/D on Mondays 16:00–18:00 and Wednesdays 11:00–13:00 during project weeks 6–9. It lists parallel rooms MPEB 6.02 and Roberts 704 without resolving your room: confirm your allocation in the personal timetable. Session purpose may include project work or another timetabled activity. Agree who will submit the team meeting minutes and aim to do so within 48 hours after the meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published cohort times; room allocation TBC",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-02",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-02T15:00",
+      "end": "2026-12-02T16:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-03",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-03T16:00",
+      "end": "2026-12-03T17:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "admin-2026-12-04",
+      "title": "OPTIONAL: Undergraduate teaching/admin drop-in",
+      "start": "2026-12-04T09:00",
+      "end": "2026-12-04T10:00",
+      "category": "Support",
+      "course": "Student Hub",
+      "notes": "MS Teams, no appointment. Useful for timetable, module and study-support queries. Open the Moodle section for the join link.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1463351"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "dps-fri-2026-12-04",
+      "title": "ENGF0034: CS tutorial",
+      "start": "2026-12-04T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Medical Sciences 131, A V Hill Lecture Theatre. Start time published as 11:00; end time is not published. The calendar does not list an 11:00 tutorial on 18 December, so none has been invented.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-04",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-04T13:00",
+      "end": "2026-12-04T14:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "engf0001-social",
+      "title": "DUE: ENGF0001 Individual Social Impact Report (10%)",
+      "start": "2026-12-04T14:00",
+      "end": null,
+      "category": "Assessment",
+      "course": "ENGF0001",
+      "notes": "Individual submission using the supplied template, Word or PDF, maximum 1,200 words. Complete the referencing / generative AI declaration form as part of submission. Current submission instructions give the word limit; older overview text calls this a two-page report. Moodle status rechecked on 15 November: new (not submitted), last modified 13 November at 20:09.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/assign/view.php?id=9105891",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467589",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105890"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": "10%"
+    },
+    {
+      "id": "challenges-2026-12-07",
+      "title": "ENGF0001: Team 21 timetabled session (C/D)",
+      "start": "2026-12-07T16:00",
+      "end": "2026-12-07T18:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "Team 21 falls in cohort C (teams 18–25), based on the module announcement. The updated 2026 timetable places C/D on Mondays 16:00–18:00 and Wednesdays 11:00–13:00 during project weeks 6–9. It lists parallel rooms MPEB 6.02 and Roberts 704 without resolving your room: confirm your allocation in the personal timetable. Session purpose may include project work or another timetabled activity. Agree who will submit the team meeting minutes and aim to do so within 48 hours after the meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published cohort times; room allocation TBC",
+      "weight": null
+    },
+    {
+      "id": "dps-tue-2026-12-08",
+      "title": "ENGF0034: CS lecture",
+      "start": "2026-12-08T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Birkbeck Euston Road (373), room 402. Start time published as 11:00; end time is not published in the Moodle calendar. Check your personal timetable for the duration and any changes.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "challenges-2026-12-09",
+      "title": "ENGF0001: Team 21 timetabled session (C/D)",
+      "start": "2026-12-09T11:00",
+      "end": "2026-12-09T13:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "Team 21 falls in cohort C (teams 18–25), based on the module announcement. The updated 2026 timetable places C/D on Mondays 16:00–18:00 and Wednesdays 11:00–13:00 during project weeks 6–9. It lists parallel rooms MPEB 6.02 and Roberts 704 without resolving your room: confirm your allocation in the personal timetable. Session purpose may include project work or another timetabled activity. Agree who will submit the team meeting minutes and aim to do so within 48 hours after the meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published cohort times; room allocation TBC",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-09",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-09T15:00",
+      "end": "2026-12-09T16:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "engf0034-ca5",
+      "title": "DUE: ENGF0034 CA5 Pacman specification (15%) — TIME TBC",
+      "start": "2026-12-10",
+      "end": null,
+      "category": "Assessment",
+      "course": "ENGF0034",
+      "notes": "The 2026 course calendar places CA5 due on Thursday 10 December. No cutoff time, submission link or CA5 brief was published in the accessible material. This is a date-only deadline, not a 23:59 deadline. Check the brief when released on 26 November. Weight and task name are from How to use this course.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467896"
+      ],
+      "optional": false,
+      "certainty": "Date published; time and submission route TBC",
+      "weight": "15%"
+    },
+    {
+      "id": "mentor-awards",
+      "title": "OPTIONAL: Transition Mentor Awards Evening — TIME TBC",
+      "start": "2026-12-10",
+      "end": null,
+      "category": "Event",
+      "course": "Transition",
+      "notes": "The Moodle booking link names 10 December. Time/venue and registration must be checked using the booking page; no attendance assumed.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9500068"
+      ],
+      "optional": true,
+      "certainty": "Date published; time/venue TBC",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-10",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-10T16:00",
+      "end": "2026-12-10T17:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "admin-2026-12-11",
+      "title": "OPTIONAL: Undergraduate teaching/admin drop-in",
+      "start": "2026-12-11T09:00",
+      "end": "2026-12-11T10:00",
+      "category": "Support",
+      "course": "Student Hub",
+      "notes": "MS Teams, no appointment. Useful for timetable, module and study-support queries. Open the Moodle section for the join link.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1463351"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "dps-fri-2026-12-11",
+      "title": "ENGF0034: CS tutorial",
+      "start": "2026-12-11T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Medical Sciences 131, A V Hill Lecture Theatre. Start time published as 11:00; end time is not published. The calendar does not list an 11:00 tutorial on 18 December, so none has been invented.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-11",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-11T13:00",
+      "end": "2026-12-11T14:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "engf0001-demo",
+      "title": "ASSESSMENT: ENGF0001 Team 21 bioreactor demo (10%) — TIME TBC",
+      "start": "2026-12-14",
+      "end": null,
+      "category": "Assessment",
+      "course": "ENGF0001",
+      "notes": "The current Task 10.1 page explicitly says Monday 14 December 2026. The 2026 timetable places demonstrations in MPEB 6.02 during the afternoon. The downloadable DemoSchedule.pdf is explicitly dated 8 December 2025: its Team 21 slot of 16:00–16:40 is historical and is NOT a confirmed 2026 booking. Obtain the updated Team 21 slot before attending. The instructions describe a live working-system demo and viva; all team members should be ready to explain the system.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/page/view.php?id=9105595",
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507",
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105597"
+      ],
+      "optional": false,
+      "certainty": "Date published; Team 21 time TBC",
+      "weight": "10%"
+    },
+    {
+      "id": "evaluation-window-COMP0002",
+      "title": "OPTIONAL: COMP0002 module evaluation window starts",
+      "start": "2026-12-14",
+      "end": null,
+      "category": "Survey",
+      "course": "COMP0002",
+      "notes": "The current survey section lists the evaluation window as 14 December 2026–22 January 2027. This marker denotes the window opening, not an assessment or a meeting. No exact closing time is supplied; the closing date is beyond this Term 1 calendar.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/questionnaire/view.php?id=8582588"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "evaluation-window-COMP0147",
+      "title": "OPTIONAL: COMP0147 module evaluation window starts",
+      "start": "2026-12-14",
+      "end": null,
+      "category": "Survey",
+      "course": "COMP0147",
+      "notes": "The current survey section lists the evaluation window as 14 December 2026–22 January 2027. This marker denotes the window opening, not an assessment or a meeting. No exact closing time is supplied; the closing date is beyond this Term 1 calendar.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/questionnaire/view.php?id=8625372"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "comp0002-haskell-provisional",
+      "title": "UNCONFIRMED: COMP0002 Haskell test (5%) — classmate-reported date",
+      "start": "2026-12-14",
+      "end": null,
+      "category": "Assessment",
+      "course": "COMP0002",
+      "notes": "DATE NOT VERIFIED: a classmate reportedly recalled 14 December from an early lecture. The test itself and 5% weighting are confirmed by Slides 1, page 8. All accessible programming PDFs, current sections and standard forum announcements were rechecked on 15 November; none establishes this date. Spoken announcements and Panopto transcripts were not accessible, so the classmate may still be correct. This all-day tentative marker is a planning precaution, not a confirmed test booking. Time, venue and date must be confirmed with Dr David Clark or in the personal timetable. It falls on the confirmed ENGF0001 demo date, so check for a potential clash; no clash is established without the times.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508469",
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508455",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1378607"
+      ],
+      "optional": false,
+      "certainty": "UNCONFIRMED date: classmate report only; test and 5% weight confirmed",
+      "weight": "5%"
+    },
+    {
+      "id": "dps-tue-2026-12-15",
+      "title": "ENGF0034: CS lecture",
+      "start": "2026-12-15T11:00",
+      "end": null,
+      "category": "Teaching",
+      "course": "ENGF0034",
+      "notes": "Birkbeck Euston Road (373), room 402. Start time published as 11:00; end time is not published in the Moodle calendar. Check your personal timetable for the duration and any changes.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "office-2026-12-15",
+      "title": "OPTIONAL: ENGF0034 office hour",
+      "start": "2026-12-15T13:00",
+      "end": "2026-12-15T14:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "169 Euston Road, room 208. Times from the dated course calendar.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "challenges-dec16",
+      "title": "ENGF0001: Team 21 timetabled session (cohort C)",
+      "start": "2026-12-16T11:00",
+      "end": "2026-12-16T13:00",
+      "category": "Teaching",
+      "course": "ENGF0001",
+      "notes": "The updated 2026 timetable lists cohort C on Wednesday of project week 10 at 11:00–13:00 in Maths 505, Gordon Street (25). Check the personal timetable and announcements for the purpose/venue before attending. This is separate from the demo on 14 December.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105507"
+      ],
+      "optional": false,
+      "certainty": "Published timetable; recheck venue/purpose",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-16",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-16T15:00",
+      "end": "2026-12-16T16:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-17",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-17T16:00",
+      "end": "2026-12-17T17:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "term-end",
+      "title": "Term 1 ends",
+      "start": "2026-12-18",
+      "end": null,
+      "category": "Milestone",
+      "course": "Programme",
+      "notes": "Programme term dates confirm 18 December as the end of Term 1. IPAC is still due on 23 December.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1484798"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "admin-2026-12-18",
+      "title": "OPTIONAL: Undergraduate teaching/admin drop-in",
+      "start": "2026-12-18T09:00",
+      "end": "2026-12-18T10:00",
+      "category": "Support",
+      "course": "Student Hub",
+      "notes": "MS Teams, no appointment. Useful for timetable, module and study-support queries. Open the Moodle section for the join link.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1463351"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "clinic-2026-12-18",
+      "title": "OPTIONAL: ENGF0034 CS drop-in clinic",
+      "start": "2026-12-18T13:00",
+      "end": "2026-12-18T14:00",
+      "category": "Support",
+      "course": "ENGF0034",
+      "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "engf0001-final",
+      "title": "DUE: ENGF0001 Team Final Report (30%)",
+      "start": "2026-12-18T14:00",
+      "end": null,
+      "category": "Assessment",
+      "course": "ENGF0001",
+      "notes": "One team member submits a Word or PDF report; one member also completes the referencing and AI tools declaration. Use the supplied report template and rubric. The overview says 9 pages excluding references/appendices, while the submission box describes a penalty above 10 pages excluding references: target the stricter 9-page guidance and clarify the limit. Moodle status rechecked on 15 November: not submitted.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/assign/view.php?id=9105625",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467573",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105624"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": "30%"
+    },
+    {
+      "id": "engf0001-ipac",
+      "title": "DUE: ENGF0001 Individual Contribution to Teamwork / IPAC (10%)",
+      "start": "2026-12-23T14:00",
+      "end": null,
+      "category": "Assessment",
+      "course": "ENGF0001",
+      "notes": "AFTER TERM ENDS: included because it is a required assessment arising from this term. Personally complete the IPAC ratings and feedback for your teammates and yourself. The explicit assessment deadline is 14:00 on 23 December; a later closing date inside IPAC allows late submission and does not replace this deadline. Weekly minutes are part of this component: the team should submit at least six records, aiming for within 48 hours of each on-campus team meeting.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467573",
+        "https://moodle.ucl.ac.uk/mod/lti/view.php?id=9105609",
+        "https://moodle.ucl.ac.uk/mod/url/view.php?id=9105606"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": "10%"
+    }
+  ],
+  "watchlist": [
+    [
+      "COMP0002 Haskell in-class test: 14 December is unconfirmed",
+      "Slides 1, page 8 confirms the test is worth 5%; the classmate reports 14 December from an early lecture. No accessible written source gives that date. The calendar includes a tentative all-day marker labelled UNCONFIRMED, not a booked test. Confirm date, time and venue with Dr David Clark at the first Haskell session; 14 December is also the confirmed Engineering Challenges demo date.",
+      "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508469"
+    ],
+    [
+      "COMP0147 exam: 100% of the module; mock date TBC",
+      "The official 2026/27 UCL catalogue confirms 100% Exam. No exact exam date/time or duration was found. Week 10 mentions a mock test with no date or graded weighting. The exercise sheets are practice, and exam-style questions in them are not new deadlines. No exam booking has been invented.",
+      "https://www.ucl.ac.uk/module-catalogue/modules/discrete-mathematics-for-computer-scientists-COMP0147"
+    ],
+    [
+      "COMP0147 weekly lectures and PBL",
+      "Attend your allocated lecture/PBL sessions and work through the problem lists. The November announcement says teaching resumes on Tuesday 17 November; October posts mention a 09:00 main lecture and afternoon PBL, but they do not establish the remaining term timetable. No recurring times have been inferred from those posts.",
+      "https://moodle.ucl.ac.uk/mod/forum/view.php?id=8511614"
+    ],
+    [
+      "COMP0002 lectures and allocated programming lab",
+      "The module specifies three lecture hours and one two-hour allocated lab per teaching week; group times require the personal timetable. These sessions are not in the generated calendar.",
+      "https://moodle.ucl.ac.uk/course/section.php?id=1378607"
+    ],
+    [
+      "ENGF0001 Team 21 demo time",
+      "14 December 2026 is confirmed by Task 10.1. The attached demo schedule is dated 8 December 2025 and gives Team 21 a historical 16:00–16:40 slot. Do not use that slot as a 2026 booking; request the current schedule.",
+      "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105597"
+    ],
+    [
+      "ENGF0001 social-impact workshop",
+      "The social-impact page says the workshop is in a Monday afternoon or Wednesday morning slot and to check the personal timetable. The 25 November reference concerns release of slides/recording, not a confirmed personal workshop booking.",
+      "https://moodle.ucl.ac.uk/course/section.php?id=1467589"
+    ],
+    [
+      "ENGF0001 report-writing sessions",
+      "The Week 7 page mentions 5 and 7 December, with no times. 5 December 2026 is a Saturday, and the surrounding teaching material includes old dates. These two dates are listed for confirmation and have not been imported as confirmed sessions.",
+      "https://moodle.ucl.ac.uk/course/section.php?id=1467569"
+    ],
+    [
+      "CA5 exact submission time and route",
+      "10 December is the date in the current course calendar. The linked GitHub repository has no CA5 brief at this snapshot. Check the scheduled 26 November release; no 23:59 cutoff has been invented.",
+      "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+    ],
+    [
+      "ENGF0034 ethics report is in Term 2",
+      "The 2026 opening lecture places the ethics report (15%) in Term 2, week 7; presentations (10%) in Term 2 Reading Week; scenarios (40%) in Term 2. They have no verified current exact submission dates here and are outside this Term 1 calendar. The 23 November ethics tasks and 24 November lecture remain current teaching activities. Ignore the stale February 2021 date.",
+      "https://github.com/UCL-ENGF0034-2026/course-materials/blob/main/Week%201/ENGF34-2026%20Opening%20lecture.pdf"
+    ],
+    [
+      "Personal extensions and timetable changes",
+      "The calendar is based on visible course-level dates, not an independently verified extension record or your personal timetable. Check the Moodle submission box for any extension and UCL Timetable for group/room changes.",
+      "https://moodle.ucl.ac.uk/mod/url/view.php?id=9207933"
+    ]
+  ]
+}

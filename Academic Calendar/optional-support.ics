@@ -1,0 +1,640 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Study Calendar//UCL Term 1 2026 Snapshot//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UCL Term 1 — optional support and events
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:03518e79c7c3f479deec3835@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261219
+SUMMARY:OPTIONAL WINDOW: ACC one-to-one tutorials
+DESCRIPTION:Booking window\, not an appointment: Round 1 runs 16 November
+ –18 December. Book a 30-minute MS Teams tutorial on writing\, presentati
+ ons or learning strategies. A booked slot must be added separately.\n\nCer
+ tainty: Published\nTimezone: Europe/London (GMT during this calendar).\nSn
+ apshot: 15 November 2026\; this file does not sync automatically.\nSources
+ :\nhttps://moodle.ucl.ac.uk/mod/scheduler/view.php?id=8605107
+CATEGORIES:SUPPORT,ACC
+URL:https://moodle.ucl.ac.uk/mod/scheduler/view.php?id=8605107
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:0716cde0c687759167d26307@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261117T140000Z
+DTEND:20261117T150000Z
+SUMMARY:OPTIONAL: ENGF0034 office hour
+DESCRIPTION:169 Euston Road\, room 208. Times from the dated course calenda
+ r.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this calen
+ dar).\nSnapshot: 15 November 2026\; this file does not sync automatically.
+ \nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:9b85622e6cca4344ee07cf45@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261118T100000Z
+SUMMARY:COMP0002 pulse survey: requested completion
+DESCRIPTION:Moodle calendar target completion time. This is a feedback surv
+ ey\, not coursework. The actual closing time is 20 November at 23:59.\n\nC
+ ertainty: Published\nTimezone: Europe/London (GMT during this calendar).\n
+ Snapshot: 15 November 2026\; this file does not sync automatically.\nSourc
+ es:\nhttps://moodle.ucl.ac.uk/mod/feedback/view.php?id=8582586
+CATEGORIES:SURVEY,COMP0002
+URL:https://moodle.ucl.ac.uk/mod/feedback/view.php?id=8582586
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:d780ea79857950dec33d4aee@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261118T150000Z
+DTEND:20261118T160000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:1e322f7ed71b3ed1ba7d0d79@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261120
+SUMMARY:OPTIONAL: Engineering teamwork focus group — SLOT TBC
+DESCRIPTION:The 5 November Careers announcement advertises Thursday 19 Nove
+ mber\, UCL Bloomsbury\, around one hour\, with 17:00 or 18:00 slots. The M
+ CP returns only an excerpt\, so a full slot and registration details are u
+ nverified. Read the full announcement before booking\; this all-day marker
+  is not a confirmed reservation.\n\nCertainty: Announcement excerpt\; regi
+ stration/slot TBC\nTimezone: Europe/London (GMT during this calendar).\nSn
+ apshot: 15 November 2026\; this file does not sync automatically.\nSources
+ :\nhttps://moodle.ucl.ac.uk/mod/forum/view.php?id=8764831
+CATEGORIES:EVENT,Careers
+URL:https://moodle.ucl.ac.uk/mod/forum/view.php?id=8764831
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:96c24ffac71d213f19da6be5@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261119T160000Z
+DTEND:20261119T170000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:419f937827b348759ac1974e@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:OPTIONAL: Transition Mentor award nominations close — TIME TBC
+DESCRIPTION:The Moodle link says nominations close 20 November\; no cutoff 
+ time is supplied. Optional nomination\, not an assessment.\n\nCertainty: D
+ ate published\; time TBC\nTimezone: Europe/London (GMT during this calenda
+ r).\nSnapshot: 15 November 2026\; this file does not sync automatically.\n
+ Sources:\nhttps://moodle.ucl.ac.uk/mod/url/view.php?id=9500064
+CATEGORIES:EVENT,Transition
+URL:https://moodle.ucl.ac.uk/mod/url/view.php?id=9500064
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:8de27335e285d0d52295ff95@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261120T090000Z
+DTEND:20261120T100000Z
+SUMMARY:OPTIONAL: Undergraduate teaching/admin drop-in
+DESCRIPTION:MS Teams\, no appointment. Useful for timetable\, module and st
+ udy-support queries. Open the Moodle section for the join link.\n\nCertain
+ ty: Published\nTimezone: Europe/London (GMT during this calendar).\nSnapsh
+ ot: 15 November 2026\; this file does not sync automatically.\nSources:\nh
+ ttps://moodle.ucl.ac.uk/course/section.php?id=1463351
+CATEGORIES:SUPPORT,Student Hub
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1463351
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:a5352f51b9f2d16529c9683a@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261120T130000Z
+DTEND:20261120T140000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:263568e6f7e02b132438b6d8@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261120T235900Z
+SUMMARY:COMP0002 pulse survey closes
+DESCRIPTION:Feedback survey closing time from Moodle calendar\; not a grade
+ d assessment.\n\nCertainty: Published\nTimezone: Europe/London (GMT during
+  this calendar).\nSnapshot: 15 November 2026\; this file does not sync aut
+ omatically.\nSources:\nhttps://moodle.ucl.ac.uk/mod/feedback/view.php?id=8
+ 582586
+CATEGORIES:SURVEY,COMP0002
+URL:https://moodle.ucl.ac.uk/mod/feedback/view.php?id=8582586
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:b584f0a59d21eeb5da20fdd5@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261120T235900Z
+SUMMARY:COMP0147 pulse survey closes
+DESCRIPTION:Feedback survey closing time from Moodle calendar\; not a grade
+ d assessment.\n\nCertainty: Published\nTimezone: Europe/London (GMT during
+  this calendar).\nSnapshot: 15 November 2026\; this file does not sync aut
+ omatically.\nSources:\nhttps://moodle.ucl.ac.uk/mod/feedback/view.php?id=8
+ 625370
+CATEGORIES:SURVEY,COMP0147
+URL:https://moodle.ucl.ac.uk/mod/feedback/view.php?id=8625370
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:35dff27d7dd7c309931b4935@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261128
+SUMMARY:WINDOW: Final Transition Mentor session — TIME TBC
+DESCRIPTION:The final wrap-up session is in the week commencing 23 November
+ . The week-long entry marks a scheduling window\, not a meeting every day.
+  Confirm your actual session with your mentor. Programme evaluation survey
+  also mentioned\, with no fixed deadline.\n\nCertainty: Week published\; p
+ ersonal meeting TBC\nTimezone: Europe/London (GMT during this calendar).\n
+ Snapshot: 15 November 2026\; this file does not sync automatically.\nSourc
+ es:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1434967
+CATEGORIES:EVENT,Transition
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1434967
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:f28fcb0e39de6024552c32d0@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261125T150000Z
+DTEND:20261125T160000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:c98583ce72c33b7a413011c5@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261126T160000Z
+DTEND:20261126T170000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:479d30420fb00efe60991329@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261127T090000Z
+DTEND:20261127T100000Z
+SUMMARY:OPTIONAL: Undergraduate teaching/admin drop-in
+DESCRIPTION:MS Teams\, no appointment. Useful for timetable\, module and st
+ udy-support queries. Open the Moodle section for the join link.\n\nCertain
+ ty: Published\nTimezone: Europe/London (GMT during this calendar).\nSnapsh
+ ot: 15 November 2026\; this file does not sync automatically.\nSources:\nh
+ ttps://moodle.ucl.ac.uk/course/section.php?id=1463351
+CATEGORIES:SUPPORT,Student Hub
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1463351
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:d9124167443f593d1b69c206@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261127T130000Z
+DTEND:20261127T140000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:e2456426fa396c75885f00d8@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261201T140000Z
+DTEND:20261201T150000Z
+SUMMARY:OPTIONAL: ENGF0034 office hour
+DESCRIPTION:169 Euston Road\, room 208. Times from the dated course calenda
+ r.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this calen
+ dar).\nSnapshot: 15 November 2026\; this file does not sync automatically.
+ \nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:1e8af5c0f415ff69b92a7c3d@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261202T150000Z
+DTEND:20261202T160000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:998b367f7b3bea1ec2213497@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261203T160000Z
+DTEND:20261203T170000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:5069a1608e78fdde43d46cff@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261204T090000Z
+DTEND:20261204T100000Z
+SUMMARY:OPTIONAL: Undergraduate teaching/admin drop-in
+DESCRIPTION:MS Teams\, no appointment. Useful for timetable\, module and st
+ udy-support queries. Open the Moodle section for the join link.\n\nCertain
+ ty: Published\nTimezone: Europe/London (GMT during this calendar).\nSnapsh
+ ot: 15 November 2026\; this file does not sync automatically.\nSources:\nh
+ ttps://moodle.ucl.ac.uk/course/section.php?id=1463351
+CATEGORIES:SUPPORT,Student Hub
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1463351
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ef70f5d1dfaacecb52ee8af8@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261204T130000Z
+DTEND:20261204T140000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:c5fc948f5145c3363618364b@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261209T150000Z
+DTEND:20261209T160000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:a51fa71519e4952d3413a365@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:OPTIONAL: Transition Mentor Awards Evening — TIME TBC
+DESCRIPTION:The Moodle booking link names 10 December. Time/venue and regis
+ tration must be checked using the booking page\; no attendance assumed.\n\
+ nCertainty: Date published\; time/venue TBC\nTimezone: Europe/London (GMT 
+ during this calendar).\nSnapshot: 15 November 2026\; this file does not sy
+ nc automatically.\nSources:\nhttps://moodle.ucl.ac.uk/mod/url/view.php?id=
+ 9500068
+CATEGORIES:EVENT,Transition
+URL:https://moodle.ucl.ac.uk/mod/url/view.php?id=9500068
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:d9c52161a7850dbed46e0235@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261210T160000Z
+DTEND:20261210T170000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:3050a8b617bb9fe32eff7584@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261211T090000Z
+DTEND:20261211T100000Z
+SUMMARY:OPTIONAL: Undergraduate teaching/admin drop-in
+DESCRIPTION:MS Teams\, no appointment. Useful for timetable\, module and st
+ udy-support queries. Open the Moodle section for the join link.\n\nCertain
+ ty: Published\nTimezone: Europe/London (GMT during this calendar).\nSnapsh
+ ot: 15 November 2026\; this file does not sync automatically.\nSources:\nh
+ ttps://moodle.ucl.ac.uk/course/section.php?id=1463351
+CATEGORIES:SUPPORT,Student Hub
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1463351
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eaadcb522d1ffd33fec76260@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261211T130000Z
+DTEND:20261211T140000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:9220d211ae4f63aade1c7ac1@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:OPTIONAL: COMP0002 module evaluation window starts
+DESCRIPTION:The current survey section lists the evaluation window as 14 De
+ cember 2026–22 January 2027. This marker denotes the window opening\, no
+ t an assessment or a meeting. No exact closing time is supplied\; the clos
+ ing date is beyond this Term 1 calendar.\n\nCertainty: Published\nTimezone
+ : Europe/London (GMT during this calendar).\nSnapshot: 15 November 2026\; 
+ this file does not sync automatically.\nSources:\nhttps://moodle.ucl.ac.uk
+ /mod/questionnaire/view.php?id=8582588
+CATEGORIES:SURVEY,COMP0002
+URL:https://moodle.ucl.ac.uk/mod/questionnaire/view.php?id=8582588
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:7303f7d21de4820c18baa9e5@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:OPTIONAL: COMP0147 module evaluation window starts
+DESCRIPTION:The current survey section lists the evaluation window as 14 De
+ cember 2026–22 January 2027. This marker denotes the window opening\, no
+ t an assessment or a meeting. No exact closing time is supplied\; the clos
+ ing date is beyond this Term 1 calendar.\n\nCertainty: Published\nTimezone
+ : Europe/London (GMT during this calendar).\nSnapshot: 15 November 2026\; 
+ this file does not sync automatically.\nSources:\nhttps://moodle.ucl.ac.uk
+ /mod/questionnaire/view.php?id=8625372
+CATEGORIES:SURVEY,COMP0147
+URL:https://moodle.ucl.ac.uk/mod/questionnaire/view.php?id=8625372
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:a88b29e3bb5ed551ee2d0afa@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261215T130000Z
+DTEND:20261215T140000Z
+SUMMARY:OPTIONAL: ENGF0034 office hour
+DESCRIPTION:169 Euston Road\, room 208. Times from the dated course calenda
+ r.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this calen
+ dar).\nSnapshot: 15 November 2026\; this file does not sync automatically.
+ \nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:7bc4c210a84075e0f4718e5c@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261216T150000Z
+DTEND:20261216T160000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ee7e5c6325c7ce4cc7309f34@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261217T160000Z
+DTEND:20261217T170000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:165b23d7b04ae3be66930760@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261218T090000Z
+DTEND:20261218T100000Z
+SUMMARY:OPTIONAL: Undergraduate teaching/admin drop-in
+DESCRIPTION:MS Teams\, no appointment. Useful for timetable\, module and st
+ udy-support queries. Open the Moodle section for the join link.\n\nCertain
+ ty: Published\nTimezone: Europe/London (GMT during this calendar).\nSnapsh
+ ot: 15 November 2026\; this file does not sync automatically.\nSources:\nh
+ ttps://moodle.ucl.ac.uk/course/section.php?id=1463351
+CATEGORIES:SUPPORT,Student Hub
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1463351
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:768e7c019baf728417926dfe@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261218T130000Z
+DTEND:20261218T140000Z
+SUMMARY:OPTIONAL: ENGF0034 CS drop-in clinic
+DESCRIPTION:Henry Morley building\, G03 (the course calendar prints GO3). N
+ o booking required\; bring questions or come if you are unsure where to st
+ art.\n\nCertainty: Published\nTimezone: Europe/London (GMT during this cal
+ endar).\nSnapshot: 15 November 2026\; this file does not sync automaticall
+ y.\nSources:\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467895
+CATEGORIES:SUPPORT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

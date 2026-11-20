@@ -1,0 +1,252 @@
+ppt/slides/slide1.xml
+Bioreactor Challenge
+Information on the motor/stirrer
+(Hall encoder) assembly
+
+ppt/slides/slide2.xml
+Connections
+Bioreactor Motor Speed Controller
+The motor/sensor assembly is delicate and should be handled with care.
+The motor/sensor supply is 
++5 V
+, and it must be powered from the 
+Arduino 5 V supply
+.
+Do not 
+use an external supply.
+Keep the patch lead reasonably short.
+The motor rotates at up to 10000 RPM and has 10:1 gearing to give a drive speed of up to 1000 RPM, from a supply voltage of 5 V.
+The Hall sensor gives 70 pulses per revolution of the geared-down shaft, so 1167 pulses/s at 1000 RPM.
+
+ppt/slides/slide3.xml
+The speed sensor and motor connecting cable should be reasonably short, to avoid voltage drops and possible noise pickup. A good MOSFET is needed, with >> 1A rating. The flyback diode is essential to protect the MOSFET from the motor back EMF.
+The 470 
+uF
+ capacitor is used for supply decoupling to prevent the motor pulses from interfering with the sensor output.
+Interface with the MCU development board
+Bioreactor Motor Speed Controller
+
+ppt/slides/slide4.xml
+Some coding hints/suggestions
+Your routine needs to measure the speed of the motor (in RPM say) and adjust the voltage applied to the motor, to attempt to maintain the speed at a set value.
+The code overleaf contains a function to measure the motor speed (
+measspeed
+) and display a smoothed version of this (
+meanmeassspeed
+) to the serial monitor window. It also blinks the internal LED at a rate of once per revolution.
+The motor voltage may be adjusted by assigning a value to the 
+Vmotor
+ variable. The PWM is set up to be 10-bit, so 
+Vmotor
+ 
+= 0-1023 relates to a motor voltage of 0-5 V. 
+The update/sampling period is regulated to 10 
+ms
+, which is plenty fast enough. This is done without using the delay() function. In general, you should 
+always avoid using the delay() function 
+as it pauses the entire loop and can cause a lot of problems.
+Your task is to develop code to adjust the motor voltage using feedback of the measured speed so it achieves a desired set speed, of the order of 300-1000 RPM. Make sure to use 
+measspeed
+ for this rather than the smoothed version of this variable, 
+meanmeasspeed
+. A simple approach may work well enough, and in later lectures you will be guided through the design of a PI (Proportional Integral) controller.
+Bioreactor Motor Speed Controller
+
+ppt/slides/slide5.xml
+// Motor (plant) and sensor parameters
+const float 
+Npulses
+=70; // Number of pulses per revolution
+const float 
+freqtoRPM
+=60/
+Npulses
+;
+const int 
+RPMmax
+=1500; // Max RPM indicated by sensor (to mitigate any noise)
+const int 
+Tmin
+=6e7/
+RPMmax
+/
+Npulses
+;
+// Declare constants and variables
+const byte 
+encoderpin
+=2, 
+motorpin
+=10;
+long 
+currtime
+, 
+prevtime
+, 
+pulseT
+, 
+prevpulseT
+, T1;
+float 
+measspeed
+, 
+meanmeasspeed
+, 
+freq
+, 
+deltaT
+;
+int 
+Vmotor
+, trig;
+void setup() {
+  
+pinMode
+(
+encoderpin
+, INPUT_PULLUP); // one of the interrupt pins (D2/D3 on an Uno/Nano/Nucleo32)
+  
+pinMode
+(
+motorpin
+, OUTPUT); // motor PWM control signal, to MOSFET
+  
+pinMode
+(13, OUTPUT); // The on-board LED, blinks when shaft is rotated
+  
+attachInterrupt
+(
+digitalPinToInterrupt
+(
+encoderpin
+), 
+freqcount
+, RISING);
+  
+Serial.begin
+(250000); // use serial monitor to monitor speed, motor voltage 
+etc
+// Pins D9 and D10 - 7.8 kHz 10bit PWM - for Uno or Nano 
+  TCCR1A = 0b00000011; // 10bit
+  TCCR1B = 0b00000001; // 7.8 kHz
+} 
+void loop() {
+  
+currtime
+ = micros();
+  
+deltaT
+ = (
+currtime-prevtime
+)*1e-6;  // measure 
+deltaT
+  if (currtime-T1>0) { 
+  
+prevtime
+ = 
+currtime
+;
+  T1 = T1+10000; // 10 
+ms
+ update period
+  
+measspeed
+ = 
+freq
+*
+freqtoRPM
+; // measured speed in RPM (N pulses per revolution)
+  
+Vmotor
+ = constrain(Vmotor,0,1023); // Limit motor voltage to 5 V - assuming 5 V motor supply
+  if (
+Vmotor
+==255) {
+Vmotor
+=256;} // Work-around for bug in Nano/Uno with 10-bit configuration
+  
+analogWrite
+(
+motorpin,Vmotor
+);
+  if (
+currtime-pulseT
+>1e5) {
+measspeed
+=0; 
+freq
+=0;} // Indicate zero measured speed if no pulses detected for 0.1 s
+  
+meanmeasspeed
+ = 0.1*measspeed+0.9*
+meanmeasspeed
+;
+  
+Serial.print
+(0); 
+Serial.print
+(","); 
+Serial.print
+(1000); 
+Serial.print
+(",");
+  
+Serial.println
+(
+meanmeasspeed
+); // for Arduino IDE or 
+CoolTerm
+ 
+etc
+ Serial Plotter 
+  }
+}
+/////////////////////////// Interrupt routine to measure frequency ///////////////////////////
+void 
+freqcount
+() {
+  
+pulseT
+ = micros();
+  if(abs(
+pulseT-prevpulseT
+)>
+Tmin
+){ // Ignore indicated speeds > 
+RPMmax
+  
+freq
+ = 0.75*freq+2.5e5/float(
+pulseT-prevpulseT
+); // Calculate speed sensor frequency (Hz)
+  
+prevpulseT
+ = 
+pulseT
+;
+  trig++; if (2*trig>=
+Npulses
+) {trig=0;
+  
+digitalWrite
+(13, !
+digitalRead
+(13));}} // blink on-board LED in time with motor, one blink per revolution
+}
+
+ppt/slides/slide6.xml
+Bioreactor Motor Speed Controller
+The Arduino Nano is a convenient alternative to the Uno (and functionally identical). Its compact size allows it to be mounted on a breadboard, without the need for trailing wires.
+Contact 
+p.brennan@ucl.ac.uk
+ if you would like one.
+
+ppt/slides/slide7.xml
+Serial Monitor and Serial Plotter (part of the Arduino IDE) are very useful for real-time monitoring of speed, motor voltage etc.
+Arduino IDE Serial Plotter
+Bioreactor Motor Speed Controller
+
+ppt/notesSlides/notesSlide1.xml
+
+
+ppt/notesSlides/notesSlide2.xml

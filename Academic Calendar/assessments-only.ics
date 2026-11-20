@@ -1,0 +1,293 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Study Calendar//UCL Term 1 2026 Snapshot//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UCL Term 1 — assessments only
+X-WR-TIMEZONE:Europe/London
+BEGIN:VEVENT
+UID:0dfa9d196bbb8419dcd2a5b1@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261118T160000Z
+SUMMARY:DUE: COMP0002 C maze coursework (5%)
+DESCRIPTION:Submit COMP0002CW1.zip to Moodle: C source\, readMe (maximum on
+ e page)\, and required data/images. Exclude compiled files and the supplie
+ d DrawApp files. Brief and Moodle agree on 16:00 UK time. Moodle status re
+ checked on 15 November: new\, not submitted. Personal extensions may chang
+ e your deadline.\n\nCertainty: Published\nTimezone: Europe/London (GMT dur
+ ing this calendar).\nSnapshot: 15 November 2026\; this file does not sync 
+ automatically.\nSources:\nhttps://moodle.ucl.ac.uk/mod/assign/view.php?id=
+ 8508448\nhttps://moodle.ucl.ac.uk/mod/resource/view.php?id=8508574
+CATEGORIES:ASSESSMENT,COMP0002
+URL:https://moodle.ucl.ac.uk/mod/assign/view.php?id=8508448
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: COMP0002 C maze coursework (5%)
+TRIGGER:-P3D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: COMP0002 C maze coursework (5%)
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: COMP0002 C maze coursework (5%)
+TRIGGER:-PT2H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ed01e6e5bd8bbc81bc14511e@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261125T235900Z
+SUMMARY:DUE: ENGF0034 CA4 Tetris autoplayer (20%)
+DESCRIPTION:Deadline date from the current course calendar\; exact 23:59 UK
+  time from the linked assignment brief. Set up UCL GitLab\, sign in to the
+  grading server\, enrol in Tetris and push code to your fork. Check the se
+ rver has received and run your submitted version. Moodle assignment status
+  does not cover this external submission.\n\nCertainty: Published\nTimezon
+ e: Europe/London (GMT during this calendar).\nSnapshot: 15 November 2026\;
+  this file does not sync automatically.\nSources:\nhttps://moodle.ucl.ac.u
+ k/course/section.php?id=1467895\nhttps://github.com/UCL-ENGF0034-2026/cour
+ se-materials/blob/main/Assignment%204%20brief/assignment4.pdf
+CATEGORIES:ASSESSMENT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0034 CA4 Tetris autoplayer (20%)
+TRIGGER:-P3D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0034 CA4 Tetris autoplayer (20%)
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0034 CA4 Tetris autoplayer (20%)
+TRIGGER:-PT2H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:911299b6a86eb2ac2e2e1510@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261204T140000Z
+SUMMARY:DUE: ENGF0001 Individual Social Impact Report (10%)
+DESCRIPTION:Individual submission using the supplied template\, Word or PDF
+ \, maximum 1\,200 words. Complete the referencing / generative AI declarat
+ ion form as part of submission. Current submission instructions give the w
+ ord limit\; older overview text calls this a two-page report. Moodle statu
+ s rechecked on 15 November: new (not submitted)\, last modified 13 Novembe
+ r at 20:09.\n\nCertainty: Published\nTimezone: Europe/London (GMT during t
+ his calendar).\nSnapshot: 15 November 2026\; this file does not sync autom
+ atically.\nSources:\nhttps://moodle.ucl.ac.uk/mod/assign/view.php?id=91058
+ 91\nhttps://moodle.ucl.ac.uk/course/section.php?id=1467589\nhttps://moodle
+ .ucl.ac.uk/mod/url/view.php?id=9105890
+CATEGORIES:ASSESSMENT,ENGF0001
+URL:https://moodle.ucl.ac.uk/mod/assign/view.php?id=9105891
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Individual Social Impact Report (10%)
+TRIGGER:-P3D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Individual Social Impact Report (10%)
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Individual Social Impact Report (10%)
+TRIGGER:-PT2H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:33455a77b4f0eaf81366ecd7@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:DUE: ENGF0034 CA5 Pacman specification (15%) — TIME TBC
+DESCRIPTION:The 2026 course calendar places CA5 due on Thursday 10 December
+ . No cutoff time\, submission link or CA5 brief was published in the acces
+ sible material. This is a date-only deadline\, not a 23:59 deadline. Check
+  the brief when released on 26 November. Weight and task name are from How
+  to use this course.\n\nCertainty: Date published\; time and submission ro
+ ute TBC\nTimezone: Europe/London (GMT during this calendar).\nSnapshot: 15
+  November 2026\; this file does not sync automatically.\nSources:\nhttps:/
+ /moodle.ucl.ac.uk/course/section.php?id=1467895\nhttps://moodle.ucl.ac.uk/
+ course/section.php?id=1467896
+CATEGORIES:ASSESSMENT,ENGF0034
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467895
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0034 CA5 Pacman specification (15%) — TIME TBC — c
+ onfirm the time
+TRIGGER;VALUE=DATE-TIME:20261209T090000Z
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:753f720bcc7cc3092b958de8@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:ASSESSMENT: ENGF0001 Team 21 bioreactor demo (10%) — TIME TBC
+DESCRIPTION:The current Task 10.1 page explicitly says Monday 14 December 2
+ 026. The 2026 timetable places demonstrations in MPEB 6.02 during the afte
+ rnoon. The downloadable DemoSchedule.pdf is explicitly dated 8 December 20
+ 25: its Team 21 slot of 16:00–16:40 is historical and is NOT a confirmed
+  2026 booking. Obtain the updated Team 21 slot before attending. The instr
+ uctions describe a live working-system demo and viva\; all team members sh
+ ould be ready to explain the system.\n\nCertainty: Date published\; Team 2
+ 1 time TBC\nTimezone: Europe/London (GMT during this calendar).\nSnapshot:
+  15 November 2026\; this file does not sync automatically.\nSources:\nhttp
+ s://moodle.ucl.ac.uk/mod/page/view.php?id=9105595\nhttps://moodle.ucl.ac.u
+ k/mod/resource/view.php?id=9105507\nhttps://moodle.ucl.ac.uk/mod/resource/
+ view.php?id=9105597
+CATEGORIES:ASSESSMENT,ENGF0001
+URL:https://moodle.ucl.ac.uk/mod/page/view.php?id=9105595
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ASSESSMENT: ENGF0001 Team 21 bioreactor demo (10%) — TIME TBC
+  — confirm the time
+TRIGGER;VALUE=DATE-TIME:20261213T090000Z
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1f87db1ebf47d3f63a13eccc@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART;VALUE=DATE:20261214
+DTEND;VALUE=DATE:20261215
+SUMMARY:UNCONFIRMED: COMP0002 Haskell test (5%) — classmate-reported date
+DESCRIPTION:DATE NOT VERIFIED: a classmate reportedly recalled 14 December 
+ from an early lecture. The test itself and 5% weighting are confirmed by S
+ lides 1\, page 8. All accessible programming PDFs\, current sections and s
+ tandard forum announcements were rechecked on 15 November\; none establish
+ es this date. Spoken announcements and Panopto transcripts were not access
+ ible\, so the classmate may still be correct. This all-day tentative marke
+ r is a planning precaution\, not a confirmed test booking. Time\, venue an
+ d date must be confirmed with Dr David Clark or in the personal timetable.
+  It falls on the confirmed ENGF0001 demo date\, so check for a potential c
+ lash\; no clash is established without the times.\n\nCertainty: UNCONFIRME
+ D date: classmate report only\; test and 5% weight confirmed\nTimezone: Eu
+ rope/London (GMT during this calendar).\nSnapshot: 15 November 2026\; this
+  file does not sync automatically.\nSources:\nhttps://moodle.ucl.ac.uk/mod
+ /resource/view.php?id=8508469\nhttps://moodle.ucl.ac.uk/mod/resource/view.
+ php?id=8508455\nhttps://moodle.ucl.ac.uk/course/section.php?id=1378607
+CATEGORIES:ASSESSMENT,COMP0002
+URL:https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508469
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:UNCONFIRMED: COMP0002 Haskell test (5%) — classmate-reported 
+ date — confirm the time
+TRIGGER;VALUE=DATE-TIME:20261213T090000Z
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:78cd50edc7d0c7e22e0864eb@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261218T140000Z
+SUMMARY:DUE: ENGF0001 Team Final Report (30%)
+DESCRIPTION:One team member submits a Word or PDF report\; one member also 
+ completes the referencing and AI tools declaration. Use the supplied repor
+ t template and rubric. The overview says 9 pages excluding references/appe
+ ndices\, while the submission box describes a penalty above 10 pages exclu
+ ding references: target the stricter 9-page guidance and clarify the limit
+ . Moodle status rechecked on 15 November: not submitted.\n\nCertainty: Pub
+ lished\nTimezone: Europe/London (GMT during this calendar).\nSnapshot: 15 
+ November 2026\; this file does not sync automatically.\nSources:\nhttps://
+ moodle.ucl.ac.uk/mod/assign/view.php?id=9105625\nhttps://moodle.ucl.ac.uk/
+ course/section.php?id=1467573\nhttps://moodle.ucl.ac.uk/mod/url/view.php?i
+ d=9105624
+CATEGORIES:ASSESSMENT,ENGF0001
+URL:https://moodle.ucl.ac.uk/mod/assign/view.php?id=9105625
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Team Final Report (30%)
+TRIGGER:-P3D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Team Final Report (30%)
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Team Final Report (30%)
+TRIGGER:-PT2H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cdfdf7177f26e753120a7dcd@ucl-study-calendar.local
+DTSTAMP:20261115T155413Z
+LAST-MODIFIED:20261115T155413Z
+SEQUENCE:1
+CLASS:PRIVATE
+DTSTART:20261223T140000Z
+SUMMARY:DUE: ENGF0001 Individual Contribution to Teamwork / IPAC (10%)
+DESCRIPTION:AFTER TERM ENDS: included because it is a required assessment a
+ rising from this term. Personally complete the IPAC ratings and feedback f
+ or your teammates and yourself. The explicit assessment deadline is 14:00 
+ on 23 December\; a later closing date inside IPAC allows late submission a
+ nd does not replace this deadline. Weekly minutes are part of this compone
+ nt: the team should submit at least six records\, aiming for within 48 hou
+ rs of each on-campus team meeting.\n\nCertainty: Published\nTimezone: Euro
+ pe/London (GMT during this calendar).\nSnapshot: 15 November 2026\; this f
+ ile does not sync automatically.\nSources:\nhttps://moodle.ucl.ac.uk/cours
+ e/section.php?id=1467573\nhttps://moodle.ucl.ac.uk/mod/lti/view.php?id=910
+ 5609\nhttps://moodle.ucl.ac.uk/mod/url/view.php?id=9105606
+CATEGORIES:ASSESSMENT,ENGF0001
+URL:https://moodle.ucl.ac.uk/course/section.php?id=1467573
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Individual Contribution to Teamwork / IPAC (10%)
+TRIGGER:-P3D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Individual Contribution to Teamwork / IPAC (10%)
+TRIGGER:-P1D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:DUE: ENGF0001 Individual Contribution to Teamwork / IPAC (10%)
+TRIGGER:-PT2H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

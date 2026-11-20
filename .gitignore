@@ -1,0 +1,17 @@
+# Python caches and compiled coursework programs
+__pycache__/
+*.py[cod]
+*.exe
+*.o
+*.obj
+
+# Local tooling, working files, and browser profiles
+.review-tools/
+.slide-tools/
+.study-guide-tools/
+.study-guide-work/
+.resource-work/
+.edge-preview-profile/
+
+# Download audit caches; published calendars and sources remain tracked
+/Academic Calendar/audit-*/
