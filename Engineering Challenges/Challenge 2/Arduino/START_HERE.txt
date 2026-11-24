@@ -1,0 +1,96 @@
+NANO ESP32 - THERMISTOR DEVELOPMENT ENVIRONMENT
+
+Open Heating_Thermistor_Test\Heating_Thermistor_Test.ino in Arduino IDE.
+
+Installed software found on this PC:
+  Arduino IDE 2.3.10
+  Arduino CLI 1.5.1 (bundled with the IDE)
+  esp32 by Espressif Systems 3.3.12
+  Board profile: Arduino Nano ESP32
+  FQBN: esp32:esp32:nano_nora:PinNumbers=default,USBMode=default
+
+IDE SETTINGS
+  Tools > Board > esp32 > Arduino Nano ESP32
+  Tools > Pin Numbering > By Arduino pin (default)
+  Tools > USB Mode > Normal mode (TinyUSB)
+  Serial Monitor baud: 115200
+
+Choose "Arduino Nano ESP32", not the AVR "Arduino Nano".
+The installed Espressif package already contains the compiler and board
+profile; no additional sketch library is needed. Windows also requires
+Arduino's DFU USB driver for normal uploads. See USB_UPLOAD_TROUBLESHOOTING.txt
+if uploading reports LIBUSB_ERROR_NOT_FOUND or exit status 74.
+
+FIRST RUN
+  1. Leave the heater supply disconnected. Power the Nano through USB-C.
+  2. Open the sketch and check the board settings above.
+  3. Use Verify (check mark) to compile.
+  4. Connect the Nano with a USB data cable and choose its detected port.
+  5. Use Upload, then open Tools > Serial Monitor at 115200 baud.
+
+The connected Nano was subsequently detected on COM7. Its missing DFU driver
+was installed and this thermistor sketch was successfully uploaded while
+troubleshooting the upload error. The port number may change after reconnecting.
+The Verify helper compiles only; it does not upload.
+
+WIRING USED BY THIS SKETCH
+  Nano 3V3 -> 10 kohm fixed resistor -> junction -> NTC thermistor -> GND
+  Junction -> A0
+  D5 -> existing MOSFET gate-control circuit; D5 is held LOW at all times.
+
+CONFIGURATION
+  Config.h contains the pin labels, sample interval and resistor/supply values.
+  The defaults are a 10,000-ohm fixed resistor and a nominal 3300 mV divider rail.
+  Update them to actual measured values during calibration.
+  The kit-list thermistor ND06P00103K uses 10,000 ohms at 25 C and beta 4220 K.
+  temperatureOffsetC defaults to zero; only change it after calibration.
+  If your thermistor is a different part, update its resistance and beta first.
+
+OUTPUT
+  Default output is one readable line per second, for example:
+    Temperature: 23.4 C
+  This example illustrates the format; it is not a recorded measurement.
+
+  Set csvOutput = true in Config.h to enable logging with this header:
+    time_ms,temperature_C,raw_adc,voltage_mV,resistance_ohm,status
+
+  Samples are averaged over 16 conversions and printed every 1000 ms.
+  Raw ADC and calibrated millivolts are separate conversions.
+  At 25 C with a 10 kohm thermistor and 10 kohm fixed resistor, the expected
+  divider voltage is approximately 1650 mV and resistance is 10,000 ohms.
+  A raw ADC count should not be treated as a perfectly linear voltage value.
+  Warming the NTC should decrease voltage and resistance.
+
+  Status OK means the reading is within the configured electrical range.
+  LOW_OR_SHORT / HIGH_OR_OPEN flag readings near the range limits. These
+  flags suggest wiring or range problems; they are not definitive diagnoses.
+  The default display reports "Temperature unavailable" for flagged readings.
+  CSV temperature and resistance are left blank for flagged readings.
+  Zero-length fields must be handled as missing data by a CSV parser.
+
+  Celsius conversion uses the thermistor beta equation with the nominal
+  ND06P00103K coefficients from the kit datasheet. R25 tolerance is +/-10% and
+  the beta model and ADC introduce additional errors, so compare against a
+  thermometer before relying on accuracy. Displaying a decimal place does
+  not imply 0.1 C accuracy. Warming the probe should raise the displayed
+  temperature. The heater output remains LOW regardless of the reading.
+
+  The CSV is intended for Serial Monitor/logging; use numeric-only output if
+  you later add a dedicated Serial Plotter view.
+
+HELPER SCRIPTS
+  From PowerShell in this Arduino folder, or double-click the CMD files:
+    .\Verify.cmd             Compile using the installed ESP32 tools.
+    .\Open_Arduino_IDE.cmd   Open this sketch in the installed IDE.
+
+  Windows currently restricts PowerShell script execution. The CMD helpers
+  work without changing that policy. PS1 equivalents are also provided for
+  environments that already permit local scripts.
+
+  Verify stores build products in .build\Heating_Thermistor_Test.
+  It never uploads a sketch or enables the heater.
+
+REFERENCE
+  https://docs.espressif.com/projects/arduino-esp32/en/latest/api/adc.html
+  https://www.farnell.com/datasheets/86133.pdf
+  The sketch was written against the locally installed 3.3.12 ADC header.

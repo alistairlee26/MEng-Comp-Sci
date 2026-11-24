@@ -1,0 +1,45 @@
+Setup verification: 23 November 2026
+
+Arduino IDE 2.3.10 was already installed and has been launched with the starter sketch.
+Bundled Arduino CLI: 1.5.1
+Installed ESP32 platform used: esp32:esp32 3.3.12
+Board: Arduino Nano ESP32
+FQBN: esp32:esp32:nano_nora:PinNumbers=default,USBMode=default
+
+Actual compiler verification: PASSED, warnings level 'more'.
+Program storage: 364382 / 3145728 bytes (11%).
+Global variables: 55380 / 327680 bytes (16%).
+No extra libraries were required.
+
+Initial USB discovery found no attached board. A later check, after connection,
+detected the Nano on COM7 and identified a missing Windows DFU driver (code 28).
+
+Follow-up repair and upload: PASSED, 23 November 2026.
+Official Arduino Nano ESP32 DFU driver installed as oem122.inf.
+Signed driver catalog verified as Arduino SA; official archive SHA-256 checked.
+DFU interface became accessible to dfu-util.
+The current thermistor sketch was compiled again and uploaded successfully:
+364528 bytes transferred, Download done, Done, new upload port COM7.
+
+An independent serial-read attempt was denied access to COM7, so live sensor
+values have not been independently verified. Serial Monitor or another serial
+application may already hold the port. Use the Arduino IDE monitor at 115200 baud.
+
+Open START_HERE.txt for settings and first-run instructions.
+
+Celsius display update: PASSED, 23 November 2026.
+Nominal kit thermistor coefficients verified against the course-linked data sheet:
+ND06P00103K, 10000 ohms at 25 C, beta 4220 K.
+The sketch now prints readable Celsius once per second by default; CSV remains
+available through Config::csvOutput. Invalid electrical readings suppress the
+temperature instead of printing an invalid number. D5 remains LOW.
+
+Compilation passed: 365254 bytes program storage, 55380 bytes global variables.
+Upload passed: 365408 bytes transferred; Nano returned on COM7.
+Calculation sanity check: 10 kohms -> 25.00 C; 20 kohms -> 11.08 C;
+5 kohms -> 40.35 C using the configured nominal beta equation.
+
+The board was returned to its running sketch after serial handshaking selected
+USB boot mode during a capture attempt. COM7 is currently held by the IDE's
+monitor; no independent live Celsius capture was obtained. Calibration against
+a thermometer and confirmation of the actual resistor/thermistor remain pending.

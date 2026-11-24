@@ -1,0 +1,4 @@
+.build/
+.tools/
+Nano_DFU_Driver_Install.log
+Nano_DFU_Driver_Install.exitcode

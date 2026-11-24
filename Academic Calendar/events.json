@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-15T15:54:13+00:00",
+  "as_of": "2026-11-23T14:31:27+00:00",
   "timezone": "Europe/London",
   "term_end": "2026-12-18",
   "team": 21,
@@ -11,7 +11,7 @@
       "end": null,
       "category": "Milestone",
       "course": "COMP0002",
-      "notes": "The functional programming half runs 16 November–18 December. The first module slides confirm a 5% Haskell in-class test and a 90% Term 3 exam. A classmate reports 14 December for the test, but no written confirmation was found. Confirm the test date/time with Dr David Clark; consult your personal timetable for lectures and your allocated lab.",
+      "notes": "Haskell teaching began 16 November. The introduction slides now confirm the 5% in-class test for 17 December at 10:00. The Week 7 page directs synchronous lecture attendance through the Week 6 Zoom button; follow the current Haskell instructions rather than assuming the C lecture arrangement continues.",
       "sources": [
         "https://moodle.ucl.ac.uk/course/section.php?id=1378607",
         "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508469"
@@ -136,14 +136,15 @@
       "end": null,
       "category": "Assessment",
       "course": "COMP0002",
-      "notes": "Submit COMP0002CW1.zip to Moodle: C source, readMe (maximum one page), and required data/images. Exclude compiled files and the supplied DrawApp files. Brief and Moodle agree on 16:00 UK time. Moodle status rechecked on 15 November: new, not submitted. Personal extensions may change your deadline.",
+      "notes": "Moodle rechecked 23 November: submitted; last modified 17 November 2026 at 21:47. Graded: No. Original deadline was 18 November at 16:00.",
       "sources": [
         "https://moodle.ucl.ac.uk/mod/assign/view.php?id=8508448",
         "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508574"
       ],
       "optional": false,
       "certainty": "Published",
-      "weight": "5%"
+      "weight": "5%",
+      "completed": true
     },
     {
       "id": "careers-focus",
@@ -266,6 +267,39 @@
       "weight": null
     },
     {
+      "id": "social-impact-session-window",
+      "title": "CHECK TIMETABLE: ENGF0001 Social Impact lecture this week",
+      "start": "2026-11-23",
+      "end": "2026-11-28",
+      "category": "Window",
+      "course": "ENGF0001",
+      "notes": "The 20 November staff announcement and current weekly overview confirm an additional CS/EEE Social Impact lecture during 23–27 November. It is in addition to the usual Challenge 2 workshop. The personal time/room is not exposed here. This window is not a booked all-day lecture.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467527",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467589"
+      ],
+      "optional": false,
+      "certainty": "Week published; personal time and room TBC",
+      "weight": null
+    },
+    {
+      "id": "writing-skills-session-window",
+      "title": "CHECK TIMETABLE: ENGF0001 Writing Skills lecture",
+      "start": "2026-11-23",
+      "end": "2026-12-05",
+      "category": "Window",
+      "course": "ENGF0001",
+      "notes": "Staff announcement dated 23 November says the Writing Skills lecture is this week or next, delivered by Dr Geri Popova or Chris Wallace. Check the personal timetable for the actual session. New report-writing resources are in Week 7. This current announcement supersedes the older 5/7 December wording for planning; no individual slot has been guessed.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1467569"
+      ],
+      "optional": false,
+      "certainty": "Two-week window published; personal time and room TBC",
+      "weight": null
+    },
+    {
       "id": "ethics-tasks",
       "title": "ENGF0034: Ethics tasks this week",
       "start": "2026-11-23",
@@ -288,7 +322,7 @@
       "end": "2026-11-28",
       "category": "Event",
       "course": "Transition",
-      "notes": "The final wrap-up session is in the week commencing 23 November. The week-long entry marks a scheduling window, not a meeting every day. Confirm your actual session with your mentor. Programme evaluation survey also mentioned, with no fixed deadline.",
+      "notes": "The final Transition Mentor session is in the week commencing 23 November. This is a scheduling window, not a meeting every day; confirm the actual personal session. A new mentee evaluation survey offers a prize draw for responses by 11 December.",
       "sources": [
         "https://moodle.ucl.ac.uk/course/section.php?id=1434967"
       ],
@@ -367,7 +401,7 @@
       "end": null,
       "category": "Assessment",
       "course": "ENGF0034",
-      "notes": "Deadline date from the current course calendar; exact 23:59 UK time from the linked assignment brief. Set up UCL GitLab, sign in to the grading server, enrol in Tetris and push code to your fork. Check the server has received and run your submitted version. Moodle assignment status does not cover this external submission.",
+      "notes": "Deadline remains Wednesday 25 November at 23:59 UK time. The current GitHub assignment brief is unchanged since the previous audit. Push to your UCL GitLab Tetris fork and verify receipt/processing on the grading server. The brief warns of multi-hour queues near the cutoff. A Tetris follow-up PDF is newly available. External submission state is not exposed by the Moodle tool.",
       "sources": [
         "https://moodle.ucl.ac.uk/course/section.php?id=1467895",
         "https://github.com/UCL-ENGF0034-2026/course-materials/blob/main/Assignment%204%20brief/assignment4.pdf"
@@ -383,7 +417,7 @@
       "end": null,
       "category": "Release",
       "course": "ENGF0034",
-      "notes": "The course calendar schedules the CA5 release and CA5.0 Pacman video today. Read the new brief to confirm the exact 10 December cutoff and submission method.",
+      "notes": "Scheduled release of CA5 and the CA5.0 Pacman video in the current course calendar. As of 23 November the brief has not appeared; check today for exact submission time, route and instructions for the 10 December due date.",
       "sources": [
         "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
       ],
@@ -401,6 +435,21 @@
       "notes": "Henry Morley building, G03 (the course calendar prints GO3). No booking required; bring questions or come if you are unsure where to start.",
       "sources": [
         "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+      ],
+      "optional": true,
+      "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "careers-microsoft-nov26",
+      "title": "OPTIONAL: Microsoft fireside chat on agentic engineering",
+      "start": "2026-11-26T18:00",
+      "end": "2026-11-26T20:30",
+      "category": "Event",
+      "course": "Careers",
+      "notes": "UCL Data Science Society x Microsoft: Agentic Engineering and the Future of AI. Room G06, Roberts Building. The 16 November Careers announcement supplies the date/time/location. Read the full post for registration and availability; no booking has been made.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/forum/view.php?id=8764831"
       ],
       "optional": true,
       "certainty": "Published",
@@ -597,7 +646,7 @@
       "end": null,
       "category": "Assessment",
       "course": "ENGF0001",
-      "notes": "Individual submission using the supplied template, Word or PDF, maximum 1,200 words. Complete the referencing / generative AI declaration form as part of submission. Current submission instructions give the word limit; older overview text calls this a two-page report. Moodle status rechecked on 15 November: new (not submitted), last modified 13 November at 20:09.",
+      "notes": "Individual report due 4 December at 14:00. Use the supplied template, Word or PDF, maximum 1,200 words, and complete the referencing / generative AI declaration. Moodle rechecked 23 November: new, not submitted (last modified 13 November at 20:09). The 20 November announcement confirms an additional Social Impact lecture during 23–27 November, separate from the regular workshop; check your personal timetable.",
       "sources": [
         "https://moodle.ucl.ac.uk/mod/assign/view.php?id=9105891",
         "https://moodle.ucl.ac.uk/course/section.php?id=1467589",
@@ -678,7 +727,7 @@
       "end": null,
       "category": "Assessment",
       "course": "ENGF0034",
-      "notes": "The 2026 course calendar places CA5 due on Thursday 10 December. No cutoff time, submission link or CA5 brief was published in the accessible material. This is a date-only deadline, not a 23:59 deadline. Check the brief when released on 26 November. Weight and task name are from How to use this course.",
+      "notes": "The current ENGF0034 calendar still schedules CA5/Pacman release on Thursday 26 November and submission on Thursday 10 December. As checked on 23 November, no CA5 brief or exact cutoff time is visible in the course repository or Moodle assignment listings. The deadline stays date-only; do not assume 23:59. Check the brief when it is released.",
       "sources": [
         "https://moodle.ucl.ac.uk/course/section.php?id=1467895",
         "https://moodle.ucl.ac.uk/course/section.php?id=1467896"
@@ -715,6 +764,22 @@
       ],
       "optional": true,
       "certainty": "Published",
+      "weight": null
+    },
+    {
+      "id": "mentor-evaluation-raffle",
+      "title": "OPTIONAL: Mentee evaluation prize-draw cutoff — TIME TBC",
+      "start": "2026-12-11",
+      "end": null,
+      "category": "Survey",
+      "course": "Transition",
+      "notes": "The newly visible Mentee Programme Evaluation section says responses by 11 December enter a draw for one of five Love2Shop vouchers. This is an incentive cutoff, not a graded assessment or a confirmed survey closure. Exact time is not supplied.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/course/section.php?id=1434958",
+        "https://forms.cloud.microsoft/e/BL41UAec28"
+      ],
+      "optional": true,
+      "certainty": "Date published; time TBC",
       "weight": null
     },
     {
@@ -810,23 +875,6 @@
       "weight": null
     },
     {
-      "id": "comp0002-haskell-provisional",
-      "title": "UNCONFIRMED: COMP0002 Haskell test (5%) — classmate-reported date",
-      "start": "2026-12-14",
-      "end": null,
-      "category": "Assessment",
-      "course": "COMP0002",
-      "notes": "DATE NOT VERIFIED: a classmate reportedly recalled 14 December from an early lecture. The test itself and 5% weighting are confirmed by Slides 1, page 8. All accessible programming PDFs, current sections and standard forum announcements were rechecked on 15 November; none establishes this date. Spoken announcements and Panopto transcripts were not accessible, so the classmate may still be correct. This all-day tentative marker is a planning precaution, not a confirmed test booking. Time, venue and date must be confirmed with Dr David Clark or in the personal timetable. It falls on the confirmed ENGF0001 demo date, so check for a potential clash; no clash is established without the times.",
-      "sources": [
-        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508469",
-        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508455",
-        "https://moodle.ucl.ac.uk/course/section.php?id=1378607"
-      ],
-      "optional": false,
-      "certainty": "UNCONFIRMED date: classmate report only; test and 5% weight confirmed",
-      "weight": "5%"
-    },
-    {
       "id": "dps-tue-2026-12-15",
       "title": "ENGF0034: CS lecture",
       "start": "2026-12-15T11:00",
@@ -885,6 +933,23 @@
       "optional": true,
       "certainty": "Published",
       "weight": null
+    },
+    {
+      "id": "comp0002-haskell-provisional",
+      "title": "ASSESSMENT: COMP0002 Haskell in-class test (5%)",
+      "start": "2026-12-17T10:00",
+      "end": null,
+      "category": "Assessment",
+      "course": "COMP0002",
+      "notes": "The newly available Comp0002-26-27-Intro.pdf, page 2, explicitly gives Thursday 17 December at 10:00 for the 5% in-class test in the Q&A session. This replaces the previously unconfirmed classmate-reported 14 December marker. End time, duration, venue and detailed test conditions are not published in this source; check the lecturer and personal timetable for those details. The event keeps the previous calendar UID so an update can move the existing marker.",
+      "sources": [
+        "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9502411",
+        "https://moodle.ucl.ac.uk/course/section.php?id=1378622"
+      ],
+      "optional": false,
+      "certainty": "Published",
+      "weight": "5%",
+      "date_verified": true
     },
     {
       "id": "clinic-2026-12-17",
@@ -953,7 +1018,7 @@
       "end": null,
       "category": "Assessment",
       "course": "ENGF0001",
-      "notes": "One team member submits a Word or PDF report; one member also completes the referencing and AI tools declaration. Use the supplied report template and rubric. The overview says 9 pages excluding references/appendices, while the submission box describes a penalty above 10 pages excluding references: target the stricter 9-page guidance and clarify the limit. Moodle status rechecked on 15 November: not submitted.",
+      "notes": "One team member submits the final Word/PDF report and one completes the team declaration. Deadline remains 18 December at 14:00. Moodle rechecked 23 November: not submitted. Overview and submission activity retain inconsistent 9/10-page wording; target the stricter 9-page guidance and clarify. New Writing Skills sessions take place this week or next (23 November–4 December); check your personal timetable.",
       "sources": [
         "https://moodle.ucl.ac.uk/mod/assign/view.php?id=9105625",
         "https://moodle.ucl.ac.uk/course/section.php?id=1467573",
@@ -983,54 +1048,131 @@
   ],
   "watchlist": [
     [
-      "COMP0002 Haskell in-class test: 14 December is unconfirmed",
-      "Slides 1, page 8 confirms the test is worth 5%; the classmate reports 14 December from an early lecture. No accessible written source gives that date. The calendar includes a tentative all-day marker labelled UNCONFIRMED, not a booked test. Confirm date, time and venue with Dr David Clark at the first Haskell session; 14 December is also the confirmed Engineering Challenges demo date.",
-      "https://moodle.ucl.ac.uk/mod/resource/view.php?id=8508469"
+      "Personal Social Impact and Writing Skills slots",
+      "The week/range is confirmed, but the precise group time/room requires your personal timetable. The Social Impact lecture is additional to the regular workshop.",
+      "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151"
     ],
     [
-      "COMP0147 exam: 100% of the module; mock date TBC",
-      "The official 2026/27 UCL catalogue confirms 100% Exam. No exact exam date/time or duration was found. Week 10 mentions a mock test with no date or graded weighting. The exercise sheets are practice, and exam-style questions in them are not new deadlines. No exam booking has been invented.",
-      "https://www.ucl.ac.uk/module-catalogue/modules/discrete-mathematics-for-computer-scientists-COMP0147"
-    ],
-    [
-      "COMP0147 weekly lectures and PBL",
-      "Attend your allocated lecture/PBL sessions and work through the problem lists. The November announcement says teaching resumes on Tuesday 17 November; October posts mention a 09:00 main lecture and afternoon PBL, but they do not establish the remaining term timetable. No recurring times have been inferred from those posts.",
-      "https://moodle.ucl.ac.uk/mod/forum/view.php?id=8511614"
-    ],
-    [
-      "COMP0002 lectures and allocated programming lab",
-      "The module specifies three lecture hours and one two-hour allocated lab per teaching week; group times require the personal timetable. These sessions are not in the generated calendar.",
-      "https://moodle.ucl.ac.uk/course/section.php?id=1378607"
-    ],
-    [
-      "ENGF0001 Team 21 demo time",
-      "14 December 2026 is confirmed by Task 10.1. The attached demo schedule is dated 8 December 2025 and gives Team 21 a historical 16:00–16:40 slot. Do not use that slot as a 2026 booking; request the current schedule.",
-      "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105597"
-    ],
-    [
-      "ENGF0001 social-impact workshop",
-      "The social-impact page says the workshop is in a Monday afternoon or Wednesday morning slot and to check the personal timetable. The 25 November reference concerns release of slides/recording, not a confirmed personal workshop booking.",
-      "https://moodle.ucl.ac.uk/course/section.php?id=1467589"
-    ],
-    [
-      "ENGF0001 report-writing sessions",
-      "The Week 7 page mentions 5 and 7 December, with no times. 5 December 2026 is a Saturday, and the surrounding teaching material includes old dates. These two dates are listed for confirmation and have not been imported as confirmed sessions.",
-      "https://moodle.ucl.ac.uk/course/section.php?id=1467569"
-    ],
-    [
-      "CA5 exact submission time and route",
-      "10 December is the date in the current course calendar. The linked GitHub repository has no CA5 brief at this snapshot. Check the scheduled 26 November release; no 23:59 cutoff has been invented.",
+      "Pacman cutoff and submission route",
+      "10 December remains the published due date. The exact time and brief are not visible as of 23 November; check the scheduled 26 November release.",
       "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
     ],
     [
-      "ENGF0034 ethics report is in Term 2",
-      "The 2026 opening lecture places the ethics report (15%) in Term 2, week 7; presentations (10%) in Term 2 Reading Week; scenarios (40%) in Term 2. They have no verified current exact submission dates here and are outside this Term 1 calendar. The 23 November ethics tasks and 24 November lecture remain current teaching activities. Ignore the stale February 2021 date.",
-      "https://github.com/UCL-ENGF0034-2026/course-materials/blob/main/Week%201/ENGF34-2026%20Opening%20lecture.pdf"
+      "Team 21 demonstration slot",
+      "Current activity confirms 14 December 2026. The attached demo timetable is still dated 2025, so its historical 16:00–16:40 slot is not a verified booking for this year.",
+      "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9105597"
     ],
     [
-      "Personal extensions and timetable changes",
-      "The calendar is based on visible course-level dates, not an independently verified extension record or your personal timetable. Check the Moodle submission box for any extension and UCL Timetable for group/room changes.",
-      "https://moodle.ucl.ac.uk/mod/url/view.php?id=9207933"
+      "Haskell test logistics",
+      "17 December at 10:00 is now published in the current Haskell introduction. End time, duration, room and detailed conditions are not established by that slide. Week 7 Zoom instructions apply to lectures; they do not by themselves establish the test venue.",
+      "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9502411"
+    ],
+    [
+      "Discrete Maths exam timetable",
+      "The lecturer expects May 2027 and says the exact date will be known around late March/April. The module is 100% exam-assessed; Week 10 mock timing remains unpublished.",
+      "https://moodle.ucl.ac.uk/mod/forum/view.php?id=8511614"
+    ],
+    [
+      "Team report page limit",
+      "The overview and submission box still differ between 9 and 10 pages. Work to the stricter 9-page guidance and clarify with staff.",
+      "https://moodle.ucl.ac.uk/course/section.php?id=1467573"
     ]
-  ]
+  ],
+  "period_start": "2026-11-23",
+  "period_end": "2026-12-23",
+  "week_start": "2026-11-23",
+  "week_end": "2026-11-29",
+  "sequence": 2,
+  "audit_report": "audit-2026-11-23/update-report.md",
+  "previous_audit_report": "audit-2026-11-15/audit-report.md",
+  "changes": [
+    {
+      "title": "Haskell test date confirmed",
+      "text": "Thursday 17 December, 10:00; 5% of COMP0002, in the Q&A session. Replaces the unverified 14 December marker.",
+      "source": "https://moodle.ucl.ac.uk/mod/resource/view.php?id=9502411"
+    },
+    {
+      "title": "C coursework submitted",
+      "text": "Moodle shows submitted on 17 November at 21:47; no grade released. It is no longer outstanding.",
+      "source": "https://moodle.ucl.ac.uk/mod/assign/view.php?id=8508448"
+    },
+    {
+      "title": "Social Impact lecture added this week",
+      "text": "An additional session during 23–27 November, separate from regular project workshops. Check the personal timetable.",
+      "source": "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151"
+    },
+    {
+      "title": "Writing Skills session this week or next",
+      "text": "The 23 November announcement places the session in 23 November–4 December. Check the personal timetable; newer than the old 5/7 December label.",
+      "source": "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151"
+    },
+    {
+      "title": "Discrete Maths exam expected May 2027",
+      "text": "The 20 November announcement says the exact date will be known around late March or April. Examinable topics will be announced after lectures finish; there is no new Term 1 exam booking.",
+      "source": "https://moodle.ucl.ac.uk/mod/forum/view.php?id=8511614"
+    },
+    {
+      "title": "New weekly learning resources",
+      "text": "Haskell Weeks 6/7 and labsheets are now visible; Week 7 covers functions, higher-order functions and recursion. New C Slides 16 cover memory/OS topics. Maths has updated recursion material, updated List 6 and List 5 solutions.",
+      "source": "https://moodle.ucl.ac.uk/course/section.php?id=1378623"
+    },
+    {
+      "title": "Optional Microsoft event on 26 November",
+      "text": "18:00–20:30, Roberts G06. Read the Careers post for registration.",
+      "source": "https://moodle.ucl.ac.uk/mod/forum/view.php?id=8764831"
+    }
+  ],
+  "week_priorities": [
+    {
+      "title": "Finish and verify Tetris submission",
+      "text": "Due Wednesday 25 November at 23:59, worth 20% of ENGF0034. Push and check receipt on the grading server early; the brief warns about queues.",
+      "source": "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+    },
+    {
+      "title": "Attend the extra project sessions",
+      "text": "Check your timetable today for the additional Social Impact lecture this week and Writing Skills lecture this week or next. Both prepare you for the December reports.",
+      "source": "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151"
+    },
+    {
+      "title": "Complete ethics preparation and attend Tuesday’s session",
+      "text": "The current ENGF0034 calendar lists ethics tasks this week and the ethics lecture on Tuesday 24 November at 11:00, Birkbeck Euston Road room 402.",
+      "source": "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+    },
+    {
+      "title": "Read CA5 when it is released",
+      "text": "Pacman is scheduled for release Thursday 26 November, due 10 December. Confirm the exact cutoff and submission route from the new brief.",
+      "source": "https://moodle.ucl.ac.uk/course/section.php?id=1467895"
+    },
+    {
+      "title": "Keep up with Haskell and Discrete Maths",
+      "text": "Use Haskell Week 7 functions/recursion material and LabSheet2; its page directs synchronous attendance through the Week 6 Zoom button. Attempt the current maths problem sheet and use the updated induction/recursion resources.",
+      "source": "https://moodle.ucl.ac.uk/course/section.php?id=1378623"
+    },
+    {
+      "title": "Submit the team’s weekly minutes",
+      "text": "Agree one person to record and submit this week’s meeting. Check demonstration roles and build progress. The Social Impact Report is due next Friday, 4 December at 14:00, so start its template this week.",
+      "source": "https://moodle.ucl.ac.uk/course/section.php?id=1467573"
+    }
+  ],
+  "project_notices": [
+    {
+      "title": "New Week 6 controller guidance",
+      "text": "The page now explicitly says not to use delay() inside the main loop and specifies serial baud rate 2000000 rather than 9600. Read this before integrating controller code.",
+      "source": "https://moodle.ucl.ac.uk/course/section.php?id=1467568"
+    },
+    {
+      "title": "Microcontroller voltage notice",
+      "text": "The 20 November staff post distinguishes Uno 5V I/O from ESP32 3.3V I/O and says not to mix them. Read the full announcement before connecting subsystems.",
+      "source": "https://moodle.ucl.ac.uk/mod/forum/view.php?id=9105151"
+    }
+  ],
+  "completed_work": [
+    {
+      "title": "COMP0002 C coursework",
+      "deadline": "18 November, 16:00",
+      "status": "Submitted; last modified 17 November, 21:47. Not graded as of 23 November.",
+      "source": "https://moodle.ucl.ac.uk/mod/assign/view.php?id=8508448"
+    }
+  ],
+  "limits": "This update refreshed 13 current/support course outlines, assignment/quiz/resource listings and 17 standard forums, then read 19 relevant full sections, the newly available documents and changed GitHub lecture PDFs. It is a change review against 15 November, not a repeat transcription of all lecture recordings. Forum tools return excerpts, with replies/full hsuforum threads and the personal timetable unavailable. Two new controller PPTX downloads failed; the page-level coding notice was readable. One new Careers newsletter rendered only as undefined, so no dates were inferred from it. Exact personal slots, extensions and external GitLab submission state remain unverified."
 }

@@ -1,0 +1,46 @@
+NANO ESP32 UPLOAD: LIBUSB_ERROR_NOT_FOUND / EXIT STATUS 74
+
+Diagnosis on 23 November 2026:
+  Windows detected the Nano ESP32 at COM7 (USB VID 2341, PID 0070).
+  Its serial interface was working, but the separate Arduino DFU interface
+  had Windows problem code 28: no driver installed.
+
+The existing Espressif ESP32 platform supplies the Nano compiler/profile but
+does not install Arduino's Windows-specific DFU driver. The earlier setup
+check verified compilation only, while the Nano was not connected, and
+therefore missed this driver requirement.
+
+Repair prepared:
+  Official Arduino ESP32 package: 2.0.18-arduino.5.
+  Downloaded from the URL in Arduino's package index, with SHA-256 checked.
+  nanoesp32.cat signature verified as valid, signed by Arduino SA.
+  nanoesp32.inf matches USB\VID_2341&PID_0070&MI_00 specifically.
+
+Install_Nano_DFU_Driver.ps1 uses Windows PnPUtil to install that official
+driver. It must run as administrator; a Windows UAC permission prompt is
+expected. The repair targets the DFU interface, not the existing COM driver.
+The package was extracted under .tools\nano-dfu-driver in this project.
+
+Installation output is recorded in Nano_DFU_Driver_Install.log and its exit
+code in Nano_DFU_Driver_Install.exitcode. Exit code 0 indicates success;
+3010 means success with a restart required.
+
+After driver installation:
+  1. Device Manager should show Nano ESP32 DFU without a warning icon.
+  2. Select Arduino Nano ESP32 and the current COM port in the IDE.
+  3. Retry Upload. Keep the external heater supply disconnected.
+  4. If needed, unplug/reconnect USB and reselect the current port.
+  5. Open Serial Monitor at 115200 baud after a successful upload.
+
+This error alone does not justify erasing the flash or burning a bootloader.
+
+REPAIR RESULT
+  Installation succeeded: Windows published the driver as oem122.inf.
+  dfu-util could then open the board's DFU interface.
+  The thermistor sketch compiled and uploaded successfully (364528 bytes).
+  Nano returned on COM7. Open Serial Monitor at 115200 baud.
+  A separate serial reader was denied access, so no independent sensor data
+  capture was obtained; only one serial application should hold COM7 at a time.
+
+Official Arduino guidance:
+  https://docs.arduino.cc/tutorials/nano-esp32/debugging/
