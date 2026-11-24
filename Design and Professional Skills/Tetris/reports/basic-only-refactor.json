@@ -1,0 +1,102 @@
+{
+  "change": "retain ordinary chance search and resources while removing seed prediction and whole-game planning",
+  "backup_folder": "backups\\before-basic-only-20261124-023855",
+  "before_sha256": "f21d3ae3f2f1ae5dd553fd1c82d22c2cde43b92264f013703ba4f614e3fa4bd6",
+  "after_sha256": "243fc9a16a7539b59e09c1f058145330f47abd954bfd72fc7bc681c7ee9b940c",
+  "before_lines": 1109,
+  "after_lines": 866,
+  "unchanged_syntax": [
+    "Player",
+    "RandomPlayer",
+    "FallbackPlayer after renaming",
+    "Planner.make_templates",
+    "Planner.columns_from_board",
+    "Planner.collides",
+    "Planner.clear_rows",
+    "Planner.explode",
+    "Planner.measure",
+    "Planner.evaluate",
+    "Planner.resource_factor",
+    "Planner.candidate_priority",
+    "Planner.placements except unused line-count metadata",
+    "HeuristicPlayer.verify_plan",
+    "HeuristicPlayer.resource_landings except renamed fallback and unused metadata"
+  ],
+  "main_evaluation_weights": {
+    "height": 0.2,
+    "holes": 12.0,
+    "bumpiness": 0.6,
+    "danger": 1.0,
+    "setup": 1.0,
+    "well_fill": 0.0,
+    "discard_cost": 6.4,
+    "bomb_cost": 6.4,
+    "destroyed_cell_cost": 1.6
+  },
+  "full_game_checks": [
+    {
+      "case": "integer seed 42",
+      "seed": 42,
+      "python_version": "3.11.9",
+      "score_before": 56947,
+      "score_after": 56947,
+      "status": "block-limit",
+      "identical_decisions": 399,
+      "trace_sha256": "97662de9f6c3ab491db52fdd0dc10c7c708d8647db82064c6a68bcb9d5e79d58",
+      "cpu_before_seconds": 75.484,
+      "cpu_after_seconds": 71.844,
+      "bombs_used": 1,
+      "discards_used": 6
+    },
+    {
+      "case": "comparison seed with early loss",
+      "seed": "comparison-b-2418d849492e3e6c61ab66741d3d8622",
+      "python_version": "3.11.9",
+      "score_before": 36436,
+      "score_after": 36436,
+      "status": "top-out",
+      "identical_decisions": 319,
+      "trace_sha256": "1de3a660f553f79dea200443322bdb6a3df5ce2fc669a74e318dd96d8bf19e3a",
+      "cpu_before_seconds": 56.734,
+      "cpu_after_seconds": 56.672,
+      "bombs_used": 5,
+      "discards_used": 10
+    }
+  ],
+  "position_checks": {
+    "python_version": "3.7.9",
+    "identical_decisions": 192,
+    "planning_failures": 0,
+    "before_cpu_seconds": 4.75,
+    "after_cpu_seconds": 4.875,
+    "settings": {
+      "root_width": 2,
+      "preview_width": 2,
+      "time_limit": 100
+    },
+    "coverage": [
+      "all shapes including bombs",
+      "empty and high boards",
+      "holes and prepared wells",
+      "missing previews",
+      "one and two playable pieces left",
+      "varying resource budgets"
+    ]
+  },
+  "tests": {
+    "python_version": "3.7.9",
+    "passed": 33
+  },
+  "tool_checks": [
+    "benchmark and experiment completed short games",
+    "local launcher seed and manual interface verified",
+    "all active Python files compile on 3.7.9",
+    "PowerShell launcher help verified"
+  ],
+  "limitations": [
+    "local timing samples do not establish a speed change",
+    "the existing soft CPU limit can change candidate counts across machines",
+    "fallback counter now counts only actual emergency use"
+  ],
+  "pushed": false
+}

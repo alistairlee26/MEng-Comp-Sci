@@ -1,0 +1,59 @@
+[
+  {
+    "name": "basic-v1",
+    "algorithm": "baseline-v1",
+    "prediction": "missing"
+  },
+  {
+    "name": "basic-chance-resources",
+    "prediction": "missing",
+    "options": {
+      "basic_mode": "chance",
+      "basic_root_width": 6,
+      "basic_preview_width": 4,
+      "basic_time_limit": 0.5,
+      "basic_setup_rows": 8,
+      "allow_discards": true,
+      "allow_bombs": true,
+      "basic_weights": {
+        "height": 0.2,
+        "holes": 12.0,
+        "bumpiness": 0.6,
+        "danger": 1.0,
+        "setup": 1.0,
+        "well_fill": 0.0,
+        "discard_cost": 6.4,
+        "bomb_cost": 6.4,
+        "destroyed_cell_cost": 1.6
+      }
+    }
+  },
+  {
+    "name": "predicted-v1",
+    "algorithm": "baseline-v1",
+    "prediction": "environment"
+  },
+  {
+    "name": "predicted-whole-game",
+    "prediction": "environment",
+    "options": {
+      "whole_game": true,
+      "whole_game_width": 256,
+      "whole_game_time_limit": 260,
+      "setup_rows": 12,
+      "allow_discards": true,
+      "allow_bombs": true,
+      "search_weights": {
+        "height": 0.2,
+        "holes": 12.0,
+        "bumpiness": 0.6,
+        "danger": 1.0,
+        "setup": 1.0,
+        "well_fill": 0.0,
+        "discard_cost": 6.4,
+        "bomb_cost": 6.4,
+        "destroyed_cell_cost": 1.6
+      }
+    }
+  }
+]

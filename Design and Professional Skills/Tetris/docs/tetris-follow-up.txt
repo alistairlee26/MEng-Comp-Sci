@@ -1,0 +1,443 @@
+Assignment 4: Strategy and
+Implementation Hints
+Search Complexity, Target States, and Board Heuristics
+Martin Benning
+University College London
+ENGF0034 – Design and Professional Skills
+17 November 2026
+
+Presentation Overview
+Learning Objectives
+By the end of this session, you will be able to:
+1. Separate board-state evaluation from move-sequence
+generation in choose action.
+2. Analyse why exhaustive step-by-step action search
+(≈ 520) is computationally intractable.
+3. Reduce the search space to ⩽ 40 target landing
+configurations and handle rotation boundary effects.
+4. Extract structural heuristics (heights, buried holes,
+bumpiness, and score gain) from board.cells.
+Presentation Roadmap
+The Fundamental Assumption
+Strategy 1: Exhaustive Move Search
+Strategy 2: Target-State Search
+Evaluating the Board (Heuristics)
+Accessing Board Data and Practical Advice
+Summary
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 2 / 18
+
+Presentation Overview
+Learning Objectives
+By the end of this session, you will be able to:
+1. Separate board-state evaluation from move-sequence
+generation in choose action.
+2. Analyse why exhaustive step-by-step action search
+(≈ 520) is computationally intractable.
+3. Reduce the search space to ⩽ 40 target landing
+configurations and handle rotation boundary effects.
+4. Extract structural heuristics (heights, buried holes,
+bumpiness, and score gain) from board.cells.
+Presentation Roadmap
+The Fundamental Assumption
+Strategy 1: Exhaustive Move Search
+Strategy 2: Target-State Search
+Evaluating the Board (Heuristics)
+Accessing Board Data and Practical Advice
+Summary
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 2 / 18
+
+Presentation Overview
+Learning Objectives
+By the end of this session, you will be able to:
+1. Separate board-state evaluation from move-sequence
+generation in choose action.
+2. Analyse why exhaustive step-by-step action search
+(≈ 520) is computationally intractable.
+3. Reduce the search space to ⩽ 40 target landing
+configurations and handle rotation boundary effects.
+4. Extract structural heuristics (heights, buried holes,
+bumpiness, and score gain) from board.cells.
+Presentation Roadmap
+The Fundamental Assumption
+Strategy 1: Exhaustive Move Search
+Strategy 2: Target-State Search
+Evaluating the Board (Heuristics)
+Accessing Board Data and Practical Advice
+Summary
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 2 / 18
+
+Presentation Overview
+Learning Objectives
+By the end of this session, you will be able to:
+1. Separate board-state evaluation from move-sequence
+generation in choose action.
+2. Analyse why exhaustive step-by-step action search
+(≈ 520) is computationally intractable.
+3. Reduce the search space to ⩽ 40 target landing
+configurations and handle rotation boundary effects.
+4. Extract structural heuristics (heights, buried holes,
+bumpiness, and score gain) from board.cells.
+Presentation Roadmap
+The Fundamental Assumption
+Strategy 1: Exhaustive Move Search
+Strategy 2: Target-State Search
+Evaluating the Board (Heuristics)
+Accessing Board Data and Practical Advice
+Summary
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 2 / 18
+
+Presentation Overview
+Learning Objectives
+By the end of this session, you will be able to:
+1. Separate board-state evaluation from move-sequence
+generation in choose action.
+2. Analyse why exhaustive step-by-step action search
+(≈ 520) is computationally intractable.
+3. Reduce the search space to ⩽ 40 target landing
+configurations and handle rotation boundary effects.
+4. Extract structural heuristics (heights, buried holes,
+bumpiness, and score gain) from board.cells.
+Presentation Roadmap
+The Fundamental Assumption
+Strategy 1: Exhaustive Move Search
+Strategy 2: Target-State Search
+Evaluating the Board (Heuristics)
+Accessing Board Data and Practical Advice
+Summary
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 2 / 18
+
+The Fundamental Assumption
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 3 / 18
+
+Prerequisite: Scoring a Landed Board Position
+Separating Evaluation from Search
+We begin with a simplifying design assumption: suppose
+we have a function score board(board) that measures
+the strategic quality of a board state immediately after a
+block lands and any full rows are cleared.
+Resulting Control Objective
+Given score board, the job of choose action(board)
+reduces to finding a sequence of legal actions that
+maximises score board once the falling block lands.
+Evaluation Pipeline
+Post-Landing Board
+(sandbox)
+Heuristic Function
+(score board)
+Scalar Value E(s) ∈ R
+(Higher is Better)
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 4 / 18
+
+Prerequisite: Scoring a Landed Board Position
+Separating Evaluation from Search
+We begin with a simplifying design assumption: suppose
+we have a function score board(board) that measures
+the strategic quality of a board state immediately after a
+block lands and any full rows are cleared.
+Resulting Control Objective
+Given score board, the job of choose action(board)
+reduces to finding a sequence of legal actions that
+maximises score board once the falling block lands.
+Evaluation Pipeline
+Post-Landing Board
+(sandbox)
+Heuristic Function
+(score board)
+Scalar Value E(s) ∈ R
+(Higher is Better)
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 4 / 18
+
+Strategy 1: Exhaustive Move Search
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 5 / 18
+
+Idea 1: Trying Every Possible Move Sequence
+Recursive Action Search (try all moves)
+Following the Noughts and Crosses approach from Week 5,
+a natural first idea is to branch on every legal action at every
+row:
+1 def try_all_moves(board):
+2 best = float("-inf")
+3 for action in ALL_FIVE_ACTIONS:
+4 sandbox = board.clone()
+5 landed = apply_step(sandbox, action)
+6 if landed:
+7 val = score_board(sandbox)
+8 else:
+9 val = try_all_moves(sandbox)
+10 best = max(best, val)
+11 return best
+Correctness vs Efficiency
+▶ Soundness: The recursion is logically
+valid and visits every reachable trajectory
+until the block lands.
+▶ Redundancy: Thousands of distinct
+left-right-skip sequences end at the exact
+same landed placement.
+Key Engineering Question
+Before coding this search, how many recursive
+calls does a single falling block require?
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 6 / 18
+
+Idea 1: Trying Every Possible Move Sequence
+Recursive Action Search (try all moves)
+Following the Noughts and Crosses approach from Week 5,
+a natural first idea is to branch on every legal action at every
+row:
+1 def try_all_moves(board):
+2 best = float("-inf")
+3 for action in ALL_FIVE_ACTIONS:
+4 sandbox = board.clone()
+5 landed = apply_step(sandbox, action)
+6 if landed:
+7 val = score_board(sandbox)
+8 else:
+9 val = try_all_moves(sandbox)
+10 best = max(best, val)
+11 return best
+Correctness vs Efficiency
+▶ Soundness: The recursion is logically
+valid and visits every reachable trajectory
+until the block lands.
+▶ Redundancy: Thousands of distinct
+left-right-skip sequences end at the exact
+same landed placement.
+Key Engineering Question
+Before coding this search, how many recursive
+calls does a single falling block require?
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 6 / 18
+
+Complexity Analysis: Why Exhaustive Action Search Fails
+Branching Factor and Depth (Weeks 3 &
+5)
+▶ Branching factor (b = 5): Rotate clockwise,
+rotate anticlockwise, move left, move right, or
+skip/fall.
+▶ Search depth (d ≈ 20): The grid has 24 rows,
+giving roughly 20 downward steps before landing.
+The number of action sequences for one block grows as
+bd ≈ 520 ≈ 9.5 × 1013,
+and reaches 540 ≈ 9.1 × 1027 for a 2-block lookahead.
+Action-Tree Explosion
+d = 0
+... (520 leaves at d = 20)
+Intractable at Runtime
+Unlike Noughts and Crosses (5,478 states), 520
+states cannot be searched within human patience
+or the 15-minute / 256 MB server limits.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 7 / 18
+
+Complexity Analysis: Why Exhaustive Action Search Fails
+Branching Factor and Depth (Weeks 3 &
+5)
+▶ Branching factor (b = 5): Rotate clockwise,
+rotate anticlockwise, move left, move right, or
+skip/fall.
+▶ Search depth (d ≈ 20): The grid has 24 rows,
+giving roughly 20 downward steps before landing.
+The number of action sequences for one block grows as
+bd ≈ 520 ≈ 9.5 × 1013,
+and reaches 540 ≈ 9.1 × 1027 for a 2-block lookahead.
+Action-Tree Explosion
+d = 0
+... (520 leaves at d = 20)
+Intractable at Runtime
+Unlike Noughts and Crosses (5,478 states), 520
+states cannot be searched within human patience
+or the 15-minute / 256 MB server limits.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 7 / 18
+
+Strategy 2: Target-State Search
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 8 / 18
+
+Idea 2: Focusing on Target Landing Positions
+Shifting Perspective (Plan B)
+Instead of searching every intermediate path,
+enumerate only the distinct final configurations in
+which the falling block can land:
+▶ Horizontal column: 10 columns
+(x ∈ {0, . . . , 9}).
+▶ Orientation: At most 4 distinct rotations (O has
+1; I, S, Z have 2; J, L, T have 4).
+Reduced Search Space
+Total candidates per block satisfy 10 × 4 = 40 states,
+which executes in milliseconds in Python.
+Search Space Comparison
+Search Strategy States / Piece Feasible?
+Exhaustive action tree ≈ 520 No
+1-piece target states ⩽ 40 Yes (fast)
+2-piece lookahead ⩽ 1,600 Yes
+New Subproblem
+For each target (rotations, target x), generate
+one clean action sequence that steers the block there
+and drops it.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 9 / 18
+
+Idea 2: Focusing on Target Landing Positions
+Shifting Perspective (Plan B)
+Instead of searching every intermediate path,
+enumerate only the distinct final configurations in
+which the falling block can land:
+▶ Horizontal column: 10 columns
+(x ∈ {0, . . . , 9}).
+▶ Orientation: At most 4 distinct rotations (O has
+1; I, S, Z have 2; J, L, T have 4).
+Reduced Search Space
+Total candidates per block satisfy 10 × 4 = 40 states,
+which executes in milliseconds in Python.
+Search Space Comparison
+Search Strategy States / Piece Feasible?
+Exhaustive action tree ≈ 520 No
+1-piece target states ⩽ 40 Yes (fast)
+2-piece lookahead ⩽ 1,600 Yes
+New Subproblem
+For each target (rotations, target x), generate
+one clean action sequence that steers the block there
+and drops it.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 9 / 18
+
+Structuring the Target-State Algorithm
+1 def find_best_moves(self, board):
+2 best_score = float("-inf")
+3 best_moves = [Direction.Drop]
+4
+5 for rot_count in range(4):
+6 for target_x in range(board.width):
+7 sandbox = board.clone()
+8 moves = steer_and_drop(
+9 sandbox, rot_count, target_x
+10 )
+11 if moves is not None:
+12 val = self.score_board(sandbox, board)
+13 if val > best_score:
+14 best_score = val
+15 best_moves = moves
+16 return best_moves
+Algorithm Steps
+1. Loop over 0–3 clockwise rotations and
+columns 0–9.
+2. Clone board into an isolated sandbox.
+3. Record each rotation and horizontal shift
+applied to sandbox, finishing with
+Direction.Drop.
+4. Score sandbox and retain the move list
+with the highest score.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 10 / 18
+
+Moving Towards Target: Rotation Order and Wall Boundaries
+Does Order of Operations Matter?
+Every call to rotate() or move() also drops the block by
+one row. Should we translate horizontally first or rotate
+first?
+Wall Kick-Back and Obstructions
+In board.py, rotating a wide piece (Shape.I) at a wall
+shifts it inward to stay in 0 ⩽ x < 10, while rotating into
+blocks cancels the rotation:
+▶ Moving to target x before rotating can push the
+block out of target x.
+▶ Rotating first in open space, then aligning
+falling.left to target x, avoids wall shifts.
+Wall Shift on Late Rotation
+Wall (x = 9)
+1. At x = 9
+Wall
+Kicked left
+2. Rotated late
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 11 / 18
+
+Evaluating the Board (Heuristics)
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 12 / 18
+
+Designing the Heuristic Score Function
+Core Structural Features
+▶ Score Gain
+(∆S = sandbox.score - board.score): Captures
+immediate 1–4 row clear points (25 to 1,600), as
+land block() clears full lines automatically.
+▶ Height (H): Aggregate or maximum column height
+(taller stacks risk top-out collision at y = 0).
+▶ Buried Holes (K): Empty cells trapped beneath at
+least one landed block in the same column.
+▶ Bumpiness (B) & Cells (Ncells): Penalise adjacent
+height jumps P x |hx − hx+1| and remaining blocks.
+Visualising Heuristic Features
+Hole
+h3 = 5
+|h3 − h4|
+Weighted Linear Evaluation
+Combine features with tuned weights,
+E(s) = w1∆S − w2H − w3K − w4B − w5Ncells.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 13 / 18
+
+Accessing Board Data and Practical Advice
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 14 / 18
+
+Inspecting board.cells, board.falling, and board.next
+Single-Pass Column Scan
+1 # Example T-block: {(5,22),(6,22),(7,22),(6,23)}
+2 heights = [0] * board.width
+3 holes = 0
+4 for x in range(board.width):
+5 seen_block = False
+6 for y in range(board.height):
+7 if (x, y) in board.cells:
+8 if not seen_block:
+9 heights[x] = board.height - y
+10 seen_block = True
+11 elif seen_block:
+12 holes += 1
+Three Key Sets on board
+1. board.cells: Landed (x, y) set (O(1)
+lookup).
+2. board.falling.cells: Active block
+cells (plus .shape, .left).
+3. board.next.cells: Upcoming block
+cells (for 2-piece lookahead).
+Unordered Iteration
+Python sets have no fixed order; scan x and y
+with range() in O(W · H) time.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 15 / 18
+
+Coordinate Conventions and Simulation Safeguards
+Top-Left Coordinate Grid
+▶ Origin (0, 0): Top-left corner.
+▶ Columns (x): 0 (left) to 9 (right).
+▶ Rows (y): 0 (top) to 23 (bottom floor).
+▶ Column height: For topmost occupied row
+ymin, height is 24 − ymin.
+Tracking Rotations Cleanly
+Count how many clockwise rotations (0–3) your
+simulation loop applies from spawn rather than
+inferring orientation from cell coordinates.
+Ensuring Safe Landing in sandbox
+1. Return Booleans: rotate() and move() return
+True if the 1-row step landed the block early.
+2. Conditional Drop: Once at target x, call
+move(Direction.Drop) only if not landed.
+3. Block Promotion: Landing moves sandbox.next
+into sandbox.falling; moving after both land
+raises NoBlockException.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 16 / 18
+
+Summary
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 17 / 18
+
+Summary of Strategies and Implementation Roadmap
+Algorithmic Choice
+▶ Strategy 1 (Exhaustive Action Tree):
+Exploring all move sequences (≈ 520 paths) is
+computationally intractable.
+▶ Strategy 2 (Target Landing States):
+Enumerating final (rotation, column)
+placements (⩽ 40 states, or ⩽ 1,600 with
+2-piece lookahead) is fast and effective.
+Implementation Requirements
+1. Sandbox Cloning: Clone board.clone()
+independently for every candidate target.
+2. Steer & Drop: Rotate early in open space, align
+falling.left to target x, guard early
+landings, and issue Direction.Drop.
+3. Heuristic Scoring: Combine score gain ∆S,
+column heights, buried holes, and bumpiness
+from sandbox.cells.
+Keep the search space small, guard edge cases, and tune weights systematically.
+Martin Benning (University College London) Assignment 4: Strategy and Implementation Hints 18 / 18

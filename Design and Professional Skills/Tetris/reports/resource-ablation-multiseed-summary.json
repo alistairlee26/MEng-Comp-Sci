@@ -1,0 +1,131 @@
+{
+  "python_version": "3.11.9",
+  "seeds_per_setting": 10,
+  "total_games": 30,
+  "all_results_included": true,
+  "weights_retuned": false,
+  "source_hashes": {
+    "player.py": "5748e9ae9741bc5fbd7ae0d043867f3613dddc47168e68d75db91cd118d6b1f2",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  },
+  "settings": [
+    {
+      "setting": "both-enabled",
+      "median": 66334.5,
+      "minimum": 64554,
+      "maximum": 69864,
+      "reached_piece_limit": 10,
+      "wins_against_both_enabled": 0,
+      "losses_against_both_enabled": 0,
+      "ties_against_both_enabled": 10,
+      "median_paired_difference": 0.0,
+      "total_bombs_used": 5,
+      "total_discards_used": 6,
+      "maximum_cpu_seconds": 202.234,
+      "maximum_memory_bytes": 58155008,
+      "games_with_planning_cutoffs": 0,
+      "games_with_full_initial_plan": 10,
+      "verification_failures": 0
+    },
+    {
+      "setting": "no-discards",
+      "median": 66331.5,
+      "minimum": 64838,
+      "maximum": 69847,
+      "reached_piece_limit": 10,
+      "wins_against_both_enabled": 6,
+      "losses_against_both_enabled": 4,
+      "ties_against_both_enabled": 0,
+      "median_paired_difference": 98.0,
+      "total_bombs_used": 11,
+      "total_discards_used": 0,
+      "maximum_cpu_seconds": 195.969,
+      "maximum_memory_bytes": 58155008,
+      "games_with_planning_cutoffs": 0,
+      "games_with_full_initial_plan": 10,
+      "verification_failures": 0
+    },
+    {
+      "setting": "no-bombs",
+      "median": 66345.0,
+      "minimum": 64728,
+      "maximum": 69855,
+      "reached_piece_limit": 10,
+      "wins_against_both_enabled": 8,
+      "losses_against_both_enabled": 2,
+      "ties_against_both_enabled": 0,
+      "median_paired_difference": 124.5,
+      "total_bombs_used": 0,
+      "total_discards_used": 3,
+      "maximum_cpu_seconds": 166.094,
+      "maximum_memory_bytes": 58155008,
+      "games_with_planning_cutoffs": 0,
+      "games_with_full_initial_plan": 10,
+      "verification_failures": 0
+    }
+  ],
+  "per_seed_scores": [
+    {
+      "seed": "comparison-b-a85bd89e3607641d794539382796c579",
+      "both-enabled": 66370,
+      "no-discards": 66606,
+      "no-bombs": 65327
+    },
+    {
+      "seed": "comparison-b-a134d6b87929d2fcf1ad260414b61162",
+      "both-enabled": 65287,
+      "no-discards": 65003,
+      "no-bombs": 65383
+    },
+    {
+      "seed": "comparison-b-699de40d071635f962d1a9ed0ef540d6",
+      "both-enabled": 66880,
+      "no-discards": 67032,
+      "no-bombs": 67003
+    },
+    {
+      "seed": "comparison-b-89a7472ccf90db81b5be987002c59487",
+      "both-enabled": 65171,
+      "no-discards": 65215,
+      "no-bombs": 65516
+    },
+    {
+      "seed": "comparison-b-c69bf382b397de36f2f8713c99ad540a",
+      "both-enabled": 66393,
+      "no-discards": 66266,
+      "no-bombs": 68266
+    },
+    {
+      "seed": "comparison-b-1a6b497629c05812540198eb5cee3c75",
+      "both-enabled": 66453,
+      "no-discards": 66714,
+      "no-bombs": 66579
+    },
+    {
+      "seed": "comparison-b-2418d849492e3e6c61ab66741d3d8622",
+      "both-enabled": 66299,
+      "no-discards": 64838,
+      "no-bombs": 66336
+    },
+    {
+      "seed": "comparison-b-ca695d2009735a7d97fb7bf0cdd23fce",
+      "both-enabled": 65947,
+      "no-discards": 66397,
+      "no-bombs": 66354
+    },
+    {
+      "seed": "comparison-b-71f526f36da01c7068dd181c4aa65bb1",
+      "both-enabled": 64554,
+      "no-discards": 64871,
+      "no-bombs": 64728
+    },
+    {
+      "seed": "comparison-b-06f3bb6f3c8e97399e717af3f34b4e02",
+      "both-enabled": 69864,
+      "no-discards": 69847,
+      "no-bombs": 69855
+    }
+  ]
+}

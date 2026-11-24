@@ -1,0 +1,31 @@
+[
+  {
+    "player": "SearchPlayer",
+    "seed": 42,
+    "score": 40647,
+    "pieces_generated": 400,
+    "status": "block-limit",
+    "seconds": 16.266,
+    "cpu_seconds": 16.109,
+    "decisions": 399,
+    "longest_decision_seconds": 0.1002,
+    "line_clears": {
+      "1": 29,
+      "2": 18,
+      "3": 6,
+      "4": 18
+    },
+    "highest_stack": 18,
+    "most_holes": 7,
+    "final_holes": 4,
+    "prediction_status": "missing",
+    "predicted_decisions": 0,
+    "fallback_decisions": 399,
+    "known_decisions": 0,
+    "planning_failures": 0,
+    "average_search_depth": 0.0,
+    "maximum_search_depth": 0,
+    "budget_stops": 0,
+    "last_failure": null
+  }
+]

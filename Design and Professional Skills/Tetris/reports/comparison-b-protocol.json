@@ -1,0 +1,101 @@
+{
+  "python_version": "3.7.9",
+  "sources": {
+    "player.py": "e1f4622f25e626aa18382c5257bca45a03780724cebc93582217529215d0a099",
+    "planner.py": "a53007b4d1bcc50ac202df72416a125d9aaa93e66c9bed9bcfb956995953a6f0",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  },
+  "baseline_sources": {
+    "baselines\\v1\\player.py": "12d7c34b2741ad594872ed83ea931f702533886befb58f3da6661dcdd59b1ee6",
+    "baselines\\v1\\planner.py": "ed002a265db919fe229744d8773cd813671ccd87461bd5710461c76363cda483"
+  },
+  "profiles": [
+    {
+      "name": "basic-v1",
+      "algorithm": "baseline-v1",
+      "prediction": "missing"
+    },
+    {
+      "name": "basic-chance-resources",
+      "prediction": "missing",
+      "options": {
+        "basic_mode": "chance",
+        "basic_root_width": 6,
+        "basic_preview_width": 4,
+        "basic_time_limit": 0.5,
+        "basic_setup_rows": 8,
+        "allow_discards": true,
+        "allow_bombs": true,
+        "basic_weights": {
+          "height": 0.2,
+          "holes": 12.0,
+          "bumpiness": 0.6,
+          "danger": 1.0,
+          "setup": 1.0,
+          "well_fill": 0.0,
+          "discard_cost": 6.4,
+          "bomb_cost": 6.4,
+          "destroyed_cell_cost": 1.6
+        }
+      }
+    },
+    {
+      "name": "predicted-v1",
+      "algorithm": "baseline-v1",
+      "prediction": "environment"
+    },
+    {
+      "name": "predicted-whole-game",
+      "prediction": "environment",
+      "options": {
+        "whole_game": true,
+        "whole_game_width": 256,
+        "whole_game_time_limit": 260,
+        "setup_rows": 12,
+        "allow_discards": true,
+        "allow_bombs": true,
+        "search_weights": {
+          "height": 0.2,
+          "holes": 12.0,
+          "bumpiness": 0.6,
+          "danger": 1.0,
+          "setup": 1.0,
+          "well_fill": 0.0,
+          "discard_cost": 6.4,
+          "bomb_cost": 6.4,
+          "destroyed_cell_cost": 1.6
+        }
+      }
+    }
+  ],
+  "seeds": [
+    "comparison-b-a85bd89e3607641d794539382796c579",
+    "comparison-b-a134d6b87929d2fcf1ad260414b61162",
+    "comparison-b-699de40d071635f962d1a9ed0ef540d6",
+    "comparison-b-89a7472ccf90db81b5be987002c59487",
+    "comparison-b-c69bf382b397de36f2f8713c99ad540a",
+    "comparison-b-1a6b497629c05812540198eb5cee3c75",
+    "comparison-b-2418d849492e3e6c61ab66741d3d8622",
+    "comparison-b-ca695d2009735a7d97fb7bf0cdd23fce",
+    "comparison-b-71f526f36da01c7068dd181c4aa65bb1",
+    "comparison-b-06f3bb6f3c8e97399e717af3f34b4e02"
+  ],
+  "comparisons": [
+    {
+      "before": "basic-v1",
+      "after": "basic-chance-resources"
+    },
+    {
+      "before": "predicted-v1",
+      "after": "predicted-whole-game"
+    }
+  ],
+  "rules": [
+    "All outcomes count, including early losses and crashes.",
+    "No tuning against these seeds; changed parameters require a fresh batch.",
+    "Same authoritative string seed for each paired game.",
+    "Prediction is conditional on a matching environment SEED."
+  ]
+}

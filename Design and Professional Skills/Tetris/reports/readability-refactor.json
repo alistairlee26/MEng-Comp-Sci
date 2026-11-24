@@ -1,0 +1,39 @@
+{
+  "before_sha256": "a80a3c6de765e26c7f827e05f02d5745928ad9e56c45f854a9d61e6219256860",
+  "after_sha256": "5748e9ae9741bc5fbd7ae0d043867f3613dddc47168e68d75db91cd118d6b1f2",
+  "before_lines": 1221,
+  "after_lines": 1153,
+  "unchanged_class_syntax_trees": [
+    "Player",
+    "Landing",
+    "SearchNode",
+    "Planner"
+  ],
+  "identical_heuristic_evaluations": 1120,
+  "identical_heuristic_decisions": 72,
+  "identical_seed_observations": 120,
+  "full_game_comparisons": [
+    {
+      "mode": "basic",
+      "python_version": "3.11.9",
+      "score_before": 56947,
+      "score_after": 56947,
+      "identical_decisions": 399,
+      "trace_sha256": "97662de9f6c3ab491db52fdd0dc10c7c708d8647db82064c6a68bcb9d5e79d58",
+      "cpu_before_seconds": 79.422,
+      "cpu_after_seconds": 69.828
+    },
+    {
+      "mode": "predicted",
+      "python_version": "3.7.9",
+      "score_before": 69864,
+      "score_after": 69864,
+      "identical_decisions": 399,
+      "trace_sha256": "b4ea6a8c7a7489e419e29d887e7638abc7da96c53237ef10800d208b3f643218",
+      "cpu_before_seconds": 140.859,
+      "cpu_after_seconds": 129.703
+    }
+  ],
+  "before_comments": 45,
+  "after_comments": 46
+}

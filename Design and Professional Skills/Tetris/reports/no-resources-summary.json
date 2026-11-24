@@ -1,0 +1,44 @@
+{
+  "python_version": "3.7.9",
+  "all_results_included": true,
+  "weights_retuned": false,
+  "source_hashes": {
+    "player.py": "5748e9ae9741bc5fbd7ae0d043867f3613dddc47168e68d75db91cd118d6b1f2",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  },
+  "enabled_reference": "reports/comparison-b-results.json",
+  "modes": [
+    {
+      "mode": "basic-no-resources",
+      "games": 10,
+      "median_without_resources": 25956.5,
+      "median_with_resources": 52196.0,
+      "minimum": 6504,
+      "maximum": 53099,
+      "reached_piece_limit": 2,
+      "paired_wins_without_resources": 1,
+      "maximum_cpu_seconds": 123.578,
+      "peak_process_memory_bytes": 21655552,
+      "bombs_used": 0,
+      "discards_used": 0,
+      "verification_failures": 0
+    },
+    {
+      "mode": "predicted-no-resources",
+      "games": 10,
+      "median_without_resources": 66415.5,
+      "median_with_resources": 66334.5,
+      "minimum": 65501,
+      "maximum": 69855,
+      "reached_piece_limit": 10,
+      "paired_wins_without_resources": 8,
+      "maximum_cpu_seconds": 231.359,
+      "peak_process_memory_bytes": 42508288,
+      "bombs_used": 0,
+      "discards_used": 0,
+      "verification_failures": 0
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "profiles": [
+    {
+      "name": "basic-resources-int42",
+      "prediction": "missing",
+      "options": {
+        "basic_mode": "chance",
+        "allow_discards": true,
+        "allow_bombs": true,
+        "search_time_limit": 0.5
+      }
+    }
+  ],
+  "seeds": [
+    42
+  ],
+  "results": [
+    {
+      "player": "SearchPlayer",
+      "seed": 42,
+      "score": 56947,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 172.455,
+      "cpu_seconds": 160.141,
+      "decisions": 399,
+      "longest_decision_seconds": 0.8519,
+      "line_clears": {
+        "1": 18,
+        "2": 1,
+        "3": 5,
+        "4": 30
+      },
+      "highest_stack": 14,
+      "most_holes": 8,
+      "final_holes": 0,
+      "prediction_status": "missing",
+      "predicted_decisions": 0,
+      "fallback_decisions": 399,
+      "known_decisions": 399,
+      "planning_failures": 0,
+      "average_search_depth": 2.99,
+      "maximum_search_depth": 3,
+      "budget_stops": 8,
+      "last_failure": null,
+      "discards_used": 6,
+      "bombs_used": 1,
+      "peak_process_memory_bytes": 21610496,
+      "profile": "basic-resources-int42"
+    }
+  ],
+  "complete": true,
+  "python_version": "3.7.9",
+  "source_hashes": {
+    "player.py": "9fe3dad2f596de7f28368a45a84d793e0d60a09c62bf75401257f67c40540f2c",
+    "planner.py": "b004a6e11cb9cc522ab48cb84ddfde2b7ce8025ea1a0103cd15cc6a454f6484e",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  },
+  "summary": [
+    {
+      "profile": "basic-resources-int42",
+      "median": 56947,
+      "minimum": 56947,
+      "maximum": 56947,
+      "completed": 1,
+      "games": 1,
+      "errors": 0
+    }
+  ]
+}

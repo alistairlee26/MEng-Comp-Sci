@@ -1,0 +1,5 @@
+# keep development files local and track only the player plus this rule
+# starter files already tracked by git are kept for the grader
+/*
+!/.gitignore
+!/player.py

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "all_outcomes_included": true,
+  "comparisons": [
+    {
+      "before": "basic-v1",
+      "after": "basic-chance-resources",
+      "games": 10,
+      "baseline_median": 30957.5,
+      "new_median": 52196.0,
+      "median_paired_gain": 22104.5,
+      "wins": 10,
+      "losses": 0,
+      "minimum": 36436,
+      "maximum": 59919,
+      "completed": 7,
+      "maximum_cpu_seconds": 167.125,
+      "maximum_local_wall_seconds": 169.143,
+      "peak_process_memory_bytes": 23388160,
+      "bombs_used": 43,
+      "discards_used": 89
+    },
+    {
+      "before": "predicted-v1",
+      "after": "predicted-whole-game",
+      "games": 10,
+      "baseline_median": 61523.0,
+      "new_median": 66334.5,
+      "median_paired_gain": 4075.5,
+      "wins": 10,
+      "losses": 0,
+      "minimum": 63633,
+      "maximum": 69864,
+      "completed": 10,
+      "maximum_cpu_seconds": 260.953,
+      "maximum_local_wall_seconds": 263.724,
+      "peak_process_memory_bytes": 59412480,
+      "bombs_used": 5,
+      "discards_used": 6
+    }
+  ]
+}

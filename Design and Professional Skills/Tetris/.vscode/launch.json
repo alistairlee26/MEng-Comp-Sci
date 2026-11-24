@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Tetris: Tkinter autoplayer",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/visual.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Tetris: Tkinter manual play",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/visual.py",
+      "args": ["-m"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Tetris: Pygame autoplayer",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/visual-pygame.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Tetris: terminal",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/cmdline.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

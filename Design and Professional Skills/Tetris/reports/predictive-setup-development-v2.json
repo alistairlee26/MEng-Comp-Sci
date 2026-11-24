@@ -1,0 +1,147 @@
+{
+  "profiles": [
+    {
+      "name": "predict-three-quad-setup",
+      "prediction": "environment",
+      "options": {
+        "allow_discards": true,
+        "allow_bombs": true,
+        "beam_width": 24,
+        "prediction_depth": 16,
+        "search_time_limit": 0.7,
+        "setup_rows": 12,
+        "search_weights": {
+          "discard_cost": 12.8,
+          "bomb_cost": 12.8,
+          "destroyed_cell_cost": 3.2
+        }
+      }
+    }
+  ],
+  "seeds": [
+    "predict-dev-0",
+    "predict-dev-1",
+    "validation-a-0c15d7c3cc2b09bc70ace711e0cc4377"
+  ],
+  "results": [
+    {
+      "player": "SearchPlayer",
+      "seed": "predict-dev-0",
+      "score": 65207,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 226.582,
+      "cpu_seconds": 223.469,
+      "decisions": 399,
+      "longest_decision_seconds": 0.868,
+      "line_clears": {
+        "1": 5,
+        "2": 2,
+        "3": 2,
+        "4": 36
+      },
+      "highest_stack": 16,
+      "most_holes": 1,
+      "final_holes": 0,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 15.6,
+      "maximum_search_depth": 16,
+      "budget_stops": 22,
+      "last_failure": null,
+      "discards_used": 0,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 23093248,
+      "profile": "predict-three-quad-setup"
+    },
+    {
+      "player": "SearchPlayer",
+      "seed": "validation-a-0c15d7c3cc2b09bc70ace711e0cc4377",
+      "score": 62462,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 230.418,
+      "cpu_seconds": 226.656,
+      "decisions": 399,
+      "longest_decision_seconds": 0.9393,
+      "line_clears": {
+        "1": 8,
+        "2": 3,
+        "3": 3,
+        "4": 34
+      },
+      "highest_stack": 17,
+      "most_holes": 0,
+      "final_holes": 0,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 15.57,
+      "maximum_search_depth": 16,
+      "budget_stops": 27,
+      "last_failure": null,
+      "discards_used": 0,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 23015424,
+      "profile": "predict-three-quad-setup"
+    },
+    {
+      "player": "SearchPlayer",
+      "seed": "predict-dev-1",
+      "score": 62668,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 231.092,
+      "cpu_seconds": 227.203,
+      "decisions": 399,
+      "longest_decision_seconds": 1.0611,
+      "line_clears": {
+        "1": 3,
+        "2": 5,
+        "3": 0,
+        "4": 35
+      },
+      "highest_stack": 18,
+      "most_holes": 1,
+      "final_holes": 1,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 15.66,
+      "maximum_search_depth": 16,
+      "budget_stops": 9,
+      "last_failure": null,
+      "discards_used": 1,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 23056384,
+      "profile": "predict-three-quad-setup"
+    }
+  ],
+  "complete": true,
+  "python_version": "3.7.9",
+  "source_hashes": {
+    "player.py": "e799e1e9850a6ac29548ddb031d4ae36fd8437d2d91bc24c6129d894a5333b0a",
+    "planner.py": "ab685ca3db65ca79e939a0f28e92198a2352acc671eb26cfb17a34f18dfd4378",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  },
+  "summary": [
+    {
+      "profile": "predict-three-quad-setup",
+      "median": 62668,
+      "minimum": 62462,
+      "maximum": 65207,
+      "completed": 3,
+      "games": 3,
+      "errors": 0
+    }
+  ]
+}

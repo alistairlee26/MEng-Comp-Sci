@@ -1,0 +1,17 @@
+{
+  "target_median": 60000,
+  "minimum_games": 20,
+  "block_limit": 400,
+  "python_version": "3.7.9",
+  "all_results_count": true,
+  "no_seed_exclusions": true,
+  "prediction_source": "process environment",
+  "selection": "frozen before heldout games",
+  "sources": {
+    "player.py": "12d7c34b2741ad594872ed83ea931f702533886befb58f3da6661dcdd59b1ee6",
+    "planner.py": "ed002a265db919fe229744d8773cd813671ccd87461bd5710461c76363cda483",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  }
+}

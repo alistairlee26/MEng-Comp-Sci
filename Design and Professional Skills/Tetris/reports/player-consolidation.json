@@ -1,0 +1,31 @@
+{
+  "previous_sources": {
+    "player.py": "e1f4622f25e626aa18382c5257bca45a03780724cebc93582217529215d0a099",
+    "planner.py": "a53007b4d1bcc50ac202df72416a125d9aaa93e66c9bed9bcfb956995953a6f0",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  },
+  "combined_player_sha256": "266deec19f72866b19a61363df2a59e424436dea6ccaba645c8e8eb6f3b3f2a2",
+  "class_bodies_unchanged": [
+    "HeuristicPlayer",
+    "Landing",
+    "Planner",
+    "Player",
+    "RandomPlayer",
+    "SearchNode",
+    "SearchPlayer",
+    "SeedPredictor"
+  ],
+  "class_ast_hashes": {
+    "Player": "494661a95b47f8314a0b93cf25f1711b1a640689769c23b47418288e4633c2dc",
+    "RandomPlayer": "d0b67aa5dd159c24f69bcffdedef10db40458f64351a46c66fd709a7bb29a336",
+    "HeuristicPlayer": "ddcd62ce14b3e18c057d5a841c3d1cf6d6b4b16a4d7d1c207047d6f4abb1a247",
+    "SearchPlayer": "5f9d14f54efdab39173563980cb44aa8891a7f6b95c48ac1dad48d8452535904",
+    "SeedPredictor": "b0bc2b15c5b3626066a3222d5fe93db442abb7ca82129aa5cc3b36318e2eae3a",
+    "Landing": "38e1c0baabccb6251d9bbcc56a31c43e2d2daac7aa1400c16cd2745e51636a60",
+    "SearchNode": "53e936b60d5e6797164d1b1e36b5846141113ce8d6dbe88cdbf2ced08add1a83",
+    "Planner": "e704462f7cd3eb37eece3a1ab7deaee6b0f5fec02ae3f3b55655784d837c0863"
+  },
+  "python_version": "3.7.9"
+}

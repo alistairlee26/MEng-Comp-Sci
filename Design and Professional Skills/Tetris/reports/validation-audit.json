@@ -1,0 +1,20 @@
+{
+  "target": 60000,
+  "median": 61919.5,
+  "games": 20,
+  "minimum": 2986,
+  "maximum": 68604,
+  "completed": 19,
+  "failures": 0,
+  "median_interval": {
+    "lower": 60732,
+    "upper": 63389,
+    "coverage": 0.9586105346679688
+  },
+  "maximum_cpu_seconds": 137.484,
+  "maximum_local_wall_seconds": 138.351,
+  "all_results_included": true,
+  "runtime_sources_unchanged": true,
+  "python_version": "3.7.9",
+  "conditional_on_matching_seed": true
+}

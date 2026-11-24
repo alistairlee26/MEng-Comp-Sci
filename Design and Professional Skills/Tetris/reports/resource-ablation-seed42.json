@@ -1,0 +1,220 @@
+{
+  "profiles": [
+    {
+      "name": "both-enabled",
+      "prediction": "environment",
+      "options": {
+        "whole_game": true,
+        "whole_game_width": 256,
+        "whole_game_time_limit": 260,
+        "setup_rows": 12,
+        "allow_discards": true,
+        "allow_bombs": true,
+        "search_weights": {
+          "height": 0.2,
+          "holes": 12.0,
+          "bumpiness": 0.6,
+          "danger": 1.0,
+          "setup": 1.0,
+          "well_fill": 0.0,
+          "discard_cost": 6.4,
+          "bomb_cost": 6.4,
+          "destroyed_cell_cost": 1.6
+        }
+      }
+    },
+    {
+      "name": "no-discards",
+      "prediction": "environment",
+      "options": {
+        "whole_game": true,
+        "whole_game_width": 256,
+        "whole_game_time_limit": 260,
+        "setup_rows": 12,
+        "allow_discards": false,
+        "allow_bombs": true,
+        "search_weights": {
+          "height": 0.2,
+          "holes": 12.0,
+          "bumpiness": 0.6,
+          "danger": 1.0,
+          "setup": 1.0,
+          "well_fill": 0.0,
+          "discard_cost": 6.4,
+          "bomb_cost": 6.4,
+          "destroyed_cell_cost": 1.6
+        }
+      }
+    },
+    {
+      "name": "no-bombs",
+      "prediction": "environment",
+      "options": {
+        "whole_game": true,
+        "whole_game_width": 256,
+        "whole_game_time_limit": 260,
+        "setup_rows": 12,
+        "allow_discards": true,
+        "allow_bombs": false,
+        "search_weights": {
+          "height": 0.2,
+          "holes": 12.0,
+          "bumpiness": 0.6,
+          "danger": 1.0,
+          "setup": 1.0,
+          "well_fill": 0.0,
+          "discard_cost": 6.4,
+          "bomb_cost": 6.4,
+          "destroyed_cell_cost": 1.6
+        }
+      }
+    }
+  ],
+  "seeds": [
+    42
+  ],
+  "results": [
+    {
+      "player": "SearchPlayer",
+      "seed": 42,
+      "score": 68444,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 106.924,
+      "cpu_seconds": 106.016,
+      "decisions": 399,
+      "longest_decision_seconds": 106.6565,
+      "line_clears": {
+        "1": 2,
+        "2": 1,
+        "3": 1,
+        "4": 38
+      },
+      "highest_stack": 16,
+      "most_holes": 0,
+      "final_holes": 0,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 1.0,
+      "maximum_search_depth": 395,
+      "budget_stops": 0,
+      "last_failure": null,
+      "discards_used": 0,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 44838912,
+      "full_plans": 1,
+      "cached_decisions": 394,
+      "profile": "no-bombs"
+    },
+    {
+      "player": "SearchPlayer",
+      "seed": 42,
+      "score": 68452,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 110.156,
+      "cpu_seconds": 109.281,
+      "decisions": 399,
+      "longest_decision_seconds": 109.807,
+      "line_clears": {
+        "1": 2,
+        "2": 1,
+        "3": 1,
+        "4": 38
+      },
+      "highest_stack": 15,
+      "most_holes": 0,
+      "final_holes": 0,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 1.0,
+      "maximum_search_depth": 395,
+      "budget_stops": 0,
+      "last_failure": null,
+      "discards_used": 0,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 53080064,
+      "full_plans": 1,
+      "cached_decisions": 394,
+      "profile": "no-discards"
+    },
+    {
+      "player": "SearchPlayer",
+      "seed": 42,
+      "score": 68260,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 110.547,
+      "cpu_seconds": 109.391,
+      "decisions": 399,
+      "longest_decision_seconds": 110.2241,
+      "line_clears": {
+        "1": 3,
+        "2": 0,
+        "3": 1,
+        "4": 38
+      },
+      "highest_stack": 16,
+      "most_holes": 0,
+      "final_holes": 0,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 1.0,
+      "maximum_search_depth": 395,
+      "budget_stops": 0,
+      "last_failure": null,
+      "discards_used": 2,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 55697408,
+      "full_plans": 1,
+      "cached_decisions": 394,
+      "profile": "both-enabled"
+    }
+  ],
+  "complete": true,
+  "python_version": "3.11.9",
+  "source_hashes": {
+    "player.py": "5748e9ae9741bc5fbd7ae0d043867f3613dddc47168e68d75db91cd118d6b1f2",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  },
+  "summary": [
+    {
+      "profile": "both-enabled",
+      "median": 68260,
+      "minimum": 68260,
+      "maximum": 68260,
+      "completed": 1,
+      "games": 1,
+      "errors": 0
+    },
+    {
+      "profile": "no-discards",
+      "median": 68452,
+      "minimum": 68452,
+      "maximum": 68452,
+      "completed": 1,
+      "games": 1,
+      "errors": 0
+    },
+    {
+      "profile": "no-bombs",
+      "median": 68444,
+      "minimum": 68444,
+      "maximum": 68444,
+      "completed": 1,
+      "games": 1,
+      "errors": 0
+    }
+  ]
+}

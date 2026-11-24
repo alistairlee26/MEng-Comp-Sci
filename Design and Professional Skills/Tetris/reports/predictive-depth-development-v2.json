@@ -1,0 +1,193 @@
+{
+  "profiles": [
+    {
+      "name": "predict-eight-standard",
+      "prediction": "environment",
+      "options": {
+        "allow_discards": true,
+        "allow_bombs": true,
+        "beam_width": 32,
+        "prediction_depth": 8,
+        "search_time_limit": 0.4
+      }
+    },
+    {
+      "name": "predict-long-standard",
+      "prediction": "environment",
+      "options": {
+        "allow_discards": true,
+        "allow_bombs": true,
+        "beam_width": 24,
+        "prediction_depth": 16,
+        "search_time_limit": 0.7
+      }
+    }
+  ],
+  "seeds": [
+    "predict-dev-0",
+    "validation-a-0c15d7c3cc2b09bc70ace711e0cc4377"
+  ],
+  "results": [
+    {
+      "player": "SearchPlayer",
+      "seed": "predict-dev-0",
+      "score": 62214,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 130.018,
+      "cpu_seconds": 128.922,
+      "decisions": 399,
+      "longest_decision_seconds": 0.4707,
+      "line_clears": {
+        "1": 13,
+        "2": 2,
+        "3": 1,
+        "4": 34
+      },
+      "highest_stack": 14,
+      "most_holes": 1,
+      "final_holes": 0,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 7.91,
+      "maximum_search_depth": 8,
+      "budget_stops": 6,
+      "last_failure": null,
+      "discards_used": 3,
+      "bombs_used": 2,
+      "peak_process_memory_bytes": 23212032,
+      "profile": "predict-eight-standard"
+    },
+    {
+      "player": "SearchPlayer",
+      "seed": "validation-a-0c15d7c3cc2b09bc70ace711e0cc4377",
+      "score": 59403,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 133.432,
+      "cpu_seconds": 132.297,
+      "decisions": 399,
+      "longest_decision_seconds": 0.4779,
+      "line_clears": {
+        "1": 4,
+        "2": 7,
+        "3": 2,
+        "4": 32
+      },
+      "highest_stack": 14,
+      "most_holes": 7,
+      "final_holes": 7,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 7.92,
+      "maximum_search_depth": 8,
+      "budget_stops": 4,
+      "last_failure": null,
+      "discards_used": 2,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 23003136,
+      "profile": "predict-eight-standard"
+    },
+    {
+      "player": "SearchPlayer",
+      "seed": "predict-dev-0",
+      "score": 64038,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 243.339,
+      "cpu_seconds": 241.047,
+      "decisions": 399,
+      "longest_decision_seconds": 0.8146,
+      "line_clears": {
+        "1": 8,
+        "2": 4,
+        "3": 1,
+        "4": 35
+      },
+      "highest_stack": 14,
+      "most_holes": 1,
+      "final_holes": 0,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 15.14,
+      "maximum_search_depth": 16,
+      "budget_stops": 116,
+      "last_failure": null,
+      "discards_used": 0,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 23638016,
+      "profile": "predict-long-standard"
+    },
+    {
+      "player": "SearchPlayer",
+      "seed": "validation-a-0c15d7c3cc2b09bc70ace711e0cc4377",
+      "score": 61269,
+      "pieces_generated": 400,
+      "status": "block-limit",
+      "seconds": 248.002,
+      "cpu_seconds": 245.531,
+      "decisions": 399,
+      "longest_decision_seconds": 0.7806,
+      "line_clears": {
+        "1": 8,
+        "2": 6,
+        "3": 2,
+        "4": 33
+      },
+      "highest_stack": 13,
+      "most_holes": 8,
+      "final_holes": 0,
+      "prediction_status": "verified",
+      "predicted_decisions": 395,
+      "fallback_decisions": 4,
+      "known_decisions": 0,
+      "planning_failures": 0,
+      "average_search_depth": 15.22,
+      "maximum_search_depth": 16,
+      "budget_stops": 91,
+      "last_failure": null,
+      "discards_used": 0,
+      "bombs_used": 0,
+      "peak_process_memory_bytes": 23478272,
+      "profile": "predict-long-standard"
+    }
+  ],
+  "complete": true,
+  "python_version": "3.7.9",
+  "source_hashes": {
+    "player.py": "e799e1e9850a6ac29548ddb031d4ae36fd8437d2d91bc24c6129d894a5333b0a",
+    "planner.py": "ab685ca3db65ca79e939a0f28e92198a2352acc671eb26cfb17a34f18dfd4378",
+    "board.py": "ae2706edfe2216d94d86ab486fb04611e5070574c50206a32f5f5abf40b3bcb8",
+    "adversary.py": "69915ad21f62e14bdc52dc7b2460f2970582e10d52fb1de0862db773594699f8",
+    "constants.py": "760b335a85361b2e4f5e1940ca4a0149e2d6f812ae19843f0282c1f20049ee93"
+  },
+  "summary": [
+    {
+      "profile": "predict-eight-standard",
+      "median": 60808.5,
+      "minimum": 59403,
+      "maximum": 62214,
+      "completed": 2,
+      "games": 2,
+      "errors": 0
+    },
+    {
+      "profile": "predict-long-standard",
+      "median": 62653.5,
+      "minimum": 61269,
+      "maximum": 64038,
+      "completed": 2,
+      "games": 2,
+      "errors": 0
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Optional game interfaces for local use only.
+# The submitted player must use the Python standard library only.
+pygame==2.6.1
+windows-curses==2.4.2; sys_platform == "win32"
