@@ -1,866 +1,257 @@
-from board import Board, Block, Direction, Rotation, Action, Shape
-from random import Random
-import time
-from time import process_time
+from board import Block, Direction, Rotation, Shape
 from constants import BLOCK_LIMIT
 
+NORMAL_SHAPES = tuple(shape for shape in Shape if shape is not Shape.B)
+FIRST_MOVE_LIMIT = 6
+PREVIEW_REPLY_LIMIT = 4
 
-# keep the older evaluator for emergency moves and engine based bomb preparation
-FALLBACK_WEIGHTS = {
-    'height': 0.45,
-    'holes': 6.0,
-    'buried_holes': 0.25,
-    'bumpiness': 0.35,
-    'danger': 0.75,
-    'setup': 1.0,
-    'setup_hole_discount': 0.0,
-    'hole_risk': 0.0,
-}
-
+ROTATION_PLANS = (
+    (),
+    (Rotation.Clockwise,),
+    (Rotation.Clockwise, Rotation.Clockwise),
+    (Rotation.Anticlockwise,),
+)
 
 class Player:
     def choose_action(self, board):
-        raise NotImplementedError("choose_action must be implemented by subclasses")
+        raise NotImplementedError
 
 
+class MyPlayer(Player):
+    def __init__(self, depth=2):
+        if not isinstance(depth, int) or depth < 1:
+            raise ValueError('depth must be a positive integer')
+        self.depth = depth
+        self.turn = 0
 
-class RandomPlayer(Player):
-    def __init__(self, seed=None):
-        self.random = Random(seed)
+    def choose_action(self, board):
+        moves = self.search(board)
+        self.turn += 1
+        return moves
 
-    def print_board(self, board):
-        print("--------")
-        for y in range(24):
-            s = ""
-            for x in range(10):
-                if (x,y) in board.cells:
-                    s += "#"
+    def search(self, board):
+        _, moves = self.search_position(board, depth=self.depth)
+        return moves
+
+
+    # returns value of the position, moves to reach there
+    def search_position(self, board, depth, remaining=None):
+        if remaining is None:
+            remaining = BLOCK_LIMIT - 1 - self.turn
+
+        depth = min(depth, remaining)
+        if depth <= 0 or board.falling is None:
+            return self.evaluate(board, remaining), []
+        if not board.alive:
+            return self.top_out_value(board, remaining), []
+
+        if depth >= 3 and board.next is not None:
+            landings = self.shortlist(board, remaining)
+            if not landings:
+                return self.search_position(board, depth=2, remaining=remaining) # this is a fallback if the shortlist function fails
+            loss_value = self.top_out_value(board, remaining)
+        else:
+            landings = ((moves, trial, None) for moves, trial in self.placements(board))
+
+        best_moves = [Direction.Drop]
+        best_rank = (False, -1_000_000, 0) # compares left to right
+        for moves, trial, preview_boards in landings: # preview boards is populated after the boards of the previews are landed ????
+            # landing the current piece spawns the preview
+            if preview_boards is None:
+                value, _ = self.search_position(trial, depth - 1, remaining - 1)
+                rank = (trial.alive, value, -len(moves))
+            else:
+                value = self.expected_value(preview_boards, depth - 2, remaining - 2, loss_value)
+                rank = (True, value, 0)  # keep shortlist order on a tie
+
+            if rank > best_rank:
+                best_rank = rank
+                best_moves = moves
+        return best_rank[1], best_moves
+
+    def expected_value(self, preview_boards, depth, remaining, loss_value):
+        total = 0.0
+        for shape in NORMAL_SHAPES:
+            scores = []
+            for after_preview in preview_boards:
+                # ordinary placements work the same with any preview
+                trial = after_preview.clone()
+                trial.next = Block(shape)
+                trial.place_next_block()
+                if not trial.alive:
+                    continue
+
+                if depth == 1:
+                    value, _ = self.search_position(trial, depth, remaining)
                 else:
-                    s += "."
-            print(s, y)
+                    # draw C's preview before placing C
+                    draw_total = 0.0
+                    for next_shape in NORMAL_SHAPES:
+                        branch = trial.clone()
+                        branch.next = Block(next_shape)
+                        draw_value, _ = self.search_position(branch, depth, remaining)
+                        draw_total += draw_value
+                    value = draw_total / len(NORMAL_SHAPES)
 
+                scores.append(value)
+            total += max(scores, default=loss_value)
+        return total / len(NORMAL_SHAPES)
 
-    def choose_action(self, board):
-        self.print_board(board)
-        time.sleep(0.5)
-        if self.random.random() > 0.97:
-            # 3% chance we'll discard or drop a bomb
-            return self.random.choice([
-                Action.Discard,
-                Action.Bomb,
-            ])
-        # 97% chance we'll make a normal move
-        return self.random.choice([
-            Direction.Left,
-            Direction.Right,
-            Direction.Down,
-            Rotation.Anticlockwise,
-            Rotation.Clockwise,
-        ])
+    def top_out_value(self, board, remaining):
+        return board.score / 25.0 - max(100, remaining * 6.4)
 
+    def shortlist(self, board, remaining):
+        def score(result):
+            return result[0]
 
-
-class FallbackPlayer(Player):
-
-    def __init__(self, lookahead_candidates=4, weights=None,
-                 block_limit=BLOCK_LIMIT):
-        if lookahead_candidates < 0:
-            lookahead_candidates = 0
-
-        self.lookahead_candidates = lookahead_candidates
-        self.weights = FALLBACK_WEIGHTS.copy()
-        if weights is not None:
-            for name, value in weights.items():
-                if name not in self.weights:
-                    raise ValueError('Unknown evaluation weight: ' + name)
-                if value < 0:
-                    raise ValueError('Evaluation weights must be nonnegative')
-                self.weights[name] = value
-
-        self.block_limit = block_limit
-        self.pieces_played = 0
-
-    def choose_action(self, board):
-        starting_score = board.score
         candidates = []
-
-        # one call places one piece and the final generated piece stays a preview
-        self.pieces_played += 1
-        remaining_pieces = max(0, self.block_limit - self.pieces_played - 1)
-
-        # rank the current piece before trying its preview
-        for moves, landed_board in self.landings(board):
-            candidates.append({
-                'evaluation': self.evaluate(landed_board, starting_score, remaining_pieces),
-                'moves': moves,
-                'board': landed_board,
-            })
-
-        if not candidates:
-            return Direction.Drop
-
-        candidates.sort(key=self.candidate_priority, reverse=True)
-        best_moves = candidates[0]['moves']
-        if (board.next is None or remaining_pieces == 0
-                or self.lookahead_candidates == 0):
-            return best_moves
-
-        best_priority = (float('-inf'), float('-inf'))
-        for candidate in candidates[:self.lookahead_candidates]:
-            immediate_evaluation = candidate['evaluation']
-            moves = candidate['moves']
-            if immediate_evaluation == float('-inf'):
+        for moves, after_current in self.unique_placements(board):
+            if not after_current.alive:
                 continue
 
-            # landing the current piece promotes the preview in the cloned board
-            future_value = float('-inf')
-            found_preview_landing = False
-            for preview_moves, future_board in self.landings(candidate['board']):
-                found_preview_landing = True
-                evaluation = self.evaluate(
-                    future_board, starting_score, remaining_pieces - 1
-                )
-                if evaluation > future_value:
-                    future_value = evaluation
-            if not found_preview_landing:
-                future_value = immediate_evaluation
+            replies = []
+            for _, after_preview in self.unique_placements(after_current):
+                value = self.evaluate(after_preview, remaining - 2)
+                replies.append((value, after_preview))
 
-            # compare score first then prefer fewer moves when scores tie
-            priority = (future_value, -len(moves))
-            if priority > best_priority:
-                best_priority = priority
-                best_moves = moves
+            if not replies:
+                continue
 
-        return best_moves
+            replies.sort(key=score, reverse=True)
+            rank = (replies[0][0], -len(moves))
+            preview_boards = [trial for _, trial in replies[:PREVIEW_REPLY_LIMIT]]
+            candidates.append((rank, moves, after_current, preview_boards))
 
-    def candidate_priority(self, candidate):
-        return (candidate['evaluation'], -len(candidate['moves']))
-
-    def landings(self, board):
-        if board.falling is None:
-            return
-
-        rotation_sequences = [
-            [],
-            [Rotation.Clockwise],
-            [Rotation.Clockwise, Rotation.Clockwise],
-            [Rotation.Anticlockwise],
+        candidates.sort(key=score, reverse=True)
+        return [
+            (moves, after_current, preview_boards)
+            for _, moves, after_current, preview_boards in candidates[:FIRST_MOVE_LIMIT]
         ]
-        seen_states = set()
 
-        for rotations in rotation_sequences:
-            # rotate once then reuse that board for every target column
-            rotated_board = board.clone()
+    def unique_placements(self, board):
+        unique = {}
+        for moves, trial in self.placements(board):
+            key = (frozenset(trial.cells), trial.score) # create a hashable dictionary key
+            previous = unique.get(key)
+            if previous is None or len(moves) < len(previous[0]):
+                unique[key] = (moves, trial) # return the least moves one
+        return unique.values() # yep
+
+    def placements(self, board):
+        for rotations in ROTATION_PLANS:
+            rotated = board.clone()
             rotation_moves = []
-            has_landed = False
+            landed = False
             for rotation in rotations:
                 rotation_moves.append(rotation)
-                has_landed = rotated_board.rotate(rotation)
-                if has_landed:
+                landed = rotated.rotate(rotation)
+                if landed:
                     break
-
-            if has_landed:
-                state = (frozenset(rotated_board.cells), rotated_board.score)
-                if state not in seen_states:
-                    seen_states.add(state)
-                    yield rotation_moves, rotated_board
+            if landed:
+                yield rotation_moves, rotated
                 continue
 
-            for target_x in range(board.width):
-                sandbox = rotated_board.clone()
+            left = rotated.falling.left
+            right = rotated.falling.right
+            for offset in range(-left, board.width - right):
+                trial = rotated.clone()
                 moves = rotation_moves.copy()
-                has_landed = False
-
-                # align the left edge with the requested column
-                while not has_landed:
-                    current_x = sandbox.falling.left
-
-                    if current_x == target_x:
-                        break
-
-                    if current_x > target_x:
-                        direction = Direction.Left
-                    else:
-                        direction = Direction.Right
-
+                direction = Direction.Left if offset < 0 else Direction.Right
+                for _ in range(abs(offset)):
                     moves.append(direction)
-                    has_landed = sandbox.move(direction)
-
-                    # stop steering once the piece lands or movement is blocked
-                    if has_landed or sandbox.falling.left == current_x:
+                    if trial.move(direction): # returns true if the piece has landed after
                         break
-
-                # gravity may already have landed the piece during steering
-                if not has_landed:
+                else: # gravity hasnt landed the pieces so drop the piece down
                     moves.append(Direction.Drop)
-                    sandbox.move(Direction.Drop)
+                    trial.move(Direction.Drop)
+                yield moves, trial
 
-                # frozenset lets us recognise duplicate boards
-                state = (frozenset(sandbox.cells), sandbox.score)
+    def evaluate(self, board, remaining=None):
+        if remaining is None:
+            remaining = BLOCK_LIMIT - 1 - self.turn
 
-                if state in seen_states:
-                    continue
+        # points
+        value = board.score / 25.0
+        if remaining <= 0:
+            return value
 
-                seen_states.add(state)
-                yield moves, sandbox
+        height_weight = 0.20
+        hole_weight = 12.0
+        bumpiness_weight = 0.60
+        danger_weight = 1.0
+        setup_weight = 1.0
+        well_fill_weight = 0.0
 
-    def evaluate(self, board, starting_score, remaining_pieces=None):
-        if not board.alive:
-            return float('-inf')
+        # column heights
+        heights = [0] * board.width
+        for x, y in board.cells:
+            cell_height = board.height - y
+            if cell_height > heights[x]:
+                heights[x] = cell_height
 
-        column_heights = []
-        holes = 0
-        blocks_above_holes = 0
+        total_height = sum(heights)
 
-        # read each column from top to bottom
-        for x in range(board.width):
-            column_height = 0
-            blocks_above = 0
+        # Empty cells below each column's top block are holes.
+        holes = total_height - len(board.cells)
 
-            for y in range(board.height):
-                if (x, y) in board.cells:
-                    if blocks_above == 0:
-                        column_height = board.height - y
+        # pick the lower edge well
+        well_column = None
+        if board.width > 1:
+            if heights[0] < heights[1]:
+                well_column = 0
 
-                    blocks_above += 1
-                elif blocks_above > 0:
-                    holes += 1
-                    blocks_above_holes += blocks_above
+            right_edge = board.width - 1
+            if heights[right_edge] < heights[right_edge - 1]:
+                if well_column is None or heights[right_edge] < heights[well_column]:
+                    well_column = right_edge
 
-            column_heights.append(column_height)
-
-        tallest_column = max(column_heights, default=0)
+        # bumpiness outside the well
         bumpiness = 0
         for x in range(board.width - 1):
-            bumpiness += abs(column_heights[x] - column_heights[x + 1])
-
-        safe_height = board.height // 2
-        excess_height = max(0, tallest_column - safe_height)
-
-        # buried holes are expensive and get riskier as headroom runs out
-        hole_penalty = self.weights['holes'] * holes
-        risk_fraction = excess_height / safe_height
-        hole_penalty *= 1.0 + self.weights['hole_risk'] * risk_fraction
-
-        setup_reward = self.multi_row_setup_reward(
-            board, column_heights, tallest_column
-        )
-        setup_reward *= self.weights['setup']
-
-        setup_reward /= 1.0 + self.weights['setup_hole_discount'] * holes
-
-        if remaining_pieces is not None:
-            if remaining_pieces == 0:
-                setup_reward = 0.0
-            elif board.falling is None or board.falling.shape is not Shape.I:
-                # near the end there may not be another i-piece to finish the well
-                unknown_pieces = remaining_pieces
-                if board.falling is not None:
-                    # the promoted preview is already known not to be an i
-                    unknown_pieces -= 1
-                chance_of_an_i = 1.0 - (6.0 / 7.0) ** unknown_pieces
-                setup_reward *= chance_of_an_i
-
-        # keep this arithmetic order so close evaluations still break ties the same way
-        evaluation = (board.score - starting_score) / 25.0
-        evaluation += setup_reward
-        evaluation -= self.weights['height'] * sum(column_heights)
-        evaluation -= hole_penalty
-        evaluation -= self.weights['buried_holes'] * blocks_above_holes
-        evaluation -= self.weights['bumpiness'] * bumpiness
-        evaluation -= self.weights['danger'] * excess_height * excess_height
-
-        return evaluation
-
-    def multi_row_setup_reward(self, board, column_heights, tallest_column):
-        # estimated future value in units of 25 points
-        setup_values = [0.0, 6.0, 14.0, 30.0, 64.0]
-        best_setup_reward = 0.0
-
-        for well_x in range(board.width):
-            # a covered well cannot take a vertical i-piece
-            if column_heights[well_x] != 0:
-                continue
-
-            ready_rows = 0
-            for y in range(board.height - 1, -1, -1):
-                row_is_ready = True
-
-                for x in range(board.width):
-                    if x != well_x and (x, y) not in board.cells:
-                        row_is_ready = False
-                        break
-
-                if not row_is_ready:
-                    break
-
-                ready_rows += 1
-                if ready_rows == 4:
-                    break
-
-            best_setup_reward = max(best_setup_reward, setup_values[ready_rows])
-
-        # waiting for an i-piece becomes less attractive as headroom runs out
-        safe_height = board.height // 2
-        if tallest_column > safe_height:
-            headroom = board.height - tallest_column
-            safety_factor = max(0.0, headroom / (board.height - safe_height))
-            best_setup_reward *= safety_factor
-
-        return best_setup_reward
-
-
-
-class Landing:
-    def __init__(self, columns, points, moves, cost=0.0,
-                 discards=0, next_shape=None, bombs=0):
-        self.columns = columns
-        self.points = points
-        self.moves = moves
-        self.cost = cost
-        self.discards = discards
-        self.next_shape = next_shape
-        self.bombs = bombs
-
-
-
-class Preview:
-    # one possible board after the preview has been placed
-    def __init__(self, columns, points, value, discards, cost):
-        self.columns = columns
-        self.points = points
-        self.value = value
-        self.discards = discards
-        self.cost = cost
-
-
-
-class Planner:
-    def __init__(self, width=10, height=24, time_limit=0.5,
-                 weights=None, well_column=None, setup_rows=8):
-        self.width = width
-        self.height = height
-        self.time_limit = time_limit
-        self.templates = {}
-        self.spawn_cells = {}
-        self.last_depth = 0
-        self.budget_stopped = False
-        self.well_column = well_column
-        self.setup_rows = setup_rows
-        self.weights = {
-            'height': 0.20,
-            'holes': 12.0,
-            'bumpiness': 0.60,
-            'danger': 1.0,
-            'setup': 1.0,
-            'well_fill': 0.0,
-            'discard_cost': 6.4,
-            'bomb_cost': 6.4,
-            'destroyed_cell_cost': 1.6,
-        }
-        if weights is not None:
-            for name, value in weights.items():
-                if name not in self.weights or value < 0:
-                    raise ValueError('Invalid search weight: ' + name)
-                self.weights[name] = value
-        for shape in Shape:
-            self.make_templates(shape)
-
-    def make_templates(self, shape):
-        # build each rotation on an empty board once instead of at every search node
-        rotations = [
-            [],
-            [Rotation.Clockwise],
-            [Rotation.Clockwise, Rotation.Clockwise],
-            [Rotation.Anticlockwise],
-        ]
-        if shape is Shape.B:
-            rotations = [[]]
-        templates = []
-        for sequence in rotations:
-            board = Board(self.width, self.height)
-            board.next = Block(shape)
-            board.place_next_block()
-            self.spawn_cells[shape] = list(board.falling.cells)
-            checks = [list(board.falling.cells)]
-            for rotation in sequence:
-                board.falling.rotate(rotation, board)
-                checks.append(list(board.falling.cells))
-                board.falling.move(Direction.Down, board)
-                checks.append(list(board.falling.cells))
-            templates.append({
-                'cells': list(board.falling.cells),
-                'left': board.falling.left,
-                'right': board.falling.right,
-                'moves': sequence,
-                'points': board.score,
-                'checks': checks,
-            })
-        self.templates[shape] = templates
-
-    def columns_from_board(self, board):
-        # bit y in a column is set when cell (x, y) is occupied
-        columns = [0] * self.width
-        for x, y in board.cells:
-            columns[x] |= 1 << y
-        return tuple(columns)
-
-    def collides(self, columns, cells, dx=0, dy=0):
-        for x, y in cells:
-            x += dx
-            y += dy
-            if x < 0 or x >= self.width or y < 0 or y >= self.height:
-                return True
-            if columns[x] & (1 << y):
-                return True
-        return False
-
-    def placements(self, columns, shape):
-        if shape not in self.templates:
-            return []
-        if self.collides(columns, self.spawn_cells[shape]):
-            return []
-
-        results = []
-        seen = set()
-        for template in self.templates[shape]:
-            allowed = True
-            for cells in template['checks']:
-                if self.collides(columns, cells):
-                    allowed = False
-                    break
-            if not allowed:
-                continue
-
-            cells = template['cells']
-            piece_width = template['right'] - template['left'] + 1
-            for target in range(self.width - piece_width + 1):
-                dx = 0
-                dy = 0
-                points = template['points']
-                moves = template['moves'].copy()
-                distance = target - template['left']
-                direction = Direction.Right
-                step = 1
-                if distance < 0:
-                    direction = Direction.Left
-                    step = -1
-                landed = False
-
-                for index in range(abs(distance)):
-                    blocked = self.collides(columns, cells, dx + step, dy)
-                    if not blocked:
-                        dx += step
-                    moves.append(direction)
-                    # sideways moves still trigger a step of gravity
-                    if self.collides(columns, cells, dx, dy + 1):
-                        landed = True
-                        break
-                    dy += 1
-                    points += 1
-                    if blocked:
-                        break
-
-                if not landed:
-                    drop = self.height
-                    for x, y in cells:
-                        x += dx
-                        y += dy
-                        below = columns[x] >> (y + 1)
-                        # the lowest set bit below the piece marks its first obstacle
-                        free_rows = self.height - y - 1
-                        if below:
-                            free_rows = (below & -below).bit_length() - 1
-                        drop = min(drop, free_rows)
-                    dy += drop
-                    points += drop
-                    moves.append(Direction.Drop)
-
-                cost = 0.0
-                if shape is Shape.B:
-                    # bombs remove cells instead of becoming part of the stack
-                    bomb_x, bomb_y = cells[0]
-                    placed, destroyed = self.explode(columns, bomb_x + dx, bomb_y + dy)
-                    cost = destroyed * self.weights['destroyed_cell_cost']
-                else:
-                    placed = list(columns)
-                    for x, y in cells:
-                        placed[x + dx] |= 1 << (y + dy)
-                result, lines = self.clear_rows(placed)
-                if result is None:
-                    continue
-                points += [0, 25, 100, 400, 1600][lines]
-                key = (result, points, cost)
-                if key in seen:
-                    continue
-                seen.add(key)
-                results.append(Landing(result, points, moves, cost=cost))
-        return results
-
-    def clear_rows(self, columns):
-        # matching set bits across every column identify full rows
-        full_rows = columns[0]
-        for column in columns[1:]:
-            full_rows &= column
-        if full_rows == 1:
-            full_rows = 0
-        lines = bin(full_rows).count('1')
-        if lines > 4:
-            return None, lines
-        while full_rows:
-            # clear one row then shift the rows above it down
-            row_bit = full_rows & -full_rows
-            above = row_bit - 1
-            below = ~(row_bit | above)
-            for x in range(self.width):
-                columns[x] = (columns[x] & below) | ((columns[x] & above) << 1)
-            full_rows ^= row_bit
-        return tuple(columns), lines
-
-    def explode(self, columns, bomb_x, bomb_y):
-        result = list(columns)
-        destroyed = 0
-        first_row = max(0, bomb_y - 1)
-        last_row = min(self.height - 1, bomb_y + 1)
-        blast_mask = ((1 << (last_row - first_row + 1)) - 1) << first_row
-        for x in range(max(0, bomb_x - 1), min(self.width, bomb_x + 2)):
-            destroyed += bin(result[x] & blast_mask).count('1')
-            result[x] &= ~blast_mask
-            upper_mask = (1 << (bomb_y + 1)) - 1
-            upper_count = bin(result[x] & upper_mask).count('1')
-            lower_cells = result[x] >> bomb_y
-            lowest = self.height - 1
-            if lower_cells:
-                lowest = bomb_y + (lower_cells & -lower_cells).bit_length() - 2
-            result[x] &= ~upper_mask
-            if upper_count:
-                result[x] |= ((1 << upper_count) - 1) << (lowest - upper_count + 1)
-        return result, destroyed
-
-    def measure(self, columns):
-        heights = []
-        holes = 0
-        for column in columns:
-            height = 0
-            if column:
-                height = self.height - ((column & -column).bit_length() - 1)
-                holes += height - bin(column).count('1')
-            heights.append(height)
-        return heights, holes
-
-    def options(self, columns, shape, discards, remaining, allow_discards):
-        if self.collides(columns, self.spawn_cells[shape]):
-            return []
-        choices = self.placements(columns, shape)
-        # a discard spends one piece and promotes the preview
-        if allow_discards and discards > 0 and remaining > 1:
-            choices.append(Landing(columns, 0, [Action.Discard],
-                                   cost=self.weights['discard_cost'], discards=1))
-        return choices
-
-    def evaluate(self, columns, points, remaining):
-        if remaining <= 0:
-            return points / 25.0
-        heights, holes = self.measure(columns)
-
-        left_well = heights[0] < heights[1]
-        right_well = heights[-1] < heights[-2]
-        well = -1
-        if left_well:
-            well = 0
-        if right_well and (well == -1 or heights[-1] < heights[0]):
-            well = self.width - 1
-        if self.well_column is not None:
-            well = self.well_column
-
-        bumpiness = 0
-        # leave the scoring well out of the surface roughness calculation
-        for x in range(self.width - 1):
-            if x == well or x + 1 == well:
+            if x == well_column or x + 1 == well_column:
                 continue
             bumpiness += abs(heights[x] - heights[x + 1])
 
-        ready = 0
-        if well != -1 and heights[well] == 0:
-            for y in range(self.height - 1, -1, -1):
-                complete = True
-                for x in range(self.width):
-                    if x != well and not (columns[x] & (1 << y)):
-                        complete = False
+        # rows ready for a four-line clear
+        setup = 0
+        if well_column is not None and heights[well_column] == 0:
+            ready_rows = 0
+            for offset in range(min(8, board.height)):
+                y = board.height - 1 - offset
+                row_ready = True
+                for x in range(board.width):
+                    if x != well_column and (x, y) not in board.cells:
+                        row_ready = False
                         break
-                if not complete:
+                if not row_ready:
                     break
-                ready += 1
-                if ready == self.setup_rows:
-                    break
+                ready_rows += 1
 
-        tallest = max(heights)
-        danger = max(0, tallest - 10)
-        complete_groups = ready // 4
-        # each group represents another possible four row clear
-        extra_rows = ready % 4
-        setup = complete_groups * 64 + [0, 6, 14, 30][extra_rows]
-        if remaining < 7:
-            setup *= remaining / 7.0
+            full_groups = ready_rows // 4
+            extra_rows = ready_rows % 4
+            partial_rewards = (0, 6, 14, 30)
+            setup = full_groups * 64 + partial_rewards[extra_rows]
+            if remaining < 7:
+                setup *= remaining / 7.0
 
-        value = points / 25.0
-        value += self.weights['setup'] * setup
-        value -= self.weights['height'] * sum(heights)
-        value -= self.weights['holes'] * holes
-        value -= self.weights['bumpiness'] * bumpiness
-        value -= self.weights['danger'] * danger * danger
-        if well != -1:
-            well_blocks = bin(columns[well]).count('1')
-            value -= self.weights['well_fill'] * well_blocks
+        # danger above ten rows
+        highest_column = max(heights)
+        danger = max(0, highest_column - 10)
+
+        # occupied cells in the well
+        well_fill = 0
+        if well_column is not None and well_fill_weight:
+            for x, _ in board.cells:
+                if x == well_column:
+                    well_fill += 1
+
+        value += setup_weight * setup
+        value -= height_weight * total_height
+        value -= hole_weight * holes
+        value -= bumpiness_weight * bumpiness
+        value -= danger_weight * danger * danger
+        value -= well_fill_weight * well_fill
         return value
 
-    def preview_priority(self, preview):
-        return (preview.value, preview.points)
 
-    def resource_factor(self, remaining):
-        return min(1.0, max(0, remaining) / 8.0)
-
-    def candidate_priority(self, candidate):
-        return (candidate['value'], candidate['first_value'])
-
-    def search(self, board, remaining, root_width=6, preview_width=4,
-               allow_discards=False, root_landings=None):
-        started = process_time()
-        columns = self.columns_from_board(board)
-        discards = 0
-        if allow_discards:
-            discards = board.discards_remaining
-        if root_landings is None:
-            root_landings = self.options(columns, board.falling.shape, discards,
-                                         remaining, allow_discards)
-        if board.next is None or remaining < 2:
-            return self.single_piece_search(root_landings, remaining)
-
-        candidates = []
-        for first in root_landings:
-            preview_shape = board.next.shape
-            if first.next_shape is not None:
-                preview_shape = first.next_shape
-            previews = []
-            discards_left = discards - first.discards
-            first_value = self.evaluate(first.columns, first.points, remaining - 1)
-            first_value -= first.cost * self.resource_factor(remaining - 1)
-            for second in self.options(first.columns, preview_shape, discards_left,
-                                        remaining - 1, allow_discards):
-                points = first.points + second.points
-                cost = first.cost + second.cost
-                value = self.evaluate(second.columns, points, remaining - 2)
-                value -= cost * self.resource_factor(remaining - 2)
-                previews.append(Preview(second.columns, points, value,
-                                        discards_left - second.discards, cost))
-            if not previews:
-                continue
-            previews.sort(key=self.preview_priority, reverse=True)
-            selected = previews[:preview_width]
-            for preview in previews:
-                if preview.discards < discards_left and preview not in selected:
-                    selected.append(preview)
-                    break
-            candidates.append({
-                'landing': first, 'previews': selected,
-                'value': previews[0].value, 'first_value': first_value,
-            })
-
-        if not candidates:
-            # if every preview would top out, finish the current piece for
-            # the most real points available before the game ends
-            self.last_depth = 1
-            self.budget_stopped = False
-            best = None
-            for landing in root_landings:
-                if best is None or landing.points > best.points:
-                    best = landing
-            return best
-        candidates.sort(key=self.candidate_priority, reverse=True)
-        best = candidates[0]['landing']
-        self.last_depth = 2
-        self.budget_stopped = False
-        if remaining < 3:
-            return best
-
-        best_value = float('-inf')
-        best_first_value = float('-inf')
-        considered = 0
-        for candidate in candidates[:root_width]:
-            total_value = 0.0
-            # the third piece is unknown now, but will be visible before the
-            # preview is placed each possible shape gets its own best reply
-            for shape in list(Shape)[:-1]:
-                best_reply = -max(100.0, remaining * 6.4)
-                for preview in candidate['previews']:
-                    choices = self.options(preview.columns, shape, preview.discards,
-                                           remaining - 2, allow_discards)
-                    for third in choices:
-                        points = preview.points + third.points
-                        cost = preview.cost + third.cost
-                        value = self.evaluate(third.columns, points, remaining - 3)
-                        value -= cost * self.resource_factor(remaining - 3)
-                        best_reply = max(best_reply, value)
-                total_value += best_reply
-            value = total_value / 7.0
-            first_value = candidate['first_value']
-            if value > best_value or (value == best_value and first_value > best_first_value):
-                best_value = value
-                best_first_value = first_value
-                best = candidate['landing']
-            considered += 1
-            if process_time() - started >= self.time_limit:
-                self.budget_stopped = considered < min(root_width, len(candidates))
-                break
-        self.last_depth = 3
-        return best
-
-    def single_piece_search(self, landings, remaining):
-        # handle a missing preview or the final piece without a whole search tree
-        self.last_depth = 0
-        self.budget_stopped = False
-        remaining = max(0, remaining - 1)
-        best = None
-        best_priority = (float('-inf'), float('-inf'))
-        for landing in landings:
-            value = self.evaluate(landing.columns, landing.points, remaining)
-            value -= landing.cost * self.resource_factor(remaining)
-            priority = (value, landing.points)
-            if best is None or priority > best_priority:
-                best = landing
-                best_priority = priority
-        if best is not None:
-            self.last_depth = 1
-        return best
-
-
-class HeuristicPlayer(Player):
-    def __init__(self, block_limit=BLOCK_LIMIT, root_width=6, preview_width=4,
-                 time_limit=0.5, weights=None, well_column=None, setup_rows=8,
-                 allow_discards=True, allow_bombs=True,
-                 fallback_candidates=4, fallback_weights=None):
-        self.fallback_player = FallbackPlayer(fallback_candidates, fallback_weights,
-                                             block_limit)
-        self.block_limit = block_limit
-        self.root_width = root_width
-        self.preview_width = preview_width
-        self.time_limit = time_limit
-        self.weights = weights
-        self.well_column = well_column
-        self.setup_rows = setup_rows
-        self.allow_discards = allow_discards
-        self.allow_bombs = allow_bombs
-        self.planner = None
-        self.turn = 0
-        self.search_decisions = 0
-        self.fallback_decisions = 0
-        self.planning_failures = 0
-        self.last_failure = None
-        self.total_search_depth = 0
-        self.maximum_search_depth = 0
-        self.budget_stops = 0
-        self.bomb_decisions = 0
-        self.discard_decisions = 0
-
-    def choose_action(self, board):
-        # every call spends one playable piece including a discarded one
-        remaining = self.block_limit - self.turn - 1
-        self.fallback_player.pieces_played = self.turn
-        self.turn += 1
-        try:
-            if self.planner is None:
-                self.planner = self.make_planner(board)
-            choices = self.resource_landings(board, remaining)
-            landing = self.planner.search(board, remaining, self.root_width,
-                                          self.preview_width, self.allow_discards,
-                                          choices)
-            # check the fast simulation on an engine clone before returning moves
-            if landing is not None and self.verify_plan(board, landing):
-                self.record_plan(landing)
-                return landing.moves
-            self.last_failure = 'plan verification failed'
-        except Exception as error:
-            self.last_failure = type(error).__name__
-        self.planning_failures += 1
-        self.fallback_decisions += 1
-        return self.fallback_player.choose_action(board)
-
-    def record_plan(self, landing):
-        self.search_decisions += 1
-        if Action.Bomb in landing.moves:
-            self.bomb_decisions += 1
-        if Action.Discard in landing.moves:
-            self.discard_decisions += 1
-        depth = self.planner.last_depth
-        self.total_search_depth += depth
-        self.maximum_search_depth = max(self.maximum_search_depth, depth)
-        if self.planner.budget_stopped:
-            self.budget_stops += 1
-
-    def make_planner(self, board):
-        return Planner(board.width, board.height, time_limit=self.time_limit,
-                       weights=self.weights, well_column=self.well_column,
-                       setup_rows=self.setup_rows)
-
-    def resource_landings(self, board, remaining):
-        if not self.allow_discards and not self.allow_bombs:
-            return None
-        columns = self.planner.columns_from_board(board)
-        choices = self.planner.options(columns, board.falling.shape,
-                                       board.discards_remaining, remaining,
-                                       self.allow_discards)
-        if (not self.allow_bombs or board.bombs_remaining == 0
-                or board.next is None or board.next.shape is Shape.B
-                or remaining < 2 or board.falling.shape is Shape.B):
-            return choices
-        heights, holes = self.planner.measure(columns)
-        if max(heights) < 14 and holes < 3:
-            return choices
-
-        sandbox = board.clone()
-        landed = sandbox.bomb()
-        bomb_cost = self.planner.weights['bomb_cost']
-        if landed:
-            choices.append(Landing(self.planner.columns_from_board(sandbox),
-                                   sandbox.score - board.score, [Action.Bomb],
-                                   cost=bomb_cost, next_shape=Shape.B, bombs=1))
-        else:
-            for moves, after in self.fallback_player.landings(sandbox):
-                plan = [Action.Bomb] + moves
-                choices.append(Landing(self.planner.columns_from_board(after),
-                                       after.score - board.score, plan,
-                                       cost=bomb_cost, next_shape=Shape.B, bombs=1))
-        return choices
-
-    def verify_plan(self, board, landing):
-        sandbox = board.clone()
-        landed = False
-        for index, move in enumerate(landing.moves):
-            if move is Action.Discard:
-                landed = sandbox.discard()
-            elif move is Action.Bomb:
-                landed = sandbox.bomb()
-            elif move is None:
-                landed = sandbox.skip()
-            elif isinstance(move, Rotation):
-                landed = sandbox.rotate(move)
-            else:
-                landed = sandbox.move(move)
-            if landed:
-                if index != len(landing.moves) - 1:
-                    return False
-                break
-        if not landed:
-            return False
-        result = (sandbox.score - board.score,
-                  board.discards_remaining - sandbox.discards_remaining,
-                  board.bombs_remaining - sandbox.bombs_remaining)
-        if result != (landing.points, landing.discards, landing.bombs):
-            return False
-        if landing.next_shape is not None:
-            if sandbox.falling is None or sandbox.falling.shape is not landing.next_shape:
-                return False
-        return self.planner.columns_from_board(sandbox) == landing.columns
-
-
-SelectedPlayer = HeuristicPlayer
+SelectedPlayer = MyPlayer
